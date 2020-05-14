@@ -1,6 +1,16 @@
 #include <iostream>
+#include <string>
 
 // Write your function here
+void printString(std::string napis, int powt)
+{
+    int i = 1;
+    while(i <= powt)
+    {
+        std::cout << napis << "\n";
+        i++;
+    } 
+}
 
 int main() {
     printString("Hello", 5);
