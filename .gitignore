@@ -19,6 +19,7 @@ js/reveal.min.js
 build/
 .vscode/
 googletest/
+*.code-workspace
 
 # Compiled Object files
 *.slo
