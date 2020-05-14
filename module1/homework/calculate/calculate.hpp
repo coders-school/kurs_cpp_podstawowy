@@ -15,6 +15,14 @@ std::string calculate(const std::string& command, int first, int second)
     {
         return std::to_string(first * second);
     }
+    else if (command == "divide")
+    {
+        return (second == 0) ? "Division by 0" : std::to_string(first / second); 
+    }
+    else
+    {
+        return "Invalid data";
+    }
     
     
     return "";
