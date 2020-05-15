@@ -1,8 +1,12 @@
 #pragma once
-
+#include <vector>
 int fibonacci_iterative(int sequence) {
-    // TODO: Your implementation goes here
-    return 0;
+    std::vector<int> fibbo{0,1};
+    for(int i = 2 ; i < sequence + 1 ; ++i)
+    {
+        fibbo.push_back(fibbo[i-1] + fibbo[i-2]);
+    }
+    return fibbo[sequence];
 }
 
 int fibonacci_recursive(int sequence) {
