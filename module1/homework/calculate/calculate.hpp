@@ -19,7 +19,7 @@ std::string calculate(const std::string& command, int first, int second)
     {
         if (second == 0)
         {
-            return std::to_string("Division by 0");
+            return "Division by 0";
         }
         else
         {
@@ -28,6 +28,6 @@ std::string calculate(const std::string& command, int first, int second)
     }
     else
     {
-        return std::to_string("Invalid data");
+        return "Invalid data";
     }
 }
