@@ -2,6 +2,9 @@
 #include <string>
 
 std::string calculate(const std::string& command, int first, int second) {
-    // TODO: Implement your solution here and return proper value
+    if ("add" == command){
+        return std::to_string(first + second);
+    }
+
     return "";
 }
