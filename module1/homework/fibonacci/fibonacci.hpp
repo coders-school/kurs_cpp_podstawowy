@@ -2,14 +2,20 @@
 
 int fibonacci_iterative(int sequence) {
     // TODO: Your implementation goes here
-    int total[sequence+2];
-    total[0] = 0;
-    total[1] = 1;
-
+    int next , previous, total;
+    total = 1;
+    previous = 0;
+    next = 1;
+    if(sequence < 2)
+        return sequence;
     for(int i = 2; i <= sequence; i++){ 
-        total[i] = total[i-1]+total[i-2];
+        
+        next = previous + total;
+        previous = total;
+        total = next;
+        
     }
-    return total[sequence];    
+    return total;    
 }
 
 int fibonacci_recursive(int sequence) {
