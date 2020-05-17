@@ -10,15 +10,18 @@ add, subtract, multiply, divide
 };
 
 std::string Add(const int& first,const int& second){
-
-    return  std::to_string(first +second);
-
-    
+    return  std::to_string((long)(first + second));
+}
+std::string Subtract(const int& first,const int& second){
+    return  std::to_string(first - second);
+}
+std::string Multiply(const int& first,const int& second){
+    return  std::to_string((long)(first * second));
 }
     const std::map<std::string, pCalculate_fun> Map_Command {
         { "add", Add },
-        // { "subtract", subtract },
-        // {"multiply",multiply},
+         { "subtract", Subtract },
+        {"multiply",Multiply},
         // {"divide",divide}
     };
     
