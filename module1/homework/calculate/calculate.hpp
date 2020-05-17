@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-#include <algorithm>
 
 std::string add(int first, int second) {
     return std::to_string(first + second);
