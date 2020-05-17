@@ -14,6 +14,10 @@ std::string multiply(int first, int second) {
 }
 
 std::string divide(int first, int second) {
+    if (second == 0)
+    {
+        return "Division by 0";
+    }
     return std::to_string(first / second);
 }
 
