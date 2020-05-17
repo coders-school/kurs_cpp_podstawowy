@@ -17,7 +17,7 @@ int fibonacci_iterative(int sequence)
         return numb1;
     }
 
-    for (int i = 3; i <= sequence, i++) 
+    for (int i = 3; i <= sequence; i++) 
     {
         result = numb1 + numb2;
         numb1 = numb2;
