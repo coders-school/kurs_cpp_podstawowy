@@ -2,12 +2,7 @@
 #include <string>
 #include <map>
 
-// using calculate_fun = std::string (*)(int,int);
-
-typedef std::string (*pCalculate_fun)(const int& ,const int& );
-        enum Enum_Commmand{
-add, subtract, multiply, divide
-};
+ using pCalculate_fun = std::string (*)(const int& ,const int& );
 
 std::string Add(const int& first,const int& second){
     return  std::to_string((long)(first + second));
@@ -18,21 +13,22 @@ std::string Subtract(const int& first,const int& second){
 std::string Multiply(const int& first,const int& second){
     return  std::to_string((long)(first * second));
 }
+std::string Divide(const int& first,const int& second){
+    if(second==0)
+        return "Division by 0";
+
+    return  std::to_string(first / second);
+}
     const std::map<std::string, pCalculate_fun> Map_Command {
-        { "add", Add },
-         { "subtract", Subtract },
+        {"add", Add },
+        {"subtract", Subtract },
         {"multiply",Multiply},
-        // {"divide",divide}
+        {"divide",Divide}
     };
-    
-
 std::string calculate(const std::string& command, int first, int second) {
-
-    // TODO: Implement your solution here and return proper value
 if ( Map_Command.find(command) == Map_Command.end() ) {
   return "Invalid data";
 } else {
   return Map_Command.at(command)(first,second);
 }
-
 }
