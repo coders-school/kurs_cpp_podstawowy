@@ -31,6 +31,7 @@ INSTANTIATE_TEST_SUITE_P(
         std::make_tuple(6, 8),
         std::make_tuple(13, 233),
         std::make_tuple(17, 1597),
-        std::make_tuple(20, 6765)
+        std::make_tuple(20, 6765),
+        std::make_tuple(-10,0)
     )
 );
