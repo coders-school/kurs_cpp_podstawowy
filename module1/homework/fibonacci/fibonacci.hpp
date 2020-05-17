@@ -1,7 +1,9 @@
 #pragma once
 
 int fibonacci_iterative(int sequence) {
-    if (sequence <= 1) {
+    if (sequence < 0) {
+        throw std::invalid_argument("Fibonacci sequence index cannot be negative.");
+    } else if (sequence <= 1) {
         return sequence;
     }
 
@@ -18,7 +20,9 @@ int fibonacci_iterative(int sequence) {
 }
 
 int fibonacci_recursive(int sequence) {
-    if (sequence <= 1) {
+    if (sequence < 0) {
+        throw std::invalid_argument("Fibonacci sequence index cannot be negative.");
+    } else if (sequence <= 1) {
         return sequence;
     }
 
