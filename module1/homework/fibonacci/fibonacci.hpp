@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 #include <stdexcept>
 
 int fibonacci_iterative(int sequence) {
