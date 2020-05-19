@@ -8,11 +8,10 @@ int fibonacci_iterative(int sequence) {
         return sequence;
     }
     
-    int first = 0;
-    int second = 1;
-    
+    int first = 0,second = 1, result;
+
     for(int i = 2 ; i <= sequence ; ++i){
-        int result = first + second;
+        result = first + second;
         first = second;
         second = result;
     }
