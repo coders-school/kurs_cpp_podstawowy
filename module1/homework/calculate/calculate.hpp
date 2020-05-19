@@ -1,8 +1,6 @@
 #pragma once
-#include <algorithm>
 #include <map>
 #include <string>
-#include <vector>
 
 std::string calculate(const std::string &command, int first, int second)
 {
