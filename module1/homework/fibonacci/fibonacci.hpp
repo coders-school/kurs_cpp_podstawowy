@@ -4,15 +4,19 @@ int fibonacci_iterative(int sequence) {
     if (sequence < 0) {
         return -1;
     }
-    int fib[sequence + 1];
-    fib[0] = 0;
-    if (sequence > 0) {
-        fib[1] = 1;
+    if (sequence == 0) {
+        return 0;
     }
-    for (int i = 2; i < sequence + 1; ++i) {
-        fib[i] = fib[i - 1] + fib[i - 2];
+    if (sequence == 1) {
+        return 1;
     }
-    return fib[sequence];
+    int current = 1, one_before = 1, two_before = 0;
+    for (int i = 2; i <= sequence; ++i) {
+        current = one_before + two_before;
+        two_before = one_before;
+        one_before = current;
+    }
+    return current;
 }
 
 int fibonacci_recursive(int sequence) {
