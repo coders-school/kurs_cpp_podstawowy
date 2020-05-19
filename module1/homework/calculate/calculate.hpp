@@ -21,7 +21,7 @@ std::string calculate(const std::string &command, int first, int second)
         return std::to_string(first * second);
     } break;
     case 3: {
-        return (second != 0) ? std::to_string(first / second) : "Invalid data";
+        return (second != 0) ? std::to_string(first / second) : "Division by 0";
     } break;
     }
     return "";
