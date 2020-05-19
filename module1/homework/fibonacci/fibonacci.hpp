@@ -3,7 +3,7 @@
 int fibonacci_iterative(int sequence) {
     
     int fib = 0, fib1 = 1, fib2 = 1;
-    if (sequence >= 0 && sequence <= 1) return sequence;
+    if (sequence == 0 || sequence == 1) return sequence;
     for(int i=2; i < sequence; i++)
     {
         fib = fib1;
@@ -15,9 +15,7 @@ int fibonacci_iterative(int sequence) {
 
 int fibonacci_recursive(int sequence) {
 
-    if (sequence >= 0 && sequence <= 1) return sequence;
-    else if (sequence >=2) 
-    {
-        return fibonacci_recursive(sequence-1)+fibonacci_recursive(sequence-2);
-    }
+    if (sequence == 0 || sequence == 1) return sequence;
+    return fibonacci_recursive(sequence-1)+fibonacci_recursive(sequence-2);
+  
 }
