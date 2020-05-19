@@ -6,5 +6,8 @@ std::string calculate(const std::string& command, int first, int second) {
     if(command == "add") {
         result =  first + second;
     }
+    else if(command == "subtract") {
+        result =  first - second;
+    }
     return std::to_string(result);
 }
