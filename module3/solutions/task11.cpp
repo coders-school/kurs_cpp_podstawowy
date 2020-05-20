@@ -8,6 +8,7 @@ void foo(const::string& str) {
 int main() {
   std::string str("Some string");
   foo(str);
-
+  // pass by ref to show that it modifies?
+  // scope??
   return 0;
 }
