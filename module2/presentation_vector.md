@@ -15,6 +15,7 @@ ___
 * <!-- .element: class="fragment fade-in" --> bardzo powszechnie używany
 * <!-- .element: class="fragment fade-in" --> dynamiczna tablica
 * <!-- .element: class="fragment fade-in" --> nie musimy z góry precyzować ile ma być elementów
+* <!-- .element: class="fragment fade-in" --> znajduje się w jednym, ciągłym obszarze pamięci (tak jak tablica)
 * <!-- .element: class="fragment fade-in" --> sam zarządza pamięcią
   * zadba o alokację nowej pamięci, gdy będzie to potrzebne
   * zadba o dealokację pamięci, gdy już jej nie będziemy potrzebować
