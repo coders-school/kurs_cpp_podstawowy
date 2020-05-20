@@ -82,17 +82,21 @@ std::cout << "NWD(255, 15) = " << NWD(255, 15) << "\n";
 ```
 
 ___
-<!-- .slide: style="font-size: 0.75em" -->
+<!-- .slide: style="font-size: 0.6em" -->
 
 ## Dostarczenie zadań (różnice w stosunku do lekcji Podstawy #1)
 
 1. Już masz fork repo [kurs_cpp_podstawowy](https://github.com/coders-school/kurs_cpp_podstawowy), nie da się ponownie zrobić forka
 2. Masz już ściągnięte swoje repo
-3. Przejdź do katalogu kurs_cpp_podstawowy - `cd kurs_cpp_podstawowy`
-4. Zaktualizuj repozytorium `git pull`
-5. Przełącz się na branch module2 `git checkout module2`
-6. Postępuj tak samo jak przy poprzednich zadaniach, czyli najpierw utwórz oddzielną gałąź na nowe zadanie - `git checkout -b add_even`
-7. Przy zgłoszeniu Pull Requesta wyklikaj, że chcesz go dostarczyć do `coders-school/kurs_cpp_podstawowy` branch `module2`
+3. Przejdź do katalogu repo - `cd kurs_cpp_podstawowy`
+4. Dodaj nowe repozytorium zdalne - `git remote add coders https://github.com/coders-school/kurs_cpp_podstawowy.git`
+5. Zaktualizuj repozytorium z nowo dodanego adresu `git fetch coders`
+6. Przełącz się na branch module2 `git checkout module2`
+7. Możesz nowo ściągniętego brancha wysłać też na swoje repo na GH `git push origin module2`
+8. Postępuj tak samo jak przy poprzednich zadaniach, czyli najpierw utwórz oddzielną gałąź na nowe zadanie - `git checkout -b add_even`
+9. Zaimplementuj rozwiązanie, robiąc dużo malutkich commitów.
+10. Wysyłając zmiany na swojego GitHuba używaj komendy `git push origin add_even`
+11. Przy zgłoszeniu Pull Requesta wyklikaj, że chcesz go dostarczyć do `coders-school/kurs_cpp_podstawowy` branch `module2`
 
 ## Dostarczenie kolejnych zadań
 
