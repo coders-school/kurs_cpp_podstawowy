@@ -12,16 +12,5 @@ int fibonacci_iterative(int sequence) {
 }
 
 int fibonacci_recursive(int sequence) {
-    if(sequence <= 0)
-    {
-        return 0;
-    }
-    else if (sequence <=2)
-    {
-        return 1;
-    }
-    else 
-    {
-        return fibonacci_recursive(sequence - 1) + fibonacci_recursive(sequence - 2);
-    }
+	return sequence < 2 ? sequence :  fibonacci_recursive(sequence - 1) + fibonacci_recursive(sequence - 2);
 }
