@@ -16,24 +16,21 @@ std::string calculate(const std::string& command, int first, int second) {
              
              
      if (command == "multiply"){
-         std::string mnozenie = std::to_string(first * second);
-         return (mnozenie);
+         std::string multiply = std::to_string(first * second);
+         return (multiply);
      }
              
-     if (command == "divide" && second != 0){
-         
+     if (command == "divide"){
+         if (second == 0){
+                     return ("Division by 0");
+                   }
+         else {
            std::string divide = std::to_string(first / second);
            return (divide);
          }
-     if (command == "divide" && second == 0){
-                     return ("Division by 0");
-                   }
-     
-             
+     }       
      else {
          return ("Invalid data");
      }
-    
-    
 }
 
