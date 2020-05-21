@@ -3,6 +3,8 @@
 int fibonacci_iterative(int sequence) {
     if(sequence<0){
         return -1;
+    }else if(sequence==0){
+        return 0;
     }else if(sequence<3){
         return 1;
     }
@@ -11,6 +13,7 @@ int fibonacci_iterative(int sequence) {
         b +=a;
         a = b-a;
     }
+    return b;
 }
 
 int fibonacci_recursive(int sequence) {
