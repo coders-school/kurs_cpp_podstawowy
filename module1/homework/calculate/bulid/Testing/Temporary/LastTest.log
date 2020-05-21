@@ -1,10 +1,10 @@
-Start testing: May 21 13:07 CEST
+Start testing: May 21 13:26 CEST
 ----------------------------------------------------------
 1/1 Testing: calculate_test
 1/1 Test: calculate_test
 Command: "/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/bulid/calculate-ut"
 Directory: /home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/bulid
-"calculate_test" start time: May 21 13:07 CEST
+"calculate_test" start time: May 21 13:26 CEST
 Output:
 ----------------------------------------------------------
 Running main() from /home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/bulid/googletest-src/googletest/src/gtest_main.cc
@@ -14,90 +14,24 @@ Running main() from /home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1
 [ RUN      ] calculate.ShouldAdd
 [       OK ] calculate.ShouldAdd (0 ms)
 [ RUN      ] calculate.ShouldSubtract
-/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/test.cpp:12: Failure
-Expected equality of these values:
-  calculate("subtract", 10, 20)
-    Which is: "Invalid data"
-  "-10"
-/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/test.cpp:13: Failure
-Expected equality of these values:
-  calculate("subtract", 15, 5)
-    Which is: "Invalid data"
-  "10"
-/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/test.cpp:14: Failure
-Expected equality of these values:
-  calculate("subtract", 0, 0)
-    Which is: "Invalid data"
-  "0"
-/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/test.cpp:15: Failure
-Expected equality of these values:
-  calculate("subtract", 1, -20)
-    Which is: "Invalid data"
-  "21"
-[  FAILED  ] calculate.ShouldSubtract (0 ms)
+[       OK ] calculate.ShouldSubtract (0 ms)
 [ RUN      ] calculate.ShouldMultiply
-/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/test.cpp:19: Failure
-Expected equality of these values:
-  calculate("multiply", 10, 20)
-    Which is: "Invalid data"
-  "200"
-/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/test.cpp:20: Failure
-Expected equality of these values:
-  calculate("multiply", 15, 5)
-    Which is: "Invalid data"
-  "75"
-/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/test.cpp:21: Failure
-Expected equality of these values:
-  calculate("multiply", 0, 0)
-    Which is: "Invalid data"
-  "0"
-/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/test.cpp:22: Failure
-Expected equality of these values:
-  calculate("multiply", 1, -20)
-    Which is: "Invalid data"
-  "-20"
-[  FAILED  ] calculate.ShouldMultiply (0 ms)
+[       OK ] calculate.ShouldMultiply (0 ms)
 [ RUN      ] calculate.ShouldDivide
-/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/test.cpp:26: Failure
-Expected equality of these values:
-  calculate("divide", 10, 20)
-    Which is: "Invalid data"
-  "0"
-/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/test.cpp:27: Failure
-Expected equality of these values:
-  calculate("divide", 15, 5)
-    Which is: "Invalid data"
-  "3"
-/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/test.cpp:28: Failure
-Expected equality of these values:
-  calculate("divide", 0, 0)
-    Which is: "Invalid data"
-  "Division by 0"
-/home/piotr/Dokumenty/C++/szkola/kurs_cpp_podstawowy/module1/homework/calculate/test.cpp:29: Failure
-Expected equality of these values:
-  calculate("divide", -20, 10)
-    Which is: "Invalid data"
-  "-2"
-[  FAILED  ] calculate.ShouldDivide (0 ms)
+[       OK ] calculate.ShouldDivide (0 ms)
 [ RUN      ] calculate.ShouldReturnInvalidData
 [       OK ] calculate.ShouldReturnInvalidData (0 ms)
 [----------] 5 tests from calculate (0 ms total)
 
 [----------] Global test environment tear-down
 [==========] 5 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 2 tests.
-[  FAILED  ] 3 tests, listed below:
-[  FAILED  ] calculate.ShouldSubtract
-[  FAILED  ] calculate.ShouldMultiply
-[  FAILED  ] calculate.ShouldDivide
-
- 3 FAILED TESTS
+[  PASSED  ] 5 tests.
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
-Test Failed.
-"calculate_test" end time: May 21 13:07 CEST
+Test Passed.
+"calculate_test" end time: May 21 13:26 CEST
 "calculate_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: May 21 13:07 CEST
+End testing: May 21 13:26 CEST
