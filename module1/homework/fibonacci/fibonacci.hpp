@@ -1,30 +1,22 @@
 #pragma once
 
 int fibonacci_iterative(int sequence) {
-
-    int fibi[47];
-
-    switch (sequence)
-    {
-        case 0: {
-            return 0;
-        }
-        case 1:
-        case 2: {
-            return 1;
-        }
-        default: {
-            fibi[1] = 1;
-            fibi[2] = 1;
-
-            for (int i = 3; i <= sequence; i++)
-            {
-                fibi[i] = fibi[i-1] + fibi[i-2];    
-            }
-            return fibi[sequence];
-        }
+    
+    if(sequence < 2) {
+        return sequence;
     }
-    return 0;
+
+    int fibi_past = 0;
+    int fibi_present = 0;
+    int fibi_future = 1;
+
+    for (int i = 0; i < sequence; i++) {
+        fibi_present=fibi_past+fibi_future;
+        fibi_past=fibi_future;
+        fibi_future=fibi_present;
+    }
+    
+    return fibi_past;
 }
 
 int fibonacci_recursive(int sequence) {
