@@ -32,7 +32,7 @@ ___
 * Jeśli nie wiesz czym jest `operator%` to się dowiedz. Przyda się do pracy domowej :)
 * Zadanie 1 - AddEven (4 punkty)
 * Zadanie 2 - NWD (LCM) i NWW (GCD) (6 punktów)
-* Zadanie 3 - MaxOfVector (4 punkty)
+* Zadanie 3 - MaxOfVector (5 punktów)
 * Zadanie 4 - GenerateSequence (5 punktów)
 
 #### Bonus za punktualność

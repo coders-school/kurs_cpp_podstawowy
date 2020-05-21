@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   addEven:
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: ubuntu-latest
     steps:
     - name: Check out code
       uses: actions/checkout@master
@@ -20,7 +20,7 @@ jobs:
       run: ctest -V
 
   NWDNWW:
-      runs-on: [ubuntu-latest, macos-latest]
+      runs-on: ubuntu-latest
       steps:
       - name: Check out code
         uses: actions/checkout@master
@@ -36,7 +36,7 @@ jobs:
         run: ctest -V
 
   maxOfVector:
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: ubuntu-latest
     steps:
     - name: Check out code
       uses: actions/checkout@master
@@ -52,7 +52,7 @@ jobs:
       run: ctest -V
 
   generateSequence:
-    runs-on: [ubuntu-latest, macos-latest]
+    runs-on: ubuntu-latest
     steps:
     - name: Check out code
       uses: actions/checkout@master
@@ -66,4 +66,3 @@ jobs:
     - name: Run tests
       working-directory: module2/homework/generateSequence/build
       run: ctest -V
-    
