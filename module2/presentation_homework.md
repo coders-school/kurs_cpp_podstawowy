@@ -129,7 +129,7 @@ ___
 
 #### Dodawanie współpracownika do repo na GitHubie
 
-![Add Collaborator](https://github.com/coders-school/kurs_cpp_podstawowy/tree/module2/module2/img/add_collaborator.png)
+![Add Collaborator](https://raw.githubusercontent.com/coders-school/kurs_cpp_podstawowy/module2/module2/img/add_collaborator.png)
 
 ___
 
