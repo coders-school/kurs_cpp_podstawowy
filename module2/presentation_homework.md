@@ -47,8 +47,8 @@ ___
 
 * Przypomnij sobie informacje o wskaźnikach np z [wideo pana Zelenta](https://www.youtube.com/watch?v=0DQl74alJzw)
 * [Poczytaj o `enum`ach](http://cpp0x.pl/kursy/Kurs-C++/Typ-wyliczeniowy-enum/318)
-* Zainteresuj się tematem smart pointerów i poszukać informacji czym jest `std::shared_ptr` i `std::unique_ptr`
-* Możesz przyjrzeć się plikom z testami w zadaniach domowych i spróbować dopisać własne przypadki testowe
+* Zainteresuj się tematem smart pointerów i poszukaj informacji czym jest `std::shared_ptr` i `std::unique_ptr`
+* Przyjrzyj się plikom z testami w zadaniach domowych i spróbuj dopisać własne przypadki testowe
 
 ___
 
