@@ -3,35 +3,67 @@ name: C++ with CMake CI
 on: [push, pull_request]
 
 jobs:
-  calculate:
-    runs-on: ubuntu-latest
+  addEven:
+    runs-on: [ubuntu-latest, macos-latest]
     steps:
     - name: Check out code
       uses: actions/checkout@master
-    - name: mkdir module1/homework/calculate/build
-      run: mkdir module1/homework/calculate/build
+    - name: mkdir module2/homework/addEven/build
+      run: mkdir module2/homework/addEven/build
     - name: Compile
-      working-directory: module1/homework/calculate/build
+      working-directory: module2/homework/addEven/build
       run: |
         cmake ..
         make
     - name: Run tests
-      working-directory: module1/homework/calculate/build
+      working-directory: module2/homework/addEven/build
       run: ctest -V
 
-  fibonacci:
-      runs-on: ubuntu-latest
+  NWDNWW:
+      runs-on: [ubuntu-latest, macos-latest]
       steps:
       - name: Check out code
         uses: actions/checkout@master
-      - name: mkdir module1/homework/fibonacci/build
-        run: mkdir module1/homework/fibonacci/build
+      - name: mkdir module2/homework/nwdNww/build
+        run: mkdir module2/homework/nwdNww/build
       - name: Compile
-        working-directory: module1/homework/fibonacci/build
+        working-directory: module2/homework/nwdNww/build
         run: |
           cmake ..
           make
       - name: Run tests
-        working-directory: module1/homework/fibonacci/build
+        working-directory: module2/homework/nwdNww/build
         run: ctest -V
-  
+
+  maxOfVector:
+    runs-on: [ubuntu-latest, macos-latest]
+    steps:
+    - name: Check out code
+      uses: actions/checkout@master
+    - name: mkdir module2/homework/maxOfVector/build
+      run: mkdir module2/homework/maxOfVector/build
+    - name: Compile
+      working-directory: module2/homework/maxOfVector/build
+      run: |
+        cmake ..
+        make
+    - name: Run tests
+      working-directory: module2/homework/maxOfVector/build
+      run: ctest -V
+
+  generateSequence:
+    runs-on: [ubuntu-latest, macos-latest]
+    steps:
+    - name: Check out code
+      uses: actions/checkout@master
+    - name: mkdir module2/homework/generateSequence/build
+      run: mkdir module2/homework/generateSequence/build
+    - name: Compile
+      working-directory: module2/homework/generateSequence/build
+      run: |
+        cmake ..
+        make
+    - name: Run tests
+      working-directory: module2/homework/generateSequence/build
+      run: ctest -V
+    

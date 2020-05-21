@@ -33,11 +33,11 @@ ___
 * Zadanie 1 - AddEven (4 punkty)
 * Zadanie 2 - NWD (LCM) i NWW (GCD) (6 punktów)
 * Zadanie 3 - MaxOfVector (4 punkty)
-* Zadanie 4 - GenerateSequence (4 punkty)
+* Zadanie 4 - GenerateSequence (5 punktów)
 
 #### Bonus za punktualność
 
-Za dostarczenie każdego zadania przed 31.05.2020 (niedziela) do 23:59 dostaniesz 2 bonusowe punkty (razem 8 punkty za 4 zadania).
+Za dostarczenie każdego zadania przed 31.05.2020 (niedziela) do 23:59 dostaniesz 2 bonusowe punkty (razem 8 punktów za 4 zadania).
 
 #### [Zadania w repo](https://github.com/coders-school/kurs_cpp_podstawowy/tree/module2/module2/homework)
 
@@ -79,6 +79,36 @@ Uważaj na nietypowe przypadki, takie jak 0 lub liczby ujemne :)
 ```cpp
 std::cout << "NWW(255, 15) = " << NWW(255, 15) << "\n";
 std::cout << "NWD(255, 15) = " << NWD(255, 15) << "\n";
+```
+
+___
+
+## Zadanie 3 - MaxOfVector
+
+Napisz funkcję, która przyjmuje `std::vector<int>` i zwraca największy element tego wektora.
+
+### Przykład użycia
+
+```cpp
+std::vector<int> numbers = {6, 78, 12, 54, -11, 0};
+auto result = maxOfVector(numbers);  // result = 78
+```
+
+___
+
+## Zadanie 4 - GenerateSequence
+
+Napisz funkcję, która przyjmuje 2 argumenty:
+
+* `int count`
+* `int step`
+
+oraz zwraca `std::vector<int>` posiadający `count` elementów i każdy z nich jest większy od poprzedniego o `step`. Pierwszy ma wynosić tyle, ile `step`.
+
+### Przykład użycia
+
+```cpp
+auto result = generateSequence(5, 3);  // result = {3, 6, 9, 12, 15}
 ```
 
 ___
