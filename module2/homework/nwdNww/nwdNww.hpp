@@ -7,8 +7,8 @@ int NWD(int lhs, int rhs) {
 
     while (lhs % rhs != 0) {
         int rest = lhs % rhs;
-        lhs      = rhs;
-        rhs      = rest;
+        lhs = rhs;
+        rhs = rest;
     }
 
     return std::abs(rhs);
