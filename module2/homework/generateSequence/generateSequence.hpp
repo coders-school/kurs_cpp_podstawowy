@@ -15,7 +15,7 @@ std::vector<int> generateSequence(int count, int step) {
         }
         else
         {
-            sequence.push_back(sequence[i-1] + step);
+            sequence.push_back(sequence[i - 1] + step);
         }
     }
     
