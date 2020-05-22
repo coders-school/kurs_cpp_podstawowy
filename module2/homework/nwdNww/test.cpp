@@ -1,4 +1,5 @@
 #include <vector>
+#include <limits>
 
 #include "gtest/gtest.h"
 #include "nwdNww.hpp"
@@ -67,8 +68,22 @@ INSTANTIATE_TEST_SUITE_P(
         std::make_tuple(1, -1, 1),
         std::make_tuple(-1, -1, 1),
         std::make_tuple(-10, -10, 10),
-        std::make_tuple(-10, -2, 10)
-        
+        std::make_tuple(-10, -2, 10),
+
+        std::make_tuple(std::numeric_limits<int>::max() - 1, 
+        std::numeric_limits<int>::max() - 2, 0),
+
+        // above test will perform 2^31 iterations in NWD() !!
+        // on my computer it took 9.92 s for performing all tests :)
+
+        std::make_tuple(0.5 * (std::numeric_limits<int>::max() - 1), 
+        std::numeric_limits<int>::max() - 1, 
+        std::numeric_limits<int>::max() - 1)
+        // the product of two large ints may result in int overflow,
+        // but function nwdNww() operates internally on long ints
+        // and if the result is smaller than MAX_INT
+        // it returns proper result
         // based on implementation of std::lcm
+        // Else, function returns 0.
     )
 );
