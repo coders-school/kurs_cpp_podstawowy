@@ -10,7 +10,7 @@ int maxOfVector(const std::vector<int>& vec) {
 
     int maxValue = vec[0];
     
-    for(auto elem : vec)
+    for(const auto& elem : vec)
     {
         if(maxValue < elem)
         {
