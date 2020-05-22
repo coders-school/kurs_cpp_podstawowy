@@ -17,5 +17,5 @@ int main() {
         std::cout << "Result: " << calculate(command, first, second) << "\n";
     }
 
-    return 0;
+
 }
