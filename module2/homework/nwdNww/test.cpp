@@ -32,7 +32,9 @@ INSTANTIATE_TEST_SUITE_P(
         std::make_tuple(0, 0, 0),
         std::make_tuple(-10, -2, 2),
         std::make_tuple(-10, 2, 2),
-        std::make_tuple(10, -2, 2)
+        std::make_tuple(10, -2, 2),
+        std::make_tuple(10, 2, 2), //new
+        std::make_tuple(5, 5, 5) //new
 
         // results based on implementation of std::gcm
     )
@@ -67,7 +69,9 @@ INSTANTIATE_TEST_SUITE_P(
         std::make_tuple(1, -1, 1),
         std::make_tuple(-1, -1, 1),
         std::make_tuple(-10, -10, 10),
-        std::make_tuple(-10, -2, 10)
+        std::make_tuple(-10, -2, 10),
+        std::make_tuple(-4, 8, 8), //new
+        std::make_tuple(-8, 4, 8) //new
         
         // based on implementation of std::lcm
     )
