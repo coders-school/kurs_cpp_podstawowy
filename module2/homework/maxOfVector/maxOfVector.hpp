@@ -6,7 +6,7 @@ int maxOfVector(const std::vector<int>& vec) {
     
     int max=std::numeric_limits<int>::min();
     
-    for(int element : vec)
+    for(const int& element : vec)
     {
         if(element>max)
             max=element;
