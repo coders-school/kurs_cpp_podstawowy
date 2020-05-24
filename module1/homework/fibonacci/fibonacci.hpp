@@ -1,16 +1,15 @@
 #pragma once
 
 int fibonacci_iterative(int sequence){
-    int fibonacci[sequence];
-    fibonacci[0] = 0;
-    fibonacci[1] = 1;
-    for(int i = 2; i <= sequence; i++){
-        fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    int fibonacci_1 = 0, fibonacci_2 = 1;
+    for(int i = 0; i < sequence; i++){
+        fibonacci_2 += fibonacci_1;
+        fibonacci_1 = fibonacci_2 - fibonacci_1;
     }
-    return fibonacci[sequence];
+    return fibonacci_1;
 }
 
-int fibonacci_recursive(int sequence) {
+int fibonacci_recursive(int sequence){
     if(sequence == 0){
         return 0;
     }
