@@ -37,6 +37,32 @@ int NWD(int lhs, int rhs) {
 }
 
 int NWW(int lhs, int rhs) {
-    // TODO: Implement me :)
-    return -1;
+    int dividend, divider, result = 1;
+
+    if(rhs == 0 || lhs == 0) return 0;
+
+    if(rhs < 0) rhs = abs(rhs);
+    if(lhs < 0) lhs = abs(lhs);
+
+    if(rhs > lhs)
+    {
+        dividend = rhs;
+        divider = lhs;
+    }
+    else
+    {
+        dividend = lhs;
+        divider = rhs;
+    }
+
+    for(int i = dividend; i < 10000000; i++)
+    {
+        if(i % dividend  == 0 && i % divider == 0)
+        {
+            result = i;
+            break;
+        }
+    }
+
+    return result;
 }
