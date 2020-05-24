@@ -3,6 +3,10 @@
 #include <limits>
 
 int maxOfVector(const std::vector<int>& vec) {
-    // TODO: Implement me :)
-    return {};
+    auto max = vec[0];
+    for(const auto& elem : vec)
+    {
+        if(max < elem) max = elem;
+    }
+    return max;
 }
