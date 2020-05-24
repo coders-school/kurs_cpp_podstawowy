@@ -1,19 +1,16 @@
 #pragma once
-#include <vector>
 #include <limits>
+#include <vector>
 
 int maxOfVector(const std::vector<int>& vec) {
-    if(vec.empty())
-    {
+    if (vec.empty()) {
         return 0;
     }
 
     int maxValue = vec[0];
-    
-    for(const auto& elem : vec)
-    {
-        if(maxValue < elem)
-        {
+
+    for (const auto& elem : vec) {
+        if (maxValue < elem) {
             maxValue = elem;
         }
     }
