@@ -35,7 +35,7 @@ int NWW(int lhs, int rhs) {
         return 0;
     }
 
-    auto nww = (lhs * rhs) / NWD(lhs, rhs);
+    auto nww = (lhs / NWD(lhs, rhs)) * rhs;
 
     if (nww < 0) {
         nww = -nww;
