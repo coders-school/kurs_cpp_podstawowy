@@ -3,6 +3,15 @@
 #include <limits>
 
 int maxOfVector(const std::vector<int>& vec) {
-    // TODO: Implement me :)
-    return {};
+
+int actual_max = vec.at(0);
+	for(auto element:vec)
+	{
+		if(actual_max < element)
+		{	
+			actual_max = element;
+		}
+	}	
+
+return actual_max;
 }
