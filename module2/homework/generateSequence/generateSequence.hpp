@@ -1,15 +1,21 @@
 #pragma once
 #include <vector>
 
-std::vector<int> generateSequence(int count, int step) {
+std::vector<int> generateSequence(int count, int step) 
+{
+    std::vector<int> sequence;
 
-std::vector <int> generatorResult;
-if(count>0){
-	for(int i = 0, j=step; i<count; i++, j+=step)
-	{
-		generatorResult.push_back(j);
-	}
-}
+    if (count > 0)
+    {
+        sequence.resize(count);
+        int value = step;
 
-return generatorResult;
+        for(int i = 0; i < sequence.size(); i++)
+        {
+            sequence[i] = value;
+            value += step;
+        }
+    }
+
+    return sequence;
 }
