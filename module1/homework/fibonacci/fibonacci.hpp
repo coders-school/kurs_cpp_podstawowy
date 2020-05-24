@@ -13,7 +13,7 @@ int fibonacci_recursive(int sequence){
     if(sequence == 0){
         return 0;
     }
-    else if(sequence < 3){
+    else if(sequence == 1){
         return 1;
     }
     else{
