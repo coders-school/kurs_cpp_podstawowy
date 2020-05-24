@@ -22,9 +22,12 @@ INSTANTIATE_TEST_SUITE_P(
     GenerateSequenceTestFixture,
     ::testing::Values(
         Params{0, 0, std::vector<int>{}},
+        Params{0, 3, std::vector<int>{}},
         Params{-3, 0, std::vector<int>{}},
+        Params{-3, -5, std::vector<int>{}},
         Params{-3, 3, std::vector<int>{}},
         Params{1, 0, std::vector<int>{0}},
+        Params{1, -4, std::vector<int>{-4}},
         Params{3, 0, std::vector<int>{0, 0, 0}},
         Params{3, 1, std::vector<int>{1, 2, 3}},
         Params{3, -1, std::vector<int>{-1, -2, -3}},
