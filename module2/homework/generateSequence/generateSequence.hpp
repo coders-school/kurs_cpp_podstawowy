@@ -8,9 +8,11 @@ std::vector<int> generateSequence(int count, int step) {
         return sequence;
     }
 
-    sequence.push_back(step);
+    sequence.resize(count);
+
+    sequence[0] = step;
     for (int i = 1; i < count; i++) {
-        sequence.push_back(sequence[i - 1] + step);
+        sequence[i] = sequence[i - 1] + step;
     }
 
     return sequence;
