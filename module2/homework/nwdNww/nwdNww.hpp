@@ -10,6 +10,9 @@ int NWD(int lhs, int rhs) {
         else return 0;
     }
 
+    if(rhs < 0) rhs = abs(rhs);
+    if(lhs < 0) lhs = abs(lhs);
+
     if(rhs > lhs)
     {
         dividend = rhs;
