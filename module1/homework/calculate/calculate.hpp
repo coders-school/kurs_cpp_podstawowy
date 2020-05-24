@@ -14,7 +14,7 @@ else if(command == "subtract"){
       }
 else if(command == "divide"){
     if (second == 0){
-        return std::string("Division by Zero");
+        return std::string("Division by 0");
         }
     return std::to_string(first / second);
     }
