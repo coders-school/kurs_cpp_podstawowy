@@ -23,9 +23,7 @@ std::string calculate(const std::string& command, int first, int second) {
         result = first / second;
         return std::to_string(result);
       }
-    else {
-        return "Invalid data";
-    }
-    return "";
-}
+
+    return "Invalid data";
+
 }
