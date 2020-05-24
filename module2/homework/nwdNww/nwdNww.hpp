@@ -55,7 +55,7 @@ int NWW(int lhs, int rhs) {
         divider = rhs;
     }
 
-    for(int i = dividend; i < 10000000; i++)
+    for(int i = dividend; ; i++)
     {
         if(i % dividend  == 0 && i % divider == 0)
         {
