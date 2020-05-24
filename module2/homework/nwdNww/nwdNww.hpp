@@ -2,6 +2,14 @@
 
 int NWD(int lhs, int rhs) {
     int dividend, divider, result = 1;
+    
+    if(rhs == 0 || lhs == 0)
+    {
+        if(rhs == 0 && lhs != 0) return lhs;
+        else if(rhs != 0 && lhs == 0) return rhs;
+        else return 0;
+    }
+
     if(rhs > lhs)
     {
         dividend = rhs;
