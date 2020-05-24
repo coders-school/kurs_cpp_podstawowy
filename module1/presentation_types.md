@@ -38,7 +38,7 @@ ___
 
 ## Typ logiczny - `bool`
 
-* Rozmiar: 1 bajt
+* Rozmiar: co najmniej 1 bajt
   * `sizeof(bool) == 1`
 * 2 możliwe wartości
   * `false`

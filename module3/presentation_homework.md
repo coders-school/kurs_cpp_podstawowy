@@ -15,16 +15,12 @@ ___
 ### Napisz na czacie jak najwięcej haseł
 <!-- .element: class="fragment fade-in" -->
 
-1. <!-- .element: class="fragment fade-in" --> Typy danych
-    * `void`, `bool`, `char`, `int`, `double` + ich odmiany
-1. <!-- .element: class="fragment fade-in" --> Funkcje
-    * sygnatura (deklaracja) = typ zwracany, nazwa, argumenty
-1. <!-- .element: class="fragment fade-in" --> Instrukcje warunkowe
-    * `if`, `switch/case`
-1. <!-- .element: class="fragment fade-in" --> Pętle
-    * `for`, `while`, `do/while`
-1. <!-- .element: class="fragment fade-in" --> Tablice
-    * `Type t[N]`, `operator[]`
+1. <!-- .element: class="fragment fade-in" --> STL - co to?
+2. <!-- .element: class="fragment fade-in" --> <code>std::vector</code>
+3. <!-- .element: class="fragment fade-in" --> Pętla <code>for</code> po kolekcji
+4. <!-- .element: class="fragment fade-in" --> <code>std::string</code>
+5. <!-- .element: class="fragment fade-in" --> <code>std::list</code>
+6. <!-- .element: class="fragment fade-in" --> <code>std::map</code>
 
 ___
 <!-- .slide: style="font-size: 0.8em" -->
@@ -33,55 +29,47 @@ ___
 
 ### Post-work
 
-<!-- * Jeśli nie wiesz czym jest `operator %` to się dowiedz. Przyda się do pracy domowej :) -->
-* Poczytaj dokumentację [std::string](https://en.cppreference.com/w/cpp/string/basic_string). Znajdziesz tam m.in. opis funkcji `std::to_string`. Przyda się :)
-* Zadanie 1 - Calculate (5 punktów)
-* Zadanie 2 - Fibonacci - rekurencja i iteracja (6 punktów)
-<!-- * Zadanie 3 - NWD (LCM) i NWW (GCD) (6 punktów) -->
+* Jeśli nie wiesz czym jest `operator%` to się dowiedz. Przyda się do pracy domowej :)
+* Zadanie 1 - AddEven (4 punkty)
+* Zadanie 2 - NWD (LCM) i NWW (GCD) (6 punktów)
+* Zadanie 3 - MaxOfVector (4 punkty)
+* Zadanie 4 - GenerateSequence (4 punkty)
 
 #### Bonus za punktualność
 
-Za dostarczenie każdego zadania przed 24.05.2020 (niedziela) do 23:59 dostaniesz 2 bonusowe punkty (razem 4 punkty za 2 zadania).
+Za dostarczenie każdego zadania przed 31.05.2020 (niedziela) do 23:59 dostaniesz 2 bonusowe punkty (razem 8 punkty za 4 zadania).
+
+#### [Zadania w repo](https://github.com/coders-school/kurs_cpp_podstawowy/tree/master/module2/homework)
+
+___
 
 ### Pre-work
 
-* Poczytaj dokumentację typu [std::vector](https://en.cppreference.com/w/cpp/container/vector). Poklikaj na różne funkcje i patrz głównie na przykłady użycia na samym dole stron.
-* Możesz przyjrzeć się plikom z testami w zadaniach i spróbować dopisać własne przypadki testowe
-
-#### [Zadania w repo](https://github.com/coders-school/kurs_cpp_podstawowy/tree/master/module1/homework)
+* Przypomnij sobie informacje o wskaźnikach np z [wideo pana Zelenta](https://www.youtube.com/watch?v=0DQl74alJzw)
+* [Poczytaj o `enum`ach](http://cpp0x.pl/kursy/Kurs-C++/Typ-wyliczeniowy-enum/318)
+* Zainteresuj się tematem smart pointerów i poszukać informacji czym jest `std::shared_ptr` i `std::unique_ptr`
+* Możesz przyjrzeć się plikom z testami w zadaniach domowych i spróbować dopisać własne przypadki testowe
 
 ___
-<!-- .slide: style="font-size: 0.7em" -->
 
-## Zadanie 1 - Calculate
+## Zadanie 1 - AddEven
 
-Zaimplementuj funkcję, której zadaniem ma być wykonywanie działań arytmetycznych na dwóch liczbach.
+Napisz funkcję, która przyjmie `std::vector<int>` oraz zwróci sumę wszystkich jego parzystych elementów.
 
-Sygnatura - `std::string calculate(const std::string& command, int first, int second)`.
+Deklaracja - `int addEven(const std::vector<int>& numbers)`
 
-### Parametry
+Jeśli nie wiesz, co funkcja powinna zwracać w niektórych przypadkach to zapoznaj się z testami.
 
-* `const std::string& command` - rodzaj działania. Jedno z `add`, `subtract`, `multiply`, `divide`
-* `int first` - pierwsza liczba
-* `int second` - druga liczba
-
-### Wartość zwracana
-
-* `std::string` - wynik działania jako tekst
-
-W przypadku podania błędnego parametru `command` funkcja powinna zwrócić napis "Invalid data".
-
-### Przykłady użycia
+### Przykład użycia
 
 ```cpp
-auto result = calculate("add", 2, 3);  // result = "5"
-result = calculate("multiply", 2, 3);  // result = "6"
-result = calculate("hello", 2, 3);     // result = "Invalid data"
+std::vector<int> vec{1, 2, 3, 4, 5};
+auto result = addEven(vec);  // result = 6;
 ```
 
 ___
 
-## Zadanie 2 - Fibonacci
+## Zadanie 2 - NWD (LCM) i NWW (GCD)
 
 Zaimplementuj dwie funkcje. Obie mają liczyć n-tą liczbę [ciągu Fibonacciego](https://pl.wikipedia.org/wiki/Ciąg_Fibonacciego), ale na odmienne sposoby.
 
