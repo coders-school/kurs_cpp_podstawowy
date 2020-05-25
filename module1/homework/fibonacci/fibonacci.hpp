@@ -11,8 +11,8 @@ int fibonacci_iterative(int sequence){
     }
     for(int i = 2; i <= sequence; i++){
         int tmp = firstNumber + secondNumber;
-    firstNumber = secondNumber;
-    secondNumber = tmp;
+        firstNumber = secondNumber;
+        secondNumber = tmp;
     }
     return secondNumber;
 }
