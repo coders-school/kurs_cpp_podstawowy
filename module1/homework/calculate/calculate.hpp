@@ -7,6 +7,8 @@ std::string result{};
          result = std::to_string(first+second);
     if(command == "subtract")
         result = std::to_string(first-second);
+    if(command == "multiply")
+        result = std::to_string(first*second);
 
     return result;
 }
