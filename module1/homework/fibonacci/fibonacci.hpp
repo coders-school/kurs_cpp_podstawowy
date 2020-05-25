@@ -24,8 +24,6 @@ int fibonacci_recursive(int sequence) {
     {
         return sequence;
     }
-    else {
-        return fibonacci_recursive(sequence - 1) + fibonacci_recursive(sequence - 2);
-    }
-    return 0;
+    return fibonacci_recursive(sequence - 1) + fibonacci_recursive(sequence - 2);
+    
 }
