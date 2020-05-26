@@ -6,11 +6,10 @@ std::vector<int> generateSequence(int count, int step)
     if (count > 0)
     {
         std::vector<int> sequence(count);
-        int val2add = step;
-        for (auto& i : sequence)
+        sequence[0] = step;
+        for (int i = 1; i < count; ++i)
         {
-            i = val2add;
-            val2add += step;
+            sequence[i] = sequence[i - 1] + step;
         }
 
         return sequence;
