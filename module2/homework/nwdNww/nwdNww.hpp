@@ -23,14 +23,14 @@ int NWD(int lhs, int rhs) {
 
     while (rhs!=0)
     {
-        bufor =lhs % rhs;
+        bufor = lhs % rhs;
         lhs = rhs;
         rhs = bufor;
     }
 
-    if (lhs<0)
+    if (lhs < 0)
     {
-        lhs=-lhs;
+        lhs = -lhs;
     }
 
     return lhs;
@@ -38,7 +38,7 @@ int NWD(int lhs, int rhs) {
 
 int NWW(int lhs, int rhs) {
 
-    if(lhs==0 || rhs==0)
+    if(lhs == 0 || rhs == 0)
     {
         return 0;
     }
@@ -46,7 +46,7 @@ int NWW(int lhs, int rhs) {
 
     if(nww < 0)
     {
-        nww=-nww;
+        nww = -nww;
     }
 
     return nww;
