@@ -14,14 +14,14 @@ int NWD(int lhs, int rhs) {
 
     int bufor;
     
-    if (rhs>lhs)
+    if (rhs > lhs)
     {
         int pom = lhs;
         lhs = rhs;
         rhs = pom;
     }
 
-    while (rhs!=0)
+    while (rhs !=0 )
     {
         bufor = lhs % rhs;
         lhs = rhs;
