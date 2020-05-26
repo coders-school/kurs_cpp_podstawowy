@@ -2,7 +2,10 @@
 #include <vector>
 
 int addEven(const std::vector<int>& numbers) {
-    // TODO: Your implementation goes here
-    // Below return is only to make this function compile now
-    return -1;
+    int suma=0;
+    for (const auto &it : numbers){
+        if (it % 2==0) {suma+=it;}
+    }
+    return suma;
+return -1;
 }
