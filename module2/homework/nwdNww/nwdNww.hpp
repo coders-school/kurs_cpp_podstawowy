@@ -1,6 +1,6 @@
 #pragma once
 
-void ABS_Num( int & lhs, int& rhs)
+void ABS_Num( int& lhs, int& rhs)
 {
     lhs = abs(lhs);
     rhs = abs(rhs);
