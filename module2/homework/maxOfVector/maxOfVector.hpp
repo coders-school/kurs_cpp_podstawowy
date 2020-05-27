@@ -3,9 +3,9 @@
 #include <limits>
 
 int maxOfVector(const std::vector<int>& vec) {
-    auto max_number =  - std::numeric_limits<int>::max(); // the smallest number
+    auto max_number =  std::numeric_limits<int>::min(); // the smallest number
 
-    for (auto& el : vec) {
+    for (const auto& el : vec) {
 	if (el > max_number) max_number = el;
     }
 
