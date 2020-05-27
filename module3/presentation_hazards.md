@@ -165,6 +165,27 @@ int main() {
 
 ___
 
+## Zadanie
+
+Napisz funkcję `foo()`. Ma ona przyjąć 2 wartości typu `int` oraz zwrócić ich iloczyn jako `shared_ptr`. Sprawdź ilu właścicieli posiada `shared_ptr`.
+
+```cpp
+#include <iostream>
+
+// TODO: Implement foo()
+// It should take 2 int values and return their product as a shared_ptr.
+// Additionally, check how many owners are there.
+
+int main() {
+    auto number = foo(10, 20);
+    std::cout << "num: " << *number << " | owners: " << number.use_count() << "\n";
+
+    return 0;
+}
+```
+
+___
+
 ## Inteligentne wskaźniki rozwiązaniem wszystkich problemów?
 
 Teraz po utworzeniu inteligentnego wskaźnika, nie musimy się martwić o czas życia zmiennej.
