@@ -66,9 +66,7 @@ ___
 
 ## Usunięte zmienne - przykład
 
-## TODO: Add line highlighting
-
-```cpp []
+```cpp
 std::vector<int*> vec;
 
 void createAndAddToVec(int amount) {
