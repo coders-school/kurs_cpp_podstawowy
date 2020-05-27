@@ -155,7 +155,7 @@ ___
 ### Stały wskaźnik na stałą
 
 ```cpp
-int * const ptr = new int{42};
+const int * const ptr = new int{42};
 *ptr = 43;     // compilation error: assignment of read-only location ‘* ptr’
 ptr = nullptr; // compilation error: assignment of read-only variable ‘ptr’
 ```
