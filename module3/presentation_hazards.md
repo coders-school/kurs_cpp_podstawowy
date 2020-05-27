@@ -22,6 +22,19 @@ std::cout << *a;
 Dostęp do zmiennej wskazywanej przez pusty wskaźnik to niezdefiniowane zachowanie.
 <!-- .element: class="fragment fade-in" -->
 
+Pusty wskaźnik oznaczamy zawsze używając `nullptr`.
+<!-- .element: class="fragment fade-in" -->
+
+Nie używamy `NULL` znanego z języka C lub wcześniejszych standardów, bo jest on mniej bezpieczny.
+<!-- .element: class="fragment fade-in" -->
+
+```cpp
+void foo(int);
+foo(NULL);     // bad - no error
+foo(nullptr);  // good - compilation error
+```
+<!-- .element: class="fragment fade-in" -->
+
 ___
 
 ## Niezainicjalizowane wskaźniki
@@ -56,12 +69,10 @@ ___
 ## TODO: Add line highlighting
 
 ```cpp []
-int generateNewNumber();  // implementation not important
 std::vector<int*> vec;
 
 void createAndAddToVec(int amount) {
     for (int i = 0 ; i < amount ; ++i) {
-        int new_value = generateNewNumber();
         vec.push_back(&i);
     }
     // local variable i does not exist here anymore
@@ -103,7 +114,6 @@ ___
 ## Poprawiony listing
 
 ```cpp
-int generateNewNumber();  // implementation not important
 std::vector<std::shared_ptr<int>> vec; // previously: std::vector<int*> vec;
 
 void createAndAddToVec(int amount) {
@@ -150,19 +160,23 @@ int main() {
 <!-- .element: class="fragment fade-in" -->
 
 ___
+<!-- .slide: style="font-size: 0.9em" -->
 
 ## Pułapka powraca
 
 ```cpp
 void foo(int* num) {
-    do_sth(num);
+    if (num) {
+        do_sth(num);
+    }
 }
   
 int main() {
     auto ptr = std::make_shared<int>(5);
     int* raw = ptr.get();
     ptr.reset();    // delete object, deallocate memory
-    foo(raw);       // problem
+    foo(raw);       // problem, dangling pointer is passed
+    foo(ptr.get()); // not a problem, nullptr is passed
 }
 ```
 
@@ -172,7 +186,7 @@ Jeżeli wszystkie obiekty `shared_ptr<T>` odwołujące się do tej zmiennej zost
 Nasz zwykły wskaźnik, który pobraliśmy wcześniej za pomocą `get()`, będzie posiadał adres do nieistniejącego już zasobu.
 <!-- .element: class="fragment fade-in" -->
 
-Próba jego użycia spowodowuje niezdefiniowane zachowanie lub crash programu. Należy więc bardzo uważać na zwykłe wskaźniki.
+Próba jego użycia spowoduje UB lub crash. Należy bardzo uważać na zwykłe wskaźniki.
 <!-- .element: class="fragment fade-in" -->
 
 ___
@@ -181,6 +195,8 @@ ___
 
 * <!-- .element: class="fragment fade-in" --> wskaźniki mogą nie wskazywać na nic (<code>nullptr</code>), referencje muszą wskazywać na jakiś wcześniej stworzony obiekt
 * <!-- .element: class="fragment fade-in" --> wskaźniki i referencje mogą być niebezpieczne (częściej wskaźniki), jeśli są powiązane z nieistniejącymi już obiektami
-  * <!-- .element: class="fragment fade-in" --> tzw. dangling pointers/references, wiszące wskaźniki/referencje
+  * są to tzw. dangling pointers/references, wiszące wskaźniki/referencje
+* <!-- .element: class="fragment fade-in" --> referencji nie można przypisać innego obiektu niż ten podany podczas jej inicjalizacji
+* <!-- .element: class="fragment fade-in" --> wskaźnikom można przypisać nowe adresy, aby wskazywały inne obiekty (za wyjątkiem stałych wskaźników)
 * <!-- .element: class="fragment fade-in" --> lepiej domyślnie nie używać zwykłych wskaźników (raw pointers)
 * <!-- .element: class="fragment fade-in" --> lepiej stosować inteligentne wskaźniki

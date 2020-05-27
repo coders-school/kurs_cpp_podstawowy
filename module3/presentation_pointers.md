@@ -10,7 +10,7 @@
 
 ___
 
-## *
+## Wskaźniki - analogia
 
 Poza referencjami istnieją także wskaźniki. Wskaźniki działają podobnie jak referencje.
 <!-- .element: class="fragment fade-in" -->
@@ -24,9 +24,17 @@ Proces zdobycia tych informacji był dla nas czasochłonny.
 Wyobraźmy sobie jednak, że uprzednio zapisaliśmy sobie w telefonie adres naszego hotelu. Aby przypomnieć sobie, gdzie on się znajdował wystarczy, że sprawdzimy telefon i już wiemy. Proces ten zajął nam dużo mniej czasu.
 <!-- .element: class="fragment fade-in" -->
 
+___
+
+## Wskaźniki w C++
+
 Podobnie jest w C++. Wskaźniki służą do wskazywania miejsca w pamięci, gdzie znajduje się pożądany przez nas obiekt.
-Jeżeli funkcja przyjmuje wskaźnik, nie musi ona kopiować całej zawartości obiektu, (co jest czasochłonne), można dużo szybciej
-wskazać gdzie ten obiekt już istnieje.
+<!-- .element: class="fragment fade-in" -->
+
+Procesor nie musi odpytywać każdorazowo magistrale pamięci, gdzie znajduje się podana zmienna, tylko od razu wie, jaki jest jej adres (unikamy pośredników jak telefon do biura obsługi).
+<!-- .element: class="fragment fade-in" -->
+
+Ponadto jeżeli funkcja przyjmuje wskaźnik, nie musi ona kopiować całej zawartości obiektu, co jest czasochłonne. Można dużo szybciej wskazać gdzie ten obiekt już istnieje.
 <!-- .element: class="fragment fade-in" -->
 
 ___
@@ -64,17 +72,120 @@ Wywołanie funkcji to:
 
 ___
 
+## Gdzie dać const?
+
+### Co to jest?
+
+```cpp
+const int * ptr;
+```
+<!-- .element: class="fragment fade-in" -->
+
+Wskaźnik na stałą (`const int`).
+<!-- .element: class="fragment fade-in" -->
+
+```cpp
+int const * ptr;
+```
+<!-- .element: class="fragment fade-in" -->
+
+Również wskaźnik na stałą (`const int = int const`).
+<!-- .element: class="fragment fade-in" -->
+
+```cpp
+int * const ptr;
+```
+<!-- .element: class="fragment fade-in" -->
+
+Stały wskaźnik na zmienną (`int`).
+<!-- .element: class="fragment fade-in" -->
+
+___
+
+## Stałe wskaźniki a wskaźniki na stałe
+
+```cpp
+int const * const ptr;
+const int * const ptr;
+```
+<!-- .element: class="fragment fade-in" -->
+
+Stały wskaźnik na stałą (`int const = const int`).
+<!-- .element: class="fragment fade-in" -->
+
+Jest to częste pytanie z rozmów kwalifikacyjnych. Aby stały był wskaźnik, `const` musi być za gwiazdką.
+<!-- .element: class="fragment fade-in" -->
+
+___
+
+## Różnice
+
+### Wskaźnik na stałą
+
+```cpp
+const int * ptr = new int{42};
+*ptr = 43;     // compilation error: assignment of read-only location ‘* ptr’
+ptr = nullptr; // ok
+```
+
+* <!-- .element: class="fragment fade-in" --> Nie możemy zmodyfikować obiektu wskazywanego przez wskaźnik
+  * Odwołania z `*` nie mogą modyfikować obiektu
+* <!-- .element: class="fragment fade-in" --> Możemy zmodyfikować sam wskaźnik, np. aby wskazywał na inny obiekt
+  * Odwołania bez `*` mogą modyfikować wskaźnik
+
+___
+
+## Różnice
+
+### Stały wskaźnik
+
+```cpp
+int * const ptr = new int{42};
+*ptr = 43;     // ok
+ptr = nullptr; // compilation error: assignment of read-only variable ‘ptr’
+```
+
+* <!-- .element: class="fragment fade-in" --> Możemy zmodyfikować obiekt wskazywany przez wskaźnik
+  * Odwołania z `*` mogą modyfikować obiekt
+* <!-- .element: class="fragment fade-in" --> Nie możemy zmodyfikować samego wskaźnika, np. aby wskazywał na inny obiekt
+  * Odwołania bez `*` nie mogą modyfikować wskaźnika
+
+___
+
+### Stały wskaźnik na stałą
+
+```cpp
+int * const ptr = new int{42};
+*ptr = 43;     // compilation error: assignment of read-only location ‘* ptr’
+ptr = nullptr; // compilation error: assignment of read-only variable ‘ptr’
+```
+
+* <!-- .element: class="fragment fade-in" --> Nie możemy zmodyfikować obiektu wskazywanego przez wskaźnik
+  * Odwołania z `*` nie mogą modyfikować obiektu
+* <!-- .element: class="fragment fade-in" --> Nie możemy zmodyfikować samego wskaźnika, np. aby wskazywał na inny obiekt
+  * Odwołania bez `*` nie mogą modyfikować wskaźnika
+
+___
+<!-- .slide: style="font-size: 0.9em" -->
+
 ## Różnice między wskaźnikiem i referencją
 
-Do referencji odwołujemy się tak samo jak do zwykłego obiektu, a aby uzyskać element wskazywany przez wskaźnik musimy dodać `*`.
-Symbol `*` (operator dereferencji) oznacza obiekt wskazywany. Jeżeli nie damy `*` wypisany zostanie adres tego obiektu.
-Ma to sens, ponieważ wskaźnik, wskazuje miejsce w pamięci, gdzie znajduje się obiekt.
-<!-- .element: class="fragment fade-in" -->
+### Odwołania <!-- .element: class="fragment fade-in" -->
 
-Różnicę widać także, przy przekazywaniu argumentów do funkcji.
-Dla referencji i zwyklej zmiennej postępujemy tak samo, natomiast dla wskaźnika musimy dodać `&`.
-`&` oznacza w tym przypadku adres naszej zmiennej. Ma to również sens, ponieważ wskaźnik przechowuje adres obiektu, do którego chcemy się odwołać przez `*`.
-<!-- .element: class="fragment fade-in" -->
+* <!-- .element: class="fragment fade-in" --> Do referencji odwołujemy się tak samo jak do zwykłego obiektu - za pomocą nazwy
+* <!-- .element: class="fragment fade-in" --> Aby uzyskać element wskazywany przez wskaźnik musimy dodać <code>*</code> przed nazwą
+
+### Przekazywanie argumentów <!-- .element: class="fragment fade-in" -->
+
+* <!-- .element: class="fragment fade-in" --> Dla referencji i zwykłej zmiennej postępujemy tak samo - przekazujemy nazwę
+* <!-- .element: class="fragment fade-in" --> Dla wskaźnika musimy dodać <code>&</code> przed nazwą.
+
+### Oznaczenia <!-- .element: class="fragment fade-in" -->
+
+* <!-- .element: class="fragment fade-in" --> Symbol <code>*</code> (operator dereferencji) oznacza dostęp do obiektu wskazywanego
+* <!-- .element: class="fragment fade-in" --> Jeżeli nie damy <code>*</code> przy wskaźniku dostaniemy adres obiektu wskazywanego
+* <!-- .element: class="fragment fade-in" --> Symbol <code>&</code> oznacza pobranie adresu naszej zmiennej
+* <!-- .element: class="fragment fade-in" --> Powyższe ma sens, ponieważ wskaźnik wskazuje miejsce w pamięci (adres wskazywanego obiektu)
 
 ___
 
