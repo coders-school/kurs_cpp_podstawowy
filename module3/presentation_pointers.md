@@ -55,7 +55,7 @@ Gdy chcemy mieć pewność, że nikt nie zmodyfikuje nam wartości (chcemy ją p
 ```cpp
 void bar (int const* num) {
     std::cout << *num;  // good
-    *num += 2;          // compilation error, num is const pointer
+    *num += 2;          // compilation error, num is a pointer to const
 }
 ```
 <!-- .element: class="fragment fade-in" -->
