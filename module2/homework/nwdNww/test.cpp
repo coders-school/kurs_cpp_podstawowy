@@ -32,11 +32,15 @@ INSTANTIATE_TEST_SUITE_P(
         std::make_tuple(0, 0, 0),
         std::make_tuple(-10, -2, 2),
         std::make_tuple(-10, 2, 2),
-        std::make_tuple(10, -2, 2)
+        std::make_tuple(10, -2, 2),
+        std::make_tuple(10, 10, 10),
+        std::make_tuple(33, 891, 33),
+        std::make_tuple(322, 23122, 2),
+        std::make_tuple(25, 4345, 5),
+        std::make_tuple(344324, 65464, 4)
 
         // results based on implementation of std::gcm
-    )
-);
+        ));
 
 class NWWFixture : public ::testing::TestWithParam<std::tuple<int, int, int>> {
 };
@@ -68,7 +72,6 @@ INSTANTIATE_TEST_SUITE_P(
         std::make_tuple(-1, -1, 1),
         std::make_tuple(-10, -10, 10),
         std::make_tuple(-10, -2, 10)
-        
+
         // based on implementation of std::lcm
-    )
-);
+        ));
