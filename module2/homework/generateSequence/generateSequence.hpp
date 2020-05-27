@@ -2,6 +2,13 @@
 #include <vector>
 
 std::vector<int> generateSequence(int count, int step) {
-    // TODO: Implement me :)
-    return {};
+    if(count <= 0)return std::vector<int>{};
+    std::vector<int> vec;
+    vec.reserve(5);
+    int value = 0;
+    for(auto i = 0 ; i < count ;i++){
+    value += step;
+    vec.push_back(value);
+    }
+    return vec;
 }
