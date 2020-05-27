@@ -19,5 +19,5 @@ int NWW(int lhs, int rhs) {
         return 0;
     }
 
-    return static_cast<long long>(std::abs(lhs)) * std::abs(rhs) / NWD(lhs, rhs);
+    return std::abs(lhs) / NWD(lhs, rhs) * std::abs(rhs);
 }
