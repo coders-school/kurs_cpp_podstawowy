@@ -4,7 +4,7 @@
 std::vector<int> generateSequence(int count, int step) {
     if(count <= 0)return std::vector<int>{};
     std::vector<int> vec;
-    vec.reserve(5);
+    vec.reserve(count);
     int value = 0;
     for(auto i = 0 ; i < count ;i++){
     value += step;
