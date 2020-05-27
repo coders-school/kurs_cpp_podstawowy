@@ -204,12 +204,12 @@ ___
 ### Odwołania <!-- .element: class="fragment fade-in" -->
 
 * <!-- .element: class="fragment fade-in" --> Do referencji odwołujemy się tak samo jak do zwykłego obiektu - za pomocą nazwy
-* <!-- .element: class="fragment fade-in" --> Aby uzyskać element wskazywany przez wskaźnik musimy dodać <code>*</code> przed nazwą
+* <!-- .element: class="fragment fade-in" --> Aby uzyskać element wskazywany przez wskaźnik musimy dodać <code>*</code> przed nazwą wskaźnika
 
 ### Przekazywanie jako argument <!-- .element: class="fragment fade-in" -->
 
-* <!-- .element: class="fragment fade-in" --> Dla referencji i zwykłej zmiennej postępujemy tak samo - przekazujemy nazwę
-* <!-- .element: class="fragment fade-in" --> Dla wskaźnika musimy dodać <code>&</code> przed nazwą.
+* <!-- .element: class="fragment fade-in" --> Argument jest referencją lub zwykłą zmienną (kopią) - przekazujemy nazwę
+* <!-- .element: class="fragment fade-in" --> Argument jest wskaźnikiem a przekazujemy zmienną - musimy dodać <code>&</code> przed nazwą zmiennej.
 
 ### Oznaczenia <!-- .element: class="fragment fade-in" -->
 
