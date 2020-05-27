@@ -13,6 +13,13 @@ TEST_P(NWDFixture, ShouldCalculateNWD) {
     EXPECT_EQ(NWD(first, second), expected_result);
 }
 
+TEST_P(NWDFixture, ShouldCalculateNWDRecursively) {
+    int first = std::get<0>(GetParam());
+    int second = std::get<1>(GetParam());
+    int expected_result = std::get<2>(GetParam());
+    EXPECT_EQ(NWD_recursive(first, second), expected_result);
+}
+
 INSTANTIATE_TEST_SUITE_P(
     NWDFixtureTest,
     NWDFixture,

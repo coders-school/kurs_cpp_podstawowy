@@ -14,6 +14,14 @@ int NWD(int lhs, int rhs) {
     return std::abs(rhs);
 }
 
+int NWD_recursive(int lhs, int rhs) {
+    if (rhs == 0) {
+        return lhs;
+    }
+
+    return std::abs(NWD(rhs, lhs % rhs));
+}
+
 int NWW(int lhs, int rhs) {
     int nwd = NWD(lhs, rhs);
 
