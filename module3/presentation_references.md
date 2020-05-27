@@ -99,6 +99,27 @@ bar(num);
 
 ___
 
+## Zadanie
+
+Zaimplementuj funkcję `foo()`. Ma ona przyjąć i zmodyfikować przekazany tekst. Na ekranie chcemy zobaczyć `"Other string"`.
+
+```cpp
+#include <iostream>
+#include <string>
+
+// TODO: Implement foo()
+// It should modify passed string to text "Other string"
+
+int main() {
+    std::string str("Some string");
+    foo(str);
+    std::cout << str << '\n';
+    return 0;
+}
+```
+
+___
+
 ## Podsumowanie
 
 * <!-- .element: class="fragment fade-in" --> referencja jest aliasem (inną nazwą dla zmiennej)
