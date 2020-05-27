@@ -1,8 +1,8 @@
 #include <array>
 #include <vector>
 
-#include "gtest/gtest.h"
 #include "addEven.hpp"
+#include "gtest/gtest.h"
 
 class AddEven : public ::testing::TestWithParam<std::tuple<std::vector<int>, int>> {
 };
@@ -26,6 +26,6 @@ INSTANTIATE_TEST_SUITE_P(
         std::make_tuple(std::vector<int>{2, 4, 6, 8, 10}, 30),
         std::make_tuple(std::vector<int>{1, 1, 1, 1, 1}, 0),
         std::make_tuple(std::vector<int>{0, 0, 0, 0, 0}, 0),
-        std::make_tuple(std::vector<int>{21, 20, 18, 16, 19}, 54)
-    )
-);
+        std::make_tuple(std::vector<int>{21, 20, 18, 16, 19}, 54),
+        std::make_tuple(std::vector<int>{-8, -7, -6, -5, -4, -3, -2}, -20),
+        std::make_tuple(std::vector<int>{-3, -2, -1, 0, 1, 2, 3, 4, 5}, 4)));
