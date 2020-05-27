@@ -206,7 +206,7 @@ ___
 * <!-- .element: class="fragment fade-in" --> Do referencji odwołujemy się tak samo jak do zwykłego obiektu - za pomocą nazwy
 * <!-- .element: class="fragment fade-in" --> Aby uzyskać element wskazywany przez wskaźnik musimy dodać <code>*</code> przed nazwą
 
-### Przekazywanie argumentów <!-- .element: class="fragment fade-in" -->
+### Przekazywanie jako argument <!-- .element: class="fragment fade-in" -->
 
 * <!-- .element: class="fragment fade-in" --> Dla referencji i zwykłej zmiennej postępujemy tak samo - przekazujemy nazwę
 * <!-- .element: class="fragment fade-in" --> Dla wskaźnika musimy dodać <code>&</code> przed nazwą.
