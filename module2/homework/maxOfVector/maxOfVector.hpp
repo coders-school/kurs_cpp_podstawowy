@@ -8,5 +8,5 @@ int maxOfVector(const std::vector<int>& vec) {
     {
         if (it>max) {max=it;}
     }
-    return max;
+return max;
 }

@@ -7,5 +7,4 @@ int addEven(const std::vector<int>& numbers) {
         if (it % 2==0) {suma+=it;}
     }
     return suma;
-return -1;
 }
