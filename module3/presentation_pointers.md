@@ -168,6 +168,37 @@ ptr = nullptr; // compilation error: assignment of read-only variable ‘ptr’
 ___
 <!-- .slide: style="font-size: 0.9em" -->
 
+## Zadanie
+
+Zaimplementuj funkcje `foo()` i `bar()`.
+
+`foo()` powinno zmodyfikować wartość przekazaną przez wskaźnik na 10, a `bar()` na 20.
+
+Czy `foo()` lub `bar()` mogą przyjąć wskaźnik na stałą lub stały wskaźnik?
+
+```cpp
+#include <iostream>
+
+// TODO: Implement foo() and bar()
+// foo() should modify value under passed pointer to 10
+// bar() should modify value under passed pointer to 20
+// Can we have a pointer to const or a const pointer?
+int main() {
+    int number = 5;
+    int* pointer = &number;
+    std::cout << number << '\n';
+    foo(&number);
+    std::cout << number << '\n';
+    bar(pointer);
+    std::cout << number << '\n';
+
+    return 0;
+}
+```
+
+___
+<!-- .slide: style="font-size: 0.9em" -->
+
 ## Różnice między wskaźnikiem i referencją
 
 ### Odwołania <!-- .element: class="fragment fade-in" -->
