@@ -3,66 +3,18 @@ name: C++ with CMake CI
 on: [push, pull_request]
 
 jobs:
-  addEven:
+  passwordCheck:
     runs-on: ubuntu-latest
     steps:
     - name: Check out code
       uses: actions/checkout@master
-    - name: mkdir module2/homework/addEven/build
-      run: mkdir module2/homework/addEven/build
+    - name: mkdir module3/homework/passwordCheck/build
+      run: mkdir module3/homework/passwordCheck/build
     - name: Compile
-      working-directory: module2/homework/addEven/build
+      working-directory: module3/homework/passwordCheck/build
       run: |
         cmake ..
         make
     - name: Run tests
-      working-directory: module2/homework/addEven/build
-      run: ctest -V
-
-  NWDNWW:
-      runs-on: ubuntu-latest
-      steps:
-      - name: Check out code
-        uses: actions/checkout@master
-      - name: mkdir module2/homework/nwdNww/build
-        run: mkdir module2/homework/nwdNww/build
-      - name: Compile
-        working-directory: module2/homework/nwdNww/build
-        run: |
-          cmake ..
-          make
-      - name: Run tests
-        working-directory: module2/homework/nwdNww/build
-        run: ctest -V
-
-  maxOfVector:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Check out code
-      uses: actions/checkout@master
-    - name: mkdir module2/homework/maxOfVector/build
-      run: mkdir module2/homework/maxOfVector/build
-    - name: Compile
-      working-directory: module2/homework/maxOfVector/build
-      run: |
-        cmake ..
-        make
-    - name: Run tests
-      working-directory: module2/homework/maxOfVector/build
-      run: ctest -V
-
-  generateSequence:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Check out code
-      uses: actions/checkout@master
-    - name: mkdir module2/homework/generateSequence/build
-      run: mkdir module2/homework/generateSequence/build
-    - name: Compile
-      working-directory: module2/homework/generateSequence/build
-      run: |
-        cmake ..
-        make
-    - name: Run tests
-      working-directory: module2/homework/generateSequence/build
+      working-directory: module3/homework/passwordCheck/build
       run: ctest -V
