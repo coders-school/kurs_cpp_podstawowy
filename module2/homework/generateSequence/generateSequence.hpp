@@ -2,14 +2,26 @@
 #include <vector>
 
 std::vector<int> generateSequence(int count, int step) {
-    // TODO: Implement me :)
-    std::vector<int> vec;
-    int move = step;
 
-    for(int i = 0; i <count; i++){
-        vec.push_back(move);
-        move += step;
+    // TODO: Implement me :)
+
+    if (count < 0) {
+
+    return {};
+
+    }
+
+    std::vector<int> vec (count);
+
+    int currentNum = step;
+
+    for(auto & element : vec) {
+
+    element = currentNum;
+    currentNum += step;
+
     }
 
     return vec;
 }
+

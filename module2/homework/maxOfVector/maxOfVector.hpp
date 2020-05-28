@@ -4,12 +4,16 @@
 
 int maxOfVector(const std::vector<int>& vec) {
     // TODO: Implement me :)
-    int max_value = vec.front();
+	int maxNum = vec[0];
 
-    for(const int& elem : vec)
-    {
-        max_value = max_value <= elem ? elem : max_value;
-    }
+	for (auto it = vec.begin(); it != vec.end(); it++) {
 
-    return vec.size() == 0 ? 0 : max_value;
+		if (*it > maxNum) {
+
+			maxNum = *it;
+		}
+
+	}
+
+	return maxNum;
 }
