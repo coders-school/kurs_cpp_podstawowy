@@ -267,3 +267,9 @@ std::cout << &a;    // przy zmiennej - adres tej zmiennej w pamięci
 int fun(int& ref);  // w argumencie funkcji - przekazanie adresu
 ```
 <!-- .element: class="fragment fade-in" -->
+
+___
+
+## Ważna zasada
+
+Jeśli nie ma absolutnej potrzeby, to nie używamy wskaźników w ogóle.

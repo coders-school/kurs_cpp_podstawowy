@@ -18,3 +18,19 @@ jobs:
     - name: Run tests
       working-directory: module3/homework/passwordCheck/build
       run: ctest -V
+
+  vectorOfSharedPointers:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@master
+    - name: mkdir module3/homework/vectorOfSharedPointers/build
+      run: mkdir module3/homework/vectorOfSharedPointers/build
+    - name: Compile
+      working-directory: module3/homework/vectorOfSharedPointers/build
+      run: |
+        cmake ..
+        make
+    - name: Run tests
+      working-directory: module3/homework/vectorOfSharedPointers/build
+      run: ctest -V

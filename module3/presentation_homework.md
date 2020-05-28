@@ -29,6 +29,7 @@ ___
 ### Post-work
 
 * Zadanie 1 - PasswordCheck
+* Zadanie 2 - VectorOfSharedPointers
 
 #### Bonus za punktualność
 
@@ -47,7 +48,7 @@ ___
 
 ## Zadanie PasswordCheck
 
-Tworzysz moduł do sprawdzania reguł haseł, który otrzymuje dane z formularza kontaktowego z front-endu. Cały moduł to zestaw kilku funkcji. Ich deklaracje mają znaleźć się w pliku nagłówkowym validation.hpp, a implementacje w pliku źródłowym validation.cpp. Twoje zadania to:
+Tworzysz moduł do sprawdzania reguł haseł, który otrzymuje dane z formularza kontaktowego z front-endu. Cały moduł to zestaw kilku funkcji. Ich deklaracje mają znaleźć się w pliku nagłówkowym `validation.hpp`, a implementacje w pliku źródłowym `validation.cpp`. Twoje zadania to:
 
 1. Zdefiniuj w pliku nagłówkowym nowy typ `ErrorCode` z możliwymi wartościami dla błędów przy ustalaniu nowego hasła (1 punkt)
 
@@ -69,8 +70,7 @@ ___
 5. Napisz funkcję `checkPassword()`. Powinna ona przyjąć dwa hasła i używać funkcji `doesPasswordsMatch()` w celu określenia czy hasła się zgadzają. W przypadku gdy się nie zgadzają ma ona zwrócić kod `PasswordsDoesNotMatch`, a w przeciwnym przypadku powinna zwrócić kod błędu zwrócony przez wywołanie funkcji `checkPasswordRules()`. (2 punkty)
 6. Dla ambitnych (nieobowiązkowe) - zaimplementuj w funkcji `checkPasswordRules()` prawdziwą walidację pozostałych przypadków, które są podane jako kody błędów. Najlepiej, jeśli wykorzystasz funkcje z [nagłówka <cctype>](https://en.cppreference.com/w/cpp/header/cctype) oraz algorytm `std::any_of`. Dopisz/zmodyfikuj odpowiednie testy. (4 punkty)
 
-Razem: 7 punktów (+4 dla ambitnych, +2 za dostarczenie przed 07.06.2020 23:59)
-Można pracować w parach, najlepiej innych niż ostatnio (bonus +3 punkty/osobę)
+Razem: 7 punktów (+4 dla ambitnych, +2 za dostarczenie przed 07.06.2020 23:59, +3 punkty/osobę za pracę w parze)
 
 ___
 
@@ -88,6 +88,34 @@ int main() {
     std::cout << getErrorMessage(result) << '\n';
 
     return 0;
+}
+```
+
+___
+<!-- .slide: style="font-size: 0.75em" -->
+
+## Zadanie VectorOfSharedPointers
+
+Napisz program, który zawierać będzie 5 funkcji. Deklaracje powinny znaleźć się w pliku nagłówkowym `vectorFunctions.hpp`, a implementacje w pliku źródłowym `vectorFunctions.cpp`. Stwórz te pliki.
+
+* `std::vector<std::shared_ptr<int>> generate(int count)` która wygeneruje wektor współdzielonych wskaźników na liczby od `0` do `count`
+* `void print()` która wypisze wszystkie elementy ze wskaźników wektora
+* `void add10()` która przyjmie wektor i doda do każdej liczby `10`
+* `void sub10()` która przyjmie stały wskaźnik na `int` i odejmie od tego elementu `10`
+* `void sub10();` Która przyjmie wektor współdzielonych wskaźników i wywoła dla każdego elementu powyższe przeciążenie funkcji `sub10()`
+
+Razem: 5 punktów (1 za każdą funkcję) (+2 za dostarczenie przed 07.06.2020 23:59, +3 punkty/osobę za pracę w parze)
+
+### Przykład użycia
+
+```cpp
+int main() {
+    auto vec = generate(10);
+    print(vec);
+    add10(vec);
+    print(vec);
+    sub10(vec);
+    print(vec);
 }
 ```
 
