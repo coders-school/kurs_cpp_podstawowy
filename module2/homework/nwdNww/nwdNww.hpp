@@ -37,8 +37,6 @@ int NWD(int lhs, int rhs) {
     lhs > rhs ? biggerArg = lhs : biggerArg = rhs; // set bigger and lesser argument
     lhs > rhs ? lesserArg = rhs : lesserArg = lhs;
 
-
-
     if (!(biggerArg % lesserArg)) { // if greatest common divisor is lesser argument
     return lesserArg;
 
@@ -63,6 +61,24 @@ int NWD(int lhs, int rhs) {
 
 int NWW(int lhs, int rhs) {
 
-    return 0;
+    int nwd = NWD(lhs, rhs);
+    int nww = 0;
+
+    if (lhs < 0) { // switch to positive num
+    lhs *= -1;
+
+    }
+
+    if (rhs < 0) { // switch to positive num
+    rhs *= -1;
+
+    }
+
+    if (nwd == 0) {
+    return lhs > rhs ? lhs : rhs;
+
+    }
+
+    return (lhs * rhs) / nwd;
 
 }
