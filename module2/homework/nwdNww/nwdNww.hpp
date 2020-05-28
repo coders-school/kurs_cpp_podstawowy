@@ -12,7 +12,7 @@ int NWD(int lhs, int rhs) {
 
 int NWW(int lhs, int rhs) {
 if (lhs==0 || rhs==0) {return 0;}
-int mul=lhs*rhs;
+long long mul=lhs*rhs;
 int sub=0;
     do {
         (lhs<rhs) ? sub=rhs-lhs : sub=lhs-rhs;
