@@ -168,17 +168,48 @@ ptr = nullptr; // compilation error: assignment of read-only variable ‘ptr’
 ___
 <!-- .slide: style="font-size: 0.9em" -->
 
+## Zadanie
+
+Zaimplementuj funkcje `foo()` i `bar()`.
+
+`foo()` powinno zmodyfikować wartość przekazaną przez wskaźnik na 10, a `bar()` na 20.
+
+Czy `foo()` lub `bar()` mogą przyjąć wskaźnik na stałą lub stały wskaźnik?
+
+```cpp
+#include <iostream>
+
+// TODO: Implement foo() and bar()
+// foo() should modify value under passed pointer to 10
+// bar() should modify value under passed pointer to 20
+// Can we have a pointer to const or a const pointer?
+int main() {
+    int number = 5;
+    int* pointer = &number;
+    std::cout << number << '\n';
+    foo(&number);
+    std::cout << number << '\n';
+    bar(pointer);
+    std::cout << number << '\n';
+
+    return 0;
+}
+```
+
+___
+<!-- .slide: style="font-size: 0.9em" -->
+
 ## Różnice między wskaźnikiem i referencją
 
 ### Odwołania <!-- .element: class="fragment fade-in" -->
 
 * <!-- .element: class="fragment fade-in" --> Do referencji odwołujemy się tak samo jak do zwykłego obiektu - za pomocą nazwy
-* <!-- .element: class="fragment fade-in" --> Aby uzyskać element wskazywany przez wskaźnik musimy dodać <code>*</code> przed nazwą
+* <!-- .element: class="fragment fade-in" --> Aby uzyskać element wskazywany przez wskaźnik musimy dodać <code>*</code> przed nazwą wskaźnika
 
-### Przekazywanie argumentów <!-- .element: class="fragment fade-in" -->
+### Przekazywanie jako argument <!-- .element: class="fragment fade-in" -->
 
-* <!-- .element: class="fragment fade-in" --> Dla referencji i zwykłej zmiennej postępujemy tak samo - przekazujemy nazwę
-* <!-- .element: class="fragment fade-in" --> Dla wskaźnika musimy dodać <code>&</code> przed nazwą.
+* <!-- .element: class="fragment fade-in" --> Argument jest referencją lub zwykłą zmienną (kopią) - przekazujemy nazwę
+* <!-- .element: class="fragment fade-in" --> Argument jest wskaźnikiem a przekazujemy zmienną - musimy dodać <code>&</code> przed nazwą zmiennej.
 
 ### Oznaczenia <!-- .element: class="fragment fade-in" -->
 
@@ -236,3 +267,9 @@ std::cout << &a;    // przy zmiennej - adres tej zmiennej w pamięci
 int fun(int& ref);  // w argumencie funkcji - przekazanie adresu
 ```
 <!-- .element: class="fragment fade-in" -->
+
+___
+
+## Ważna zasada
+
+Jeśli nie ma absolutnej potrzeby, to nie używamy wskaźników w ogóle.
