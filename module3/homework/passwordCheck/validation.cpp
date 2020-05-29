@@ -1,2 +1,10 @@
 #include "validation.hpp"
-// TODO: Put implementations here
+
+enum class ErrorCode {
+    Ok,
+    PasswordNeedsAtLeastNineCharacters,
+    PasswordNeedsAtLeastOneNumber,
+    PasswordNeedsAtLeastOneSpecialCharacter,
+    PasswordNeedsAtLeastOneUppercaseLetter,
+    PasswordsDoesNotMatch
+};
