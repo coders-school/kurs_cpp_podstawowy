@@ -1,6 +1,4 @@
 #include "validation.hpp"
-
-#include "validation.h"
 #include <iostream>
 
 std::string getErrorMessage(ErrorCode type){
