@@ -11,7 +11,7 @@ std::vector<int> generateSequence(int count, int step) {
 
     int currentNum = step;
 
-    for(auto & element : vec) {
+    for(auto& element : vec) {
         element = currentNum;
         currentNum += step;
     }

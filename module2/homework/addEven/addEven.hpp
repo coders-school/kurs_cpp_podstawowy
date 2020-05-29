@@ -1,6 +1,6 @@
 #include <vector>
 
-int addEven(const std::vector<int> & numbers) {
+int addEven(const std::vector<int>& numbers) {
 
     int result = 0;
 

@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 
-int maxOfVector(const std::vector<int> & vec) {
+int maxOfVector(const std::vector<int>& vec) {
 
 	int maxNum = vec[0];
 

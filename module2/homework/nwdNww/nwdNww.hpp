@@ -29,7 +29,7 @@ int NWW(int lhs, int rhs) {
     rhs = std::abs(rhs);
 
     for(int i = 1; i < (lhs * rhs); i++) {
-        if((i % lhs == 0)&&(i % rhs == 0)) {
+        if((i % lhs == 0) && (i % rhs == 0)) {
             return i;
         }
     }
