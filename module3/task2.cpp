@@ -2,7 +2,13 @@
 
 // TODO: Implement foo() and bar()
 // foo() should modify value under passed pointer to 10
+void foo(int* const val) {
+    *val = 10;
+}
 // bar() should modify value under passed pointer to 20
+void bar(int* const val) {
+    *val = 20;
+}
 // Can we have a pointer to const or a const pointer?
 
 int main() {
