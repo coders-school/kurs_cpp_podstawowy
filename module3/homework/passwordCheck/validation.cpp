@@ -22,8 +22,19 @@ std::string getErrorMessage(ErrorCode code)
     }
 }
 
+bool doPasswordsMatch(std::string password1, std::string password2) {
+    return password1 == password2;
+}
+
 int main() {
     for(int i = 0; i <=5; i++) {
         std::cout << getErrorMessage(static_cast<ErrorCode>(i)) << "\n";
     }
+
+    std::cout << doPasswordsMatch("ziemniaki", "balonik") << "\n";
+    std::cout << doPasswordsMatch("japko", "japko") << "\n";
+    std::cout << doPasswordsMatch("żółĆ4", "żółĆ4") << "\n";
+    std::cout << doPasswordsMatch("kot", "Kot") << "\n";
+    
+    return 0;
 }
