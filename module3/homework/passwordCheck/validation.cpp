@@ -28,6 +28,8 @@ ErrorCode checkPasswordRules(const std::string& password) {
 }
 
 ErrorCode checkPassword(const std::string& password, const std::string& passwordRetyped) {
-    // implement me
-    return ErrorCode::Ok;
+    if (!doesPasswordsMatch(password, passwordRetyped)) {
+        return ErrorCode::PasswordsDoesNotMatch;
+    }
+    return checkPasswordRules(password);
 }
