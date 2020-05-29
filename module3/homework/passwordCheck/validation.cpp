@@ -3,26 +3,26 @@
 #include "validation.h"
 #include <iostream>
 
-void getErrorMessage(ErrorCode type){
+std::string getErrorMessage(ErrorCode type){
     auto code = static_cast<int>(type);
     switch(code){
         case 123:
-            std::cout << "Your password is ok. \n";
+            return "Your password is ok. \n";
             break;
         case 9:
-            std::cout << "Your password need at least nine characters. \n";
+            return "Your password need at least nine characters. \n";
             break;
         case 1:
-            std::cout << "Your password need at least one number. \n";
+            return "Your password need at least one number. \n";
             break;
         case 2:
-            std::cout << "Your password need at least one special character. \n";
+            return "Your password need at least one special character. \n";
             break;
         case 3:
-            std::cout << "Your password need at least one uppercase letter. \n";
+            return  "Your password need at least one uppercase letter. \n";
             break;
         default:
-            std::cout << "idk what's going on dude \n";
+            return "idk what's going on dude \n";
             break;
     }
 }
