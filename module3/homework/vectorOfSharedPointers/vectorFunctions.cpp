@@ -3,6 +3,7 @@
 
 #include<time.h>
 #include <iostream>
+#include <algorithm>
 #include "vectorFunctions.hpp"
 
 std::vector<std::shared_ptr<int>> generate(int count) {
@@ -20,7 +21,13 @@ int generateRandomNumber(int count) {
 
 void print(std::vector<std::shared_ptr<int>> vec) {
     for (const auto& it: vec) {
-        std::cout << *it;
+        std::cout << *it << " ";
     }
+    std::cout << '\n';
 }
 
+void add10(std::vector<std::shared_ptr<int>> vec) {
+    for (const auto& it: vec) {
+    *it += 10;
+    }
+}
