@@ -7,7 +7,7 @@ std::string getErrorMessage(ErrorCode code)
     switch (code)
     {
     case ErrorCode::Ok:
-        return "Password correct";
+        return "OK";
     case ErrorCode::PasswordNeedsAtLeastNineCharacters:
         return "Password too short (must have at least 9 characters";
     case ErrorCode::PasswordNeedsAtLeastOneNumber:
@@ -23,7 +23,7 @@ std::string getErrorMessage(ErrorCode code)
     }
 }
 
-bool doPasswordsMatch(std::string password1, std::string password2) {
+bool doesPasswordsMatch(std::string password1, std::string password2) {
     return password1 == password2;
 }
 
@@ -44,36 +44,36 @@ ErrorCode checkPasswordRules(std::string password) {
 }
 
 ErrorCode checkPassword(std::string password1, std::string password2) {
-    if(!doPasswordsMatch(password1, password2)) {
+    if(!doesPasswordsMatch(password1, password2)) {
         return ErrorCode::PasswordsDoesNotMatch;
     } else {
         return checkPasswordRules(password1);
     }
 }
 
-int main() {
-    for(int i = 0; i <=6; i++) {
-        std::cout << getErrorMessage(static_cast<ErrorCode>(i)) << "\n";
-    }
+// int main() {
+//     for(int i = 0; i <=6; i++) {
+//         std::cout << getErrorMessage(static_cast<ErrorCode>(i)) << "\n";
+//     }
 
-    std::cout << doPasswordsMatch("ziemniaki", "balonik") << "\n";
-    std::cout << doPasswordsMatch("japko", "japko") << "\n";
-    std::cout << doPasswordsMatch("żółĆ4", "żółĆ4") << "\n";
-    std::cout << doPasswordsMatch("kot", "Kot") << "\n";
+//     std::cout << doesPasswordsMatch("ziemniaki", "balonik") << "\n";
+//     std::cout << doesPasswordsMatch("japko", "japko") << "\n";
+//     std::cout << doesPasswordsMatch("żółĆ4", "żółĆ4") << "\n";
+//     std::cout << doesPasswordsMatch("kot", "Kot") << "\n";
 
-    // std::string pass = "pies";
-    std::cout << "pies \t\t\t" << getErrorMessage(checkPasswordRules("pies")) << "\n";
-    std::cout << "pumpernikiel\t\t" << getErrorMessage(checkPasswordRules("pumpernikiel")) << "\n";
-    std::cout << "pumpernikiel9\t\t" << getErrorMessage(checkPasswordRules("pumpernikiel9")) << "\n";
-    std::cout << "pumpernikiel9$\t\t" << getErrorMessage(checkPasswordRules("pumpernikiel9$")) << "\n";
-    std::cout << "pumPernikiel9$\t\t" << getErrorMessage(checkPasswordRules("pumPernikiel9$")) << "\n";
+//     // std::string pass = "pies";
+//     std::cout << "pies \t\t\t" << getErrorMessage(checkPasswordRules("pies")) << "\n";
+//     std::cout << "pumpernikiel\t\t" << getErrorMessage(checkPasswordRules("pumpernikiel")) << "\n";
+//     std::cout << "pumpernikiel9\t\t" << getErrorMessage(checkPasswordRules("pumpernikiel9")) << "\n";
+//     std::cout << "pumpernikiel9$\t\t" << getErrorMessage(checkPasswordRules("pumpernikiel9$")) << "\n";
+//     std::cout << "pumPernikiel9$\t\t" << getErrorMessage(checkPasswordRules("pumPernikiel9$")) << "\n";
 
-    std::cout << getErrorMessage(checkPassword("radom", "morda")) << "\n";
-    std::cout << getErrorMessage(checkPassword("uatwehasuo", "tródnehasuo")) << "\n";
-    std::cout << getErrorMessage(checkPassword("kratownica", "kratownica")) << "\n";
-    std::cout << getErrorMessage(checkPassword("kratownica9", "kratownica9")) << "\n";
-    std::cout << getErrorMessage(checkPassword("pumpernikiel9$", "pumpernikiel9$")) << "\n";
-    std::cout << getErrorMessage(checkPassword("pumPernikiel9$", "pumPernikiel9$")) << "\n";
+//     std::cout << getErrorMessage(checkPassword("radom", "morda")) << "\n";
+//     std::cout << getErrorMessage(checkPassword("uatwehasuo", "tródnehasuo")) << "\n";
+//     std::cout << getErrorMessage(checkPassword("kratownica", "kratownica")) << "\n";
+//     std::cout << getErrorMessage(checkPassword("kratownica9", "kratownica9")) << "\n";
+//     std::cout << getErrorMessage(checkPassword("pumpernikiel9$", "pumpernikiel9$")) << "\n";
+//     std::cout << getErrorMessage(checkPassword("pumPernikiel9$", "pumPernikiel9$")) << "\n";
 
-    return 0;
-}
+//     return 0;
+// }
