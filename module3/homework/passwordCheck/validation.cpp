@@ -18,3 +18,7 @@ std::string getErrorMessage(ErrorCode codeToShow) {
         return "Unknown error code";
     }
 }
+
+bool doesPasswordsMatch(const std::string& firstPwd, const std::string& secondPwd) {
+    return firstPwd == secondPwd;
+}
