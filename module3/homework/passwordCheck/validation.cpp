@@ -1,6 +1,7 @@
 #include "validation.hpp"
 #include <iostream>
 #include <ctime>
+#include <algorithm>
 
 std::string getErrorMessage(ErrorCode err){
     switch(err){
@@ -33,8 +34,27 @@ bool doesPasswordsMatch(std::string first_password, std::string second_password)
 }
 
 ErrorCode checkPasswordRules(std::string password){
-    std::srand(std::time(nullptr));
-    return static_cast<ErrorCode>(std::rand() % static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter));
+    /*
+    TODO:
+    -Modify and add new test cases to check if function is working properly
+    */
+    
+    // Exercise 4
+    // std::srand(std::time(nullptr));
+    // return static_cast<ErrorCode>(std::rand() % static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter));
+    if(password.size() < 9){
+        return ErrorCode::PasswordNeedsAtLeastNineCharacters;
+    }
+
+    if(!std::any_of(password.begin(), password.end(), ispunct)){
+        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
+    }
+
+    if(!std::any_of(password.begin(), password.end(), isupper)){
+        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+    }
+    
+    return ErrorCode::Ok;
 }
 
 ErrorCode checkPassword(std::string first_password, std::string second_password){

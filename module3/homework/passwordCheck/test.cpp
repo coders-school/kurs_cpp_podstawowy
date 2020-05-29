@@ -34,7 +34,11 @@ TEST(checkPasswordTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUpperca
 TEST(checkPasswordTests, returnsPasswordsDoesNotMatchForDifferentPasswords) {
     EXPECT_EQ(checkPassword(PROPER_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordsDoesNotMatch); // equal ==
     EXPECT_EQ(checkPassword(EMPTY_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
-    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch); 
+    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword("Abcd123!e", "Abcd123!e"), ErrorCode::Ok);
+    EXPECT_EQ(checkPassword("Abcd123!", "Abcd123!"), ErrorCode::PasswordNeedsAtLeastNineCharacters);
+    EXPECT_EQ(checkPassword("Abcd12345", "Abcd12345"), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
+    EXPECT_EQ(checkPassword("abcd1234!", "abcd1234!"), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter);
 }
 
 TEST(getErrorMessageTests, returnsErrorCodeAsString) {
