@@ -7,6 +7,7 @@ enum class ErrorCode{
     PasswordNeedsAtLeastOneNumber,
     PasswordNeedsAtLeastOneSpecialCharacter,
     PasswordNeedsAtLeastOneUppercaseLetter,
+    PassworIncludeForbidenCharacter,
     PasswordsDoesNotMatch
 };
 

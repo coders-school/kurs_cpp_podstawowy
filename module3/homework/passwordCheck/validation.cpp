@@ -17,6 +17,9 @@ std::string getErrorMessage(ErrorCode err){
         case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
             return "Your password needs at least one uppercase letter";
             break;
+        case ErrorCode::PassworIncludeForbidenCharacter:
+            return "Your password include forbiden character";
+            break;
         case ErrorCode::PasswordsDoesNotMatch:
             return "Password does not match";
             break;
