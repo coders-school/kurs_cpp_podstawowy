@@ -2,6 +2,7 @@
 // Don't forget the header guard
 
 #pragma once
+#include <string>
 
 enum class ErrorCode {
     Ok,
@@ -11,3 +12,5 @@ enum class ErrorCode {
     PasswordNeedsAtLeastOneUppercaseLetter,
     PasswordsDoesNotMatch
 };
+
+std::string getErrorMessage(ErrorCode code);
