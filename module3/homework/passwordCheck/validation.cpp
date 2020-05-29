@@ -80,12 +80,3 @@ ErrorCode checkPassword(std::string first, std::string second)
     return checkPasswordRules(first);
 }
 
-int main()
-{
-    std::string password = "abcdefghjk1%&AA";
-    auto error = checkPasswordRules(password);
-    std::cout << static_cast<int>(error) << std::endl;
-    getErrorMessage(error);
-
-    return 0;
-};
