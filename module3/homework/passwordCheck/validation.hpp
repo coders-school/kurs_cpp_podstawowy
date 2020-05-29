@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 enum class ErrorCode{
     Ok,
@@ -12,3 +13,4 @@ enum class ErrorCode{
 std::string  getErrorMessage(ErrorCode err);
 bool doesPasswordsMatch(std::string first_password, std::string second_password);
 ErrorCode checkPasswordRules(std::string password);
+ErrorCode checkPassword(std::string first_password, std::string second_password);
