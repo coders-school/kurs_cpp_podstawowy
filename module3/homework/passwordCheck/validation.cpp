@@ -61,6 +61,10 @@ ErrorCode checkPasswordRules(std::string password){
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
 
+    if(!std::none_of(password.begin(), password.end(), isspace)){
+        return ErrorCode::PassworIncludeForbidenCharacter;
+    }
+
     return ErrorCode::Ok;
 }
 
