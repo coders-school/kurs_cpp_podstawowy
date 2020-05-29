@@ -31,3 +31,7 @@ void add10(std::vector<std::shared_ptr<int>> vec) {
     *it += 10;
     }
 }
+
+void sub10(int* const ptr) {
+    *ptr =- 10;
+}
