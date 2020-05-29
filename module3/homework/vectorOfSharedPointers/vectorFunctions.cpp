@@ -7,6 +7,7 @@
 
 std::vector<std::shared_ptr<int>> generate(int count) {
     std::vector<std::shared_ptr<int>> vec {};
+    srand(time(NULL));
     for (auto it = 0; it < count; it++) {
         vec.emplace_back(std::make_shared<int>(generateRandomNumber(count)));
     }
@@ -14,7 +15,12 @@ std::vector<std::shared_ptr<int>> generate(int count) {
 }
 
 int generateRandomNumber(int count) {
-    srand(time(NULL));
     return rand() % count;
+}
+
+void print(std::vector<std::shared_ptr<int>> vec) {
+    for (const auto& it: vec) {
+        std::cout << *it;
+    }
 }
 
