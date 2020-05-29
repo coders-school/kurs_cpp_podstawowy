@@ -5,7 +5,7 @@ std::string getErrorMessage(const ErrorCode error) {
         case ErrorCode::Ok:
             return "OK";
         case ErrorCode::PasswordNeedsAtLeastNineCharacters:
-            return "Password need at least 9 characters";
+            return "Password needs at least 9 characters";
         case ErrorCode::PasswordNeedsAtLeastOneNumber:
             return "Password needs at least one number";
         case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
