@@ -39,6 +39,7 @@ TEST(checkPasswordTests, returnsPasswordsDoesNotMatchForDifferentPasswords) {
     EXPECT_EQ(checkPassword("Abcd123!", "Abcd123!"), ErrorCode::PasswordNeedsAtLeastNineCharacters);
     EXPECT_EQ(checkPassword("Abcd12345", "Abcd12345"), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
     EXPECT_EQ(checkPassword("abcd1234!", "abcd1234!"), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter);
+    EXPECT_EQ(checkPassword("Abcd_aaa!", "Abcd_aaa!"), ErrorCode::PasswordNeedsAtLeastOneNumber);
 }
 
 TEST(getErrorMessageTests, returnsErrorCodeAsString) {

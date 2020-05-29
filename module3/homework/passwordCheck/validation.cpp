@@ -53,7 +53,11 @@ ErrorCode checkPasswordRules(std::string password){
     if(!std::any_of(password.begin(), password.end(), isupper)){
         return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
     }
-    
+
+    if(!std::any_of(password.begin(), password.end(), isdigit)){
+        return ErrorCode::PasswordNeedsAtLeastOneNumber;
+    }
+
     return ErrorCode::Ok;
 }
 
