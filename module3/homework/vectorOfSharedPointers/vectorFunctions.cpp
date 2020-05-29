@@ -1,6 +1,5 @@
 #include "vectorFunctions.hpp"
 
-
 std::vector<std::shared_ptr<int>> generate(int count) {
     std::vector<std::shared_ptr<int>> result_vector;
     result_vector.reserve(count);
@@ -23,10 +22,6 @@ void add10(std::vector<std::shared_ptr<int>> vec) {
     }
 }
 
-void sub10(int* const ptr) {
-    
-}
+void sub10(int* const ptr) {}
 
-void sub10(std::vector<std::shared_ptr<int>>& ptr) { 
-
-}
+void sub10(std::vector<std::shared_ptr<int>>& ptr) {}
