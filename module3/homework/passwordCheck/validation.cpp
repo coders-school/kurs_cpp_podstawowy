@@ -1,14 +1,5 @@
 #include "validation.hpp"
 
-enum class ErrorCode {
-    Ok,
-    PasswordNeedsAtLeastNineCharacters,
-    PasswordNeedsAtLeastOneNumber,
-    PasswordNeedsAtLeastOneSpecialCharacter,
-    PasswordNeedsAtLeastOneUppercaseLetter,
-    PasswordsDoesNotMatch
-};
-
 std::string getErrorMessage(ErrorCode codeToShow) {
     switch (codeToShow) {
     case ErrorCode::Ok:
