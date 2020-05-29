@@ -6,6 +6,7 @@ std::string getErrorMessage(ErrorCode err){
     switch(err){
         case ErrorCode::Ok:
             return "OK";
+            break;
         case ErrorCode::PasswordNeedsAtLeastNineCharacters:
             return "Your password needs at least nine characeters";
             break;
@@ -22,4 +23,11 @@ std::string getErrorMessage(ErrorCode err){
             return "Unknown error";
             break;
     }
+}
+
+bool doesPasswordsMatch(std::string first_password, std::string second_password){
+    if(first_password == second_password){
+        return true;
+    }
+    return false;
 }
