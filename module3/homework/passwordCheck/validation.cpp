@@ -40,6 +40,7 @@ ErrorCode checkPasswordRules(std::string password)
         if (ch >= '0' && ch <= '9')
         {
             foundNumber = true;
+            break;
         }
     }
     if (!foundNumber)
@@ -47,9 +48,6 @@ ErrorCode checkPasswordRules(std::string password)
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
 
-    // https://www.ipvoid.com/password-special-characters/
-    // https://owasp.org/www-community/password-special-characters
-    std::string specialCharacters = " !\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~";
     bool passContainsSpecialChar = std::any_of(specialCharacters.begin(),
                                                 specialCharacters.end(),
                                                 [password](char ch){ return std::any_of(password.begin(),
@@ -75,5 +73,6 @@ ErrorCode checkPassword(std::string password, std::string repeatedPassword)
     {
         return checkPasswordRules(password);
     }
+
     return ErrorCode::PasswordsDoesNotMatch;
 }
