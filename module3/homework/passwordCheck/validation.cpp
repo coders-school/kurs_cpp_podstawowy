@@ -25,7 +25,7 @@ std::ostream& operator<<(std::ostream& os, ErrorCode value)
 
 bool doesPasswordsMatch(std::string& firstPassword, std::string& secondPassword)
 {
-    return true;
+    return firstPassword == secondPassword;
 }
 
 ErrorCode checkPasswordRules(std::string& password)
@@ -35,7 +35,8 @@ ErrorCode checkPasswordRules(std::string& password)
 
 ErrorCode checkPassword(std::string& firstPassword, std::string& secondPassword)
 {
-    return ErrorCode::Ok;
+    if(doesPasswordsMatch(firstPassword,secondPassword)) return ErrorCode::Ok;
+    else return ErrorCode::PasswordsDoesNotMatch;
 }
 std::string getErrorMessage(ErrorCode code)
 {
