@@ -1,7 +1,7 @@
 #include "validation.hpp"
 
 
-std::string getErrorMessage(ErrorCode err)
+std::string getErrorMessage(const ErrorCode& err)
 {
 	switch (static_cast<int>(err))
 	{
@@ -23,23 +23,16 @@ std::string getErrorMessage(ErrorCode err)
 	
 }
 
-bool doesPasswordsMatch(std::string password1, std::string password2)
+bool doesPasswordsMatch(const std::string& password1, const std::string& password2)
 {
-	if (password1.size() == password2.size())
-	{
-		for (int i = 0; i < password1.size(); i++)
-		{
-			if (password1[i] != password2[i])
-			{
-				return false;
-			}
-		}
-		return true;
-	}
-	return false;
+    if (password1 == password2)
+    {
+        return true;
+    }
+    return false;
 }
 
-ErrorCode checkPasswordRules(std::string password)
+ErrorCode checkPasswordRules(const std::string& password)
 {
 	if (password.size() < 9)
 	{
@@ -63,7 +56,7 @@ ErrorCode checkPasswordRules(std::string password)
 	}
 }
 
-ErrorCode checkPassword(std::string password1, std::string password2)
+ErrorCode checkPassword(const std::string& password1, const std::string& password2)
 {
 	if (doesPasswordsMatch(password1, password2))
 	{

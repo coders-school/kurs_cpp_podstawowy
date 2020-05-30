@@ -16,7 +16,7 @@ enum ErrorCode
 	PasswordsDoesNotMatch
 };
 
-std::string getErrorMessage(ErrorCode err);
-bool doesPasswordsMatch(std::string password1, std::string password2);
-ErrorCode checkPasswordRules(std::string password);
-ErrorCode checkPassword(std::string password1, std::string password2);
+std::string getErrorMessage(const ErrorCode& err);
+bool doesPasswordsMatch(const std::string& password1, const std::string& password2);
+ErrorCode checkPasswordRules(const std::string& password);
+ErrorCode checkPassword(const std::string& password1, const std::string& password2);
