@@ -3,13 +3,16 @@
 
 int addEven(const std::vector<int>& numbers) {
 
-    for (auto i = numbers.begin(); i != numbers.end(); i++){
+    int even_sum = 0;
+
+    for (auto elements : numbers){
         
+        if (elements % 2 == 0 ){
 
-
-
+            even_sum += elements;
+        }
+        
     }
     
-
-    return -1;
+    return even_sum;
 }
