@@ -32,17 +32,17 @@ ErrorCode checkPasswordRules(const std::string& password)
     {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
-    else if (!std::any_of(password.begin(), password.end(), [&](char letter){ return isdigit(letter); })
+    else if (!std::any_of(password.begin(), password.end(), [&](char letter){ return isdigit(letter); }))
     {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
-    else if (!std::any_of(password.begin(), password.end(), [&](char letter){ return ispunct(letter); })
+    else if (!std::any_of(password.begin(), password.end(), [&](char letter){ return ispunct(letter); }))
     {
-        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
+        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
     }
-    else if (!std::ant_of(password.begin(), password.end(), [&](char letter){ return isupper(letter); })
+    else if (!std::any_of(password.begin(), password.end(), [&](char letter){ return isupper(letter); }))
     {
-        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
+        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
     }
     else 
     {
@@ -50,3 +50,15 @@ ErrorCode checkPasswordRules(const std::string& password)
     }
 }
 
+ErrorCode checkPassword(const std::string& firstPass, const std::string& secondPass)
+{
+    if (doesPasswordsMatch(firstPass, secondPass))
+    {
+        return checkPasswordRules(firstPass);
+    }
+    else
+    {
+        return ErrorCode::PasswordsDoesNotMatch;
+    }
+    
+}

@@ -18,5 +18,4 @@ bool doesPasswordsMatch(const std::string&, const std::string&);
 
 ErrorCode checkPasswordRules(const std::string&);
 
-// TODO: I'm empty :) Put enum and function headers here.
-// Don't forget the header guard
+ErrorCode checkPassword(const std::string&, const std::string&);
