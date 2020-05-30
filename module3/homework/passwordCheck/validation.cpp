@@ -22,3 +22,19 @@ std::string getErrorMessage(ErrorCode err)
 	}
 	
 }
+
+bool doesPasswordsMatch(std::string password1, std::string password2)
+{
+	if (password1.size() == password2.size())
+	{
+		for (int i = 0; i < password1.size(); i++)
+		{
+			if (password1[i] != password2[i])
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	return false;
+}
