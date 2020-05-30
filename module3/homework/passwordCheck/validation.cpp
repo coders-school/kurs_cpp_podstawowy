@@ -4,17 +4,17 @@ std::string getErrorMessage(ErrorCode error)
 {
     switch(error)
     {
-        case 1:
+        case ErrorCode::Ok:
             return "Your password is correct.\n";
-        case 2: 
+        case ErrorCode::PasswordNeedsAtLeastNineCharacters: 
             return "Your password needs at least nine characters.\n";
-        case 3:
+        case ErrorCode::PasswordNeedsAtLeastOneNumber:
             return "Yout password needs at least one number.\n";
-        case 4:
+        case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
             return "Your password needs at least one special character.\n";
-        case 5:
+        case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
             return "Your password needs at least one upper case letter.\n";
-        case 6:
+        case ErrorCode::PasswordsDoesNotMatch:
             return "Passwords do not match.\n"; 
         default:
             return "Your password is incorrect.\n";
