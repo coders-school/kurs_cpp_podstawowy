@@ -37,14 +37,10 @@ bool doesPasswordsMatch(std::string first_password, std::string second_password)
 }
 
 ErrorCode checkPasswordRules(std::string password){
-    /*
-    TODO:
-    -Modify and add new test cases to check if function is working properly
-    */
-    
     // Exercise 4
     // std::srand(std::time(nullptr));
     // return static_cast<ErrorCode>(std::rand() % static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter));
+    
     if(password.size() < 9){
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }

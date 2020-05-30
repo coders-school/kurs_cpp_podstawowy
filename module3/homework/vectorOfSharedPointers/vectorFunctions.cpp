@@ -1,6 +1,3 @@
-//TODO 
-//function inplementation
-
 #include <iostream>
 #include <algorithm>
 #include "vectorFunctions.hpp"
@@ -22,12 +19,16 @@ void print(std::vector<std::shared_ptr<int>> vec) {
 
 void add10(std::vector<std::shared_ptr<int>> vec) {
     for (const auto& it: vec) {
-    *it += 10;
+        if(it != nullptr){
+            *it += 10;
+        }
     }
 }
 
 void sub10(int* const ptr) {
-    *ptr -= 10;
+    if(ptr != nullptr){
+        *ptr -= 10;
+    }
 }
 
 void sub10(std::vector<std::shared_ptr<int> > vec) {
