@@ -38,3 +38,36 @@ bool doesPasswordsMatch(std::string password1, std::string password2)
 	}
 	return false;
 }
+
+ErrorCode checkPasswordRules(std::string password)
+{
+	if (password.size() < 9)
+	{
+		return ErrorCode::PasswordNeedsAtLeastNineCharacters;
+	}
+	else if (any_of(password.begin(), password.end(), isdigit) == false)
+	{	
+		return ErrorCode::PasswordNeedsAtLeastOneNumber;
+	}
+	else if (any_of(password.begin(), password.end(), [](int i) {return ((i >= 33 && i <= 47) || (i >= 58 && i <= 64) || (i >= 91 && i <= 96) || (i >= 123 && i <= 125)); }) == false)
+	{
+		return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
+	}
+	else if (any_of(password.begin(), password.end(), isupper) == false)
+	{
+		return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+	}
+	else
+	{
+		return ErrorCode::Ok;
+	}
+}
+
+ErrorCode checkPassword(std::string password1, std::string password2)
+{
+	if (doesPasswordsMatch(password1, password2))
+	{
+		return checkPasswordRules(password1);
+	}
+	return ErrorCode::PasswordsDoesNotMatch;
+}
