@@ -12,7 +12,9 @@ enum class ErrorCode
 
 std::string getErrorMessage(ErrorCode);
 
-bool doesPasswordsMatch(const std::string& firstPassword, const std::string& secondPassword);
+bool doesPasswordsMatch(const std::string&, const std::string&);
+
+ErrorCode checkPasswordRules(const std::string&);
 
 // TODO: I'm empty :) Put enum and function headers here.
 // Don't forget the header guard
