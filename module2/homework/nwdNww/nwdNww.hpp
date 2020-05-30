@@ -20,5 +20,5 @@ long long mul=lhs*rhs;
         rhs = lhs % rhs;
         lhs = t;
     }
-    return mul/lhs;
+    return mul /lhs;
 }
