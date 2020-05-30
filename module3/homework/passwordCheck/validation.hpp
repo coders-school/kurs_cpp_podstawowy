@@ -1,2 +1,14 @@
-// TODO: I'm empty :) Put enum and function headers here.
-// Don't forget the header guard
+#include<string>
+
+enum class ErrorCode 
+{
+    Ok = 0,
+    PasswordNeedsAtLeastNineCharacters = 1,
+    PasswordNeedsAtLeastOneNumber = 2,
+    PasswordNeedsAtLeastOneSpecialCharacter = 3,
+    PasswordNeedsAtLeastOneUppercaseLetter = 4,
+    PasswordsDoesNotMatch = 5
+};
+
+
+std::string getErrorMessage(ErrorCode code);
