@@ -26,3 +26,27 @@ bool doesPasswordsMatch(const std::string& firstPassword, const std::string& sec
     return firstPassword == secondPassword;
 }
 
+ErrorCode checkPasswordRules(const std::string& password)
+{
+    if(password.size() < 9)
+    {
+        return ErrorCode::PasswordNeedsAtLeastNineCharacters;
+    }
+    else if (!std::any_of(password.begin(), password.end(), [&](char letter){ return isdigit(letter); })
+    {
+        return ErrorCode::PasswordNeedsAtLeastOneNumber;
+    }
+    else if (!std::any_of(password.begin(), password.end(), [&](char letter){ return ispunct(letter); })
+    {
+        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
+    }
+    else if (!std::ant_of(password.begin(), password.end(), [&](char letter){ return isupper(letter); })
+    {
+        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
+    }
+    else 
+    {
+        return ErrorCode::Ok;
+    }
+}
+
