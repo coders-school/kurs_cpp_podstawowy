@@ -18,9 +18,7 @@ std::string getErrorMessage(ErrorCode code) {
 }
 
 bool doesPasswordsMatch(const std::string& first_pass, const std::string& second_pass) {
-    auto match = std::mismatch(first_pass.begin(), first_pass.end(), second_pass.begin());
-
-    return (match.first == first_pass.end() && match.second == second_pass.end());
+    return first_pass == second_pass;
 }
 
 ErrorCode checkPasswordRules(const std::string& password) {
