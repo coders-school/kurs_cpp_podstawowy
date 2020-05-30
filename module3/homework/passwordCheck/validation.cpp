@@ -9,7 +9,7 @@ std::string getErrorMessage(ErrorCode error)
         case ErrorCode::PasswordNeedsAtLeastNineCharacters: 
             return "Your password needs at least nine characters.\n";
         case ErrorCode::PasswordNeedsAtLeastOneNumber:
-            return "Yout password needs at least one number.\n";
+            return "Your password needs at least one number.\n";
         case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
             return "Your password needs at least one special character.\n";
         case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
@@ -60,5 +60,4 @@ ErrorCode checkPassword(const std::string& firstPass, const std::string& secondP
     {
         return ErrorCode::PasswordsDoesNotMatch;
     }
-    
 }
