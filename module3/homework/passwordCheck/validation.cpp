@@ -6,7 +6,7 @@ std::string getErrorMessage(const ErrorCode& err)
 	switch (static_cast<int>(err))
 	{
 		case 0:
-			return "Well Done";
+			return "OK";
 		case 1:
 			return "Password needs at least nine characters";
 		case 2:
