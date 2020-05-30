@@ -32,10 +32,19 @@ void add10(std::vector<std::shared_ptr<int>>& vec)
 
 void sub10(int* const ptr)
 {
-
+    if (ptr != nullptr)
+    {
+        *ptr -= 10;
+    }
 }
 
 void sub10(std::vector<std::shared_ptr<int>>& vec)
 {
-
+    for (auto& elem : vec)
+    {
+        if (elem != nullptr)
+        {
+            sub10(elem.get());
+        }
+    }
 }
