@@ -20,3 +20,9 @@ std::string getErrorMessage(ErrorCode error)
             return "Your password is incorrect.\n";
     }
 }
+
+bool doesPasswordsMatch(const std::string& firstPassword, const std::string& secondPassword)
+{
+    return firstPassword == secondPassword;
+}
+
