@@ -1,26 +1,25 @@
-#include "validation.hpp"
-#include <string>
 #include <algorithm>
-
+#include <string>
+#include "validation.hpp"
 
 std::string getErrorMessage(ErrorCode Error) {
-    switch (static_cast<int>(Error)) {
-        case 100:
+    switch (Error) {
+        case ErrorCode::Ok:
             return "OK";
             break;
-        case 101:
+        case ErrorCode::PasswordNeedsAtLeastNineCharacters:
             return "Password Needs At Least Nine Characters";    
             break;
-        case 102:
+        case ErrorCode::PasswordNeedsAtLeastOneNumber:
             return "Password Needs At Least One Number";
             break;
-        case 103:
+        case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
             return "Password Needs At Least One Special Character";
             break;
-        case 104:
+        case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
             return "Password Needs A Least One Uppercase Letter";
             break;
-        case 105:
+        case ErrorCode::PasswordsDoesNotMatch:
             return "Passwords Does Not Match";
             break;
         default:
@@ -28,36 +27,32 @@ std::string getErrorMessage(ErrorCode Error) {
     }
 }
 
-bool doesPasswordsMatch(std::string& password, std::string& repeatedPassword) {
-    if (password==repeatedPassword) {
+bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword) {
+    if (password == repeatedPassword) {
         return true;
     }
-    else {
-        return false;
-    }
+    return false;
 }
 
-ErrorCode checkPasswordRules(std::string& password) {
-    if (password.size()<9) {
+ErrorCode checkPasswordRules(const std::string& password) {
+    if (password.size() < 9) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
-    if (std::any_of(password.begin(), password.end(), [](char c){ return std::isdigit(c); })==0) {
+    if (std::any_of(password.begin(), password.end(), [](char c){ return std::isdigit(c); }) == 0) {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
-    if (std::any_of(password.begin(), password.end(), [](char c){ return std::ispunct(c); })==0) {
+    if (std::any_of(password.begin(), password.end(), [](char c){ return std::ispunct(c); }) == 0) {
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
     }
-    if (std::any_of(password.begin(), password.end(), [](char c){ return std::isupper(c); })==0) {
+    if (std::any_of(password.begin(), password.end(), [](char c){ return std::isupper(c); }) == 0) {
         return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
     }
-  return ErrorCode::Ok;
+    return ErrorCode::Ok;
 }
 
-ErrorCode checkPassword(std::string& password, std::string& repeatedPassword) {
+ErrorCode checkPassword(const std::string& password, const std::string& repeatedPassword) {
     if (doesPasswordsMatch(password, repeatedPassword)) {
         return checkPasswordRules(password);
     }
-    else {
-        return ErrorCode::PasswordsDoesNotMatch;
-    }
+    return ErrorCode::PasswordsDoesNotMatch;
 }
