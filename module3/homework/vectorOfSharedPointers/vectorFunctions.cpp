@@ -1,20 +1,20 @@
 #include "vectorFunctions.hpp"
 #include <iostream>
 
-void add10(PointersVector vec)
+void add10(PointersVector& vec)
 {
     for (auto i : vec)
         if (i)
             *i += 10;
 };
-void print(PointersVector vec)
+void print(PointersVector& vec)
 {
     for (auto i : vec)
         std::cout << *i << " ";
     std::cout << "\n";
 };
 
-void sub10(PointersVector vec)
+void sub10(PointersVector& vec)
 {
     for (auto i : vec)
         if (i)
@@ -34,3 +34,4 @@ PointersVector generate(int count)
         vec.push_back(std::make_shared<int>(i));
     return vec;
 };
+
