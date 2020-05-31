@@ -28,17 +28,17 @@ std::string getErrorMessage(ErrorCode errorCode)
     }
 }
 
-bool doesPasswordsMatch(std::string password, std::string confirmedPassword)
+bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword)
 {
     return false;
 }
 
-ErrorCode checkPassword(std::string password, std::string confirmedPassword)
+ErrorCode checkPasswordRules(const std::string& password)
 {
     return ErrorCode();
 }
 
-ErrorCode checkPasswordRules(std::string password)
+ErrorCode checkPassword(const std::string& password, const std::string& repeatedPassword)
 {
     return ErrorCode();
 }
