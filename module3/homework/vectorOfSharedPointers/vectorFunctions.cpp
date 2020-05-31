@@ -20,8 +20,10 @@ void add10(std::vector<std::shared_ptr<int>> numbers) {
     }
 }
 void sub10(int* const number) {
-
+    if(number)
+        *number-=10;    
 }
+
 void sub10(std::vector<std::shared_ptr<int>> numbers) {
 
 }
