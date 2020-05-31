@@ -1,4 +1,5 @@
 #include "validation.hpp"
+#include <algorithm>
 
 std::string getErrorMessage(const ErrorCode error) {
     switch (error) {
@@ -23,7 +24,15 @@ bool doesPasswordsMatch(const std::string& password, const std::string& password
 }
 
 ErrorCode checkPasswordRules(const std::string& password) {
-    // implement me
+    if (password.size() < 9) {
+        return ErrorCode::PasswordNeedsAtLeastNineCharacters;
+    } else if (!std::any_of(password.begin(), password.end(), isdigit)) {
+        return ErrorCode::PasswordNeedsAtLeastOneNumber;
+    } else if (password.find_first_of("!@#$%^&*") == std::string::npos) {
+        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
+    } else if (!std::any_of(password.begin(), password.end(), isupper)) {
+        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+    }
     return ErrorCode::Ok;
 }
 
