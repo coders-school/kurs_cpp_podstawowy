@@ -10,5 +10,6 @@ enum class ErrorCode
     PasswordsDoesNotMatch = 5
 };
 
-
+bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword);
 std::string getErrorMessage(ErrorCode code);
+ErrorCode checkPasswordRules(std::string& password);

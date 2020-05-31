@@ -31,3 +31,8 @@ std::string getErrorMessage(ErrorCode code)
 
     return result;
 }
+
+bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword)
+{
+    return password == repeatedPassword;
+}
