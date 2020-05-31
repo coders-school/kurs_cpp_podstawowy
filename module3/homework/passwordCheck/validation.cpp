@@ -30,8 +30,20 @@ bool doesPasswordsMatch(const std::string& firstPassword, const std::string& sec
 }
 
 ErrorCode checkPasswordRules(const std::string& password){
-    srand( time( NULL ) ); 
-    return ErrorCode(std::rand()%5);
+    if(password.size() < 9)
+        return ErrorCode::PasswordNeedsAtLeastNineCharacters;
+
+    else if(!(std::any_of(password.begin(), password.end(), [](auto element){return std::isdigit(element);})))
+        return ErrorCode::PasswordNeedsAtLeastOneNumber;
+
+    else if(!(std::any_of(password.begin(), password.end(), [](auto element){return std::ispunct(element);})))
+        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
+
+    else if(!(std::any_of(password.begin(), password.end(), [](auto element){return std::isupper(element);})))
+        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+
+    else
+        return ErrorCode::Ok;
 }
 
 ErrorCode checkPassword(const std::string& firstPassword, const std::string& secondPassword){

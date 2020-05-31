@@ -4,6 +4,7 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm>
 
 enum class ErrorCode{
 
