@@ -27,11 +27,11 @@ std::string getErrorMessage(ErrorCode errorNumber) {
     }
 }
 
-//code below is only for building
-
-bool doesPasswordsMatch(const std::string&, const std::string&) {
-    return false;
+bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword) {
+    return (password == repeatedPassword);
 }
+
+//code below is only for building
 
 ErrorCode checkPasswordRules(const std::string&) {
     return ErrorCode::PasswordsDoesNotMatch;
