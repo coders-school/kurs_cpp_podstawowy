@@ -28,6 +28,26 @@ std::string getErrorMessage(ErrorCode errorCode)
     }
 }
 
+bool passwordHasNineCharacters(const std::string& password)
+{
+    return false;
+}
+
+bool passwordHasNumber(const std::string& password)
+{
+    return false;
+}
+
+bool passwordHasSpecialCharacter(const std::string& password)
+{
+    return false;
+}
+
+bool passwordHasUppercase(const std::string& password)
+{
+    return false;
+}
+
 bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword)
 {
     return false;
