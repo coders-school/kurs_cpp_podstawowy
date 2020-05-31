@@ -7,7 +7,7 @@ int addEven(const std::vector<int>& numbers) {
     int sum {};
 
     for(const auto& element : numbers){
-        if(element % 2){
+        if(!(element % 2)){
             sum += element;
         }
     }
