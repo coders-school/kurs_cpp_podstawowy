@@ -11,9 +11,13 @@ std::vector<std::shared_ptr<int>> generate(int count) {
 
 void print(std::vector<std::shared_ptr<int>> numbers) {
 
+
 }
 void add10(std::vector<std::shared_ptr<int>> numbers) {
-
+    for(auto& num: numbers){
+        if(num)
+            *num+=10;
+    }
 }
 void sub10(int* const number) {
 
