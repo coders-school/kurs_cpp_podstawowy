@@ -1,8 +1,8 @@
-#include "validation.hpp"
-#include <string>
+#include <algorithm>
 #include <ostream>
 #include <sstream>
-#include <algorithm>
+#include <string>
+#include "validation.hpp"
 
 std::ostream& operator<<(std::ostream& os, ErrorCode value)
 {
@@ -24,27 +24,27 @@ std::ostream& operator<<(std::ostream& os, ErrorCode value)
     return os;
 }
 
-bool doesPasswordsMatch(std::string& firstPassword, std::string& secondPassword)
+bool doesPasswordsMatch(const std::string& firstPassword,const std::string& secondPassword)
 {
     return firstPassword == secondPassword;
 }
 
-bool hasSpecialChar(std::string& str)
+bool hasSpecialChar(const std::string& str)
 {
     return std::any_of(str.begin(), str.end(), [](char ch) { return (!isalnum(ch) || ch == '_'); });
 }
 
-bool hasUpperCase(std::string& str)
+bool hasUpperCase(const std::string& str)
 {
     return std::any_of(str.begin(), str.end(), [](char ch) { return (isupper(ch)); });
 }
 
-bool hasDigit(std::string& str)
+bool hasDigit(const std::string& str)
 {
     return std::any_of(str.begin(), str.end(), [](char ch) { return (isdigit(ch)); });
 }
 
-ErrorCode checkPasswordRules(std::string& password)
+ErrorCode checkPasswordRules(const std::string& password)
 {
     if (password.size() < 9)
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
@@ -57,7 +57,7 @@ ErrorCode checkPasswordRules(std::string& password)
     return ErrorCode::Ok;
 }
 
-ErrorCode checkPassword(std::string& firstPassword, std::string& secondPassword)
+ErrorCode checkPassword(const std::string& firstPassword, const std::string& secondPassword)
 {
     if (doesPasswordsMatch(firstPassword, secondPassword))
         return ErrorCode::Ok;
