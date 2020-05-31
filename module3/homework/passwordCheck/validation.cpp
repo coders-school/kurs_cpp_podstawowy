@@ -6,22 +6,22 @@ std::string getErrorMessage(ErrorCode error){
             return "OK";
             break;
         case ErrorCode::PasswordNeedsAtLeastNineCharacters:
-            return "PasswordNeedsAtLeastNineCharacters";
+            return "Password needs at least nine characters";
             break;
         case ErrorCode::PasswordNeedsAtLeastOneNumber:
-            return "PasswordNeedsAtLeastOneNumber";
+            return "Password needs at least one number";
             break;
         case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
-            return "PasswordNeedsAtLeastOneSpecialCharacter";
+            return "Password needs at least one special character";
             break;
         case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
-            return "PasswordNeedsAtLeastOneUppercaseLetter";
+            return "Password needs at least one uppercase letter";
             break;
         case ErrorCode::PasswordsDoesNotMatch:
-            return "PasswordsDoesNotMatch";
+            return "Passwords does not match";
             break;
         default:
-            return "Error code not know";
+            return "Unknown error code";
     }
 }
 
