@@ -5,7 +5,7 @@ std::string EMPTY_PASSWORD = "";
 std::string PROPER_PASSWORD = "abcABC123!@#";
 std::string TOO_SHORT_PASSWORD = "12345678";
 auto MIN_ALLOWED_ERROR_CODE = ErrorCode::Ok;
-auto MAX_ALLOWED_ERROR_CODE = ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+auto MAX_ALLOWED_ERROR_CODE = ErrorCode::PassworIncludeForbiddenCharacter;
 
 TEST(DoesPasswordsMatchTests, returnsTrueForIdenticalPasswords) {
     EXPECT_TRUE(doesPasswordsMatch(EMPTY_PASSWORD, EMPTY_PASSWORD));
@@ -40,10 +40,14 @@ TEST(checkPasswordTests, returnsPasswordsDoesNotMatchForDifferentPasswords) {
     EXPECT_EQ(checkPassword("Abcd12345", "Abcd12345"), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
     EXPECT_EQ(checkPassword("abcd1234!", "abcd1234!"), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter);
     EXPECT_EQ(checkPassword("Abcd_aaa!", "Abcd_aaa!"), ErrorCode::PasswordNeedsAtLeastOneNumber);
-    EXPECT_EQ(checkPassword("Abc 123!e", "Abc 123!e"), ErrorCode::PassworIncludeForbidenCharacter);
+    EXPECT_EQ(checkPassword("Abc 123!e", "Abc 123!e"), ErrorCode::PassworIncludeForbiddenCharacter);
 }
 
 TEST(getErrorMessageTests, returnsErrorCodeAsString) {
     EXPECT_EQ(getErrorMessage(ErrorCode::Ok), "OK");
-    // Add other tests for getErrorMessage if you wish
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastNineCharacters), "Your password needs at least nine characeters");
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter), "Your password needs at least one special character");
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter), "Your password needs at least one uppercase letter");
+    EXPECT_EQ(getErrorMessage(ErrorCode::PassworIncludeForbiddenCharacter), "Your password include forbidden character");
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordsDoesNotMatch), "Password does not match");
 }

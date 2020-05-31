@@ -17,8 +17,8 @@ std::string getErrorMessage(ErrorCode err){
         case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
             return "Your password needs at least one uppercase letter";
             break;
-        case ErrorCode::PassworIncludeForbidenCharacter:
-            return "Your password include forbiden character";
+        case ErrorCode::PassworIncludeForbiddenCharacter:
+            return "Your password include forbidden character";
             break;
         case ErrorCode::PasswordsDoesNotMatch:
             return "Password does not match";
@@ -30,10 +30,7 @@ std::string getErrorMessage(ErrorCode err){
 }
 
 bool doesPasswordsMatch(std::string first_password, std::string second_password){
-    if(first_password == second_password){
-        return true;
-    }
-    return false;
+    return first_password == second_password;
 }
 
 ErrorCode checkPasswordRules(std::string password){
@@ -58,15 +55,15 @@ ErrorCode checkPasswordRules(std::string password){
     }
 
     if(!std::none_of(password.begin(), password.end(), isspace)){
-        return ErrorCode::PassworIncludeForbidenCharacter;
+        return ErrorCode::PassworIncludeForbiddenCharacter;
     }
 
     return ErrorCode::Ok;
 }
 
-ErrorCode checkPassword(std::string first_password, std::string second_password){
-    if(!doesPasswordsMatch(first_password, second_password)){
+ErrorCode checkPassword(std::string password, std::string repeated_password){
+    if(!doesPasswordsMatch(password, repeated_password)){
         return ErrorCode::PasswordsDoesNotMatch;
     }
-    return checkPasswordRules(first_password);
+    return checkPasswordRules(password);
 }
