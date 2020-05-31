@@ -1,5 +1,6 @@
-#include "validation.hpp"
 #include <algorithm>
+
+#include "validation.hpp"
 
 std::string getErrorMessage(ErrorCode errorCode)
 {
@@ -34,32 +35,25 @@ ErrorCode checkPasswordRules(const std::string& password)
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
 
-    bool foundNumber = false;
-    for (const auto& ch : password)
-    {
-        if (ch >= '0' && ch <= '9')
-        {
-            foundNumber = true;
-            break;
-        }
-    }
-    if (!foundNumber)
+    if (!std::any_of(password.begin(), password.end(), ::isdigit))
     {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
 
-    bool passContainsSpecialChar = std::any_of(specialCharacters.begin(),
-                                                specialCharacters.end(),
-                                                [password](char ch){ return std::any_of(password.begin(),
-                                                                                        password.end(),
-                                                                                        [ch](char c){ return ch == c; }); });
+    bool passContainsSpecialChar =
+        std::any_of(specialCharacters.begin(),
+                    specialCharacters.end(),
+                    [password](char ch) {
+                        return std::any_of(password.begin(),
+                                           password.end(),
+                                           [ch](char c) { return ch == c; });
+                    });
     if (!passContainsSpecialChar)
     {
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
     }
 
-    bool passContainsUpperChar = std::any_of(password.begin(), password.end(), ::isupper);
-    if (!passContainsUpperChar)
+    if (!std::any_of(password.begin(), password.end(), ::isupper))
     {
         return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
     }

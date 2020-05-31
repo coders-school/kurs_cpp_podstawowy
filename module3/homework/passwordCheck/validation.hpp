@@ -13,8 +13,9 @@ enum class ErrorCode
 
 // https://www.ipvoid.com/password-special-characters/
 // https://owasp.org/www-community/password-special-characters
+// This line below indicates which characters are allowed and which are not
 const std::string specialCharacters = " !\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~";
-const int minPasswordLength = 9;
+constexpr int minPasswordLength = 9;
 
 std::string getErrorMessage(ErrorCode errorCode);
 bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword);
