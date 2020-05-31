@@ -15,3 +15,11 @@ std::vector<std::shared_ptr<int>> generate(int count)
 
     return result;
 }
+
+void sub10(int* const elem)
+{
+    if (elem)
+    {
+        *elem -= 10;
+    }
+}
