@@ -1,5 +1,6 @@
-#include "validation.hpp"
+#include <algorithm>
 #include <string>
+#include "validation.hpp"
 
 std::string getErrorMessage(ErrorCode errorNumber) {
     switch (errorNumber) {
@@ -31,12 +32,24 @@ bool doesPasswordsMatch(const std::string& password, const std::string& repeated
     return (password == repeatedPassword);
 }
 
-//code below is only for building
-
-ErrorCode checkPasswordRules(const std::string&) {
-    return ErrorCode::PasswordsDoesNotMatch;
+ErrorCode checkPasswordRules(const std::string& password) {
+    if (password.size() < 9) {
+        return ErrorCode::PasswordNeedsAtLeastNineCharacters;
+    } else if (!std::any_of(password.begin(), password.end(), ::isdigit)) {
+        return ErrorCode::PasswordNeedsAtLeastOneNumber;
+    } else if (!std::any_of(password.begin(), password.end(), ::ispunct)) {
+        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
+    } else if (!std::any_of(password.begin(), password.end(), ::isupper)) {
+        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+    } else {
+        return ErrorCode::Ok;
+    }
 }
 
-ErrorCode checkPassword(const std::string&, const std::string&) {
-    return ErrorCode::PasswordsDoesNotMatch;
+ErrorCode checkPassword(const std::string& password, const std::string& repeatedPassword) {
+    if (doesPasswordsMatch(password, repeatedPassword)) {
+        return checkPasswordRules(password);
+    } else {
+        return ErrorCode::PasswordsDoesNotMatch;
+    }
 }
