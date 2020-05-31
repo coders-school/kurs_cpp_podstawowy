@@ -7,7 +7,7 @@ std::vector<int> generateSequence(int count, int step) {
     }
     std::vector<int> vec {step};
     for (auto it = 1; it < count; it++) {
-        vec.emplace_back(vec[it - 1]+ step);
+        vec.emplace_back(vec[it - 1] + step);
     }
 
     return vec;
