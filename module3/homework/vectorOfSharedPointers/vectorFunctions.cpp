@@ -30,7 +30,7 @@ void sub10(int* ptr)
 PointersVector generate(int count)
 {
     PointersVector vec;
-    for (int i = 0; i < count; i++)
+    for (int i = 0; i < count; ++i)
         vec.push_back(std::make_shared<int>(i));
     return vec;
 };
