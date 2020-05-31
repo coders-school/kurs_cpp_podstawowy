@@ -43,11 +43,6 @@ TEST(checkPasswordRulesTests, returnsCorrespondingErrorCodeForWrongPassword) {
 TEST(checkPasswordTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUppercaseLetter) {
     EXPECT_GE(checkPassword(PROPER_PASSWORD, PROPER_PASSWORD), MIN_ALLOWED_ERROR_CODE);
     EXPECT_LE(checkPassword(PROPER_PASSWORD, PROPER_PASSWORD), MAX_ALLOWED_ERROR_CODE);
-    EXPECT_EQ(checkPasswordRules(PROPER_PASSWORD), MIN_ALLOWED_ERROR_CODE);
-    EXPECT_EQ(checkPasswordRules(TOO_SHORT_PASSWORD), TOO_SHORT_ERROR_CODE);
-    EXPECT_EQ(checkPasswordRules(NO_UPPER_PASSWORD), MAX_ALLOWED_ERROR_CODE);
-    EXPECT_EQ(checkPasswordRules(NO_NUMBER_PASSWORD), NO_NUMBER_ERROR_CODE);
-    EXPECT_EQ(checkPasswordRules(NO_SPECIAL_CHAR_PASSWORD), NO_SPECIAL_CHAR_ERROR_CODE);
 }
 
 TEST(checkPasswordTests, returnsCorrespondingErrorCodeForWrongPassword) {
