@@ -10,12 +10,12 @@ std::vector<std::shared_ptr<int>> generate(int count) {
     return pointers;
 }
 
-void print(std::vector<std::shared_ptr<int>> numbers) {
+void print(const std::vector<std::shared_ptr<int>>& numbers) {
     for(const auto& num : numbers)
         std::cout << *num << '\n';
 }
 
-void add10(std::vector<std::shared_ptr<int>> numbers) {
+void add10(const std::vector<std::shared_ptr<int>>& numbers) {
     for(auto& num : numbers){
         if(num)
             *num+=10;
@@ -27,7 +27,7 @@ void sub10(int* const number) {
         *number-=10;    
 }
 
-void sub10(std::vector<std::shared_ptr<int>> numbers) {
+void sub10(const std::vector<std::shared_ptr<int>>& numbers) {
     for(auto& num : numbers){
         if(num)
             *num-=10;
