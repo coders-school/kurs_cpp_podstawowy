@@ -28,3 +28,15 @@ std::string getErrorMessage(ErrorCode error){
 bool doesPasswordsMatch(std::string firstPassword, std::string secondPassword){
     return (firstPassword == secondPassword);
 }
+
+ErrorCode checkPasswordRules(std::string password){
+    srand( time( NULL ) ); 
+    return ErrorCode(std::rand()%5);
+}
+
+ErrorCode checkPassword(std::string firstPassword, std::string secondPassword){
+    if(!doesPasswordsMatch(firstPassword, secondPassword))
+        return ErrorCode::PasswordsDoesNotMatch;
+    else
+        return checkPasswordRules(firstPassword);    
+}
