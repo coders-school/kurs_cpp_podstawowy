@@ -3,7 +3,7 @@
 
 
 std::vector<std::shared_ptr<int>> generate(int count) {
-    std::vector<std::shared_ptr<int>> pointers(10);
+    std::vector<std::shared_ptr<int>> pointers(count);
     for(size_t i = 0; i < count; i++)
         pointers[i] = std::make_shared<int>(i);
     
