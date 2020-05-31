@@ -1,21 +1,44 @@
 #include "validation.hpp"
 
-std::string getErrorMessage(const ErrorCode errorCode)
+std::string getErrorMessage(ErrorCode errorCode)
 {
-    return std::string();
+    switch (errorCode)
+    {
+    case ErrorCode::Ok:
+        return "Password is correct";
+        break;
+    case ErrorCode::PasswordNeedsAtLeastNineCharacters:
+        return "Password needs at least nine characters";
+        break;
+    case ErrorCode::PasswordNeedsAtLeastOneNumber:
+        return "Password needs at least one number";
+        break;
+    case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
+        return "Password needs at least one special characters";
+        break;
+    case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
+        return "Password needs at least one uppercase letter";
+        break;
+    case ErrorCode::PasswordsDoesNotMatch:
+        return "Passwords does not match";
+        break;
+    default:
+        return std::string();
+        break;
+    }
 }
 
-bool doesPasswordsMatch(const std::string& password, const std::string& confirmedPassword)
+bool doesPasswordsMatch(std::string password, std::string confirmedPassword)
 {
     return false;
 }
 
-ErrorCode checkPassword(const std::string& password, const std::string& confirmedPassword)
+ErrorCode checkPassword(std::string password, std::string confirmedPassword)
 {
     return ErrorCode();
 }
 
-ErrorCode checkPasswordRules(const std::string& password)
+ErrorCode checkPasswordRules(std::string password)
 {
     return ErrorCode();
 }
