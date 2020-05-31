@@ -2,10 +2,10 @@
 #include <vector>
 #include <memory>
 
-using VecOfSharedPtr = std::vector<std::shared_ptr<int>>;
+using PointersVector = std::vector<std::shared_ptr<int>>;
 
-void add10(VecOfSharedPtr);
-void print(VecOfSharedPtr);
-void sub10(VecOfSharedPtr);
+void add10(PointersVector);
+void print(PointersVector);
+void sub10(PointersVector);
 void sub10(int*);
-VecOfSharedPtr generate(int count);
+PointersVector generate(int count);
