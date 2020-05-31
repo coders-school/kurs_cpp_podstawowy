@@ -20,6 +20,11 @@ int NWD(int lhs, int rhs) {
 }
 
 int NWW(int lhs, int rhs) {
+    if(lhs == 0 || rhs == 0){
+        return 0;
+    }
     
-    return -1;
+    lhs = std::abs(lhs);
+    rhs = std::abs(rhs);
+    return  lhs/NWD(lhs, rhs) * rhs;
 }
