@@ -4,8 +4,15 @@
 std::string EMPTY_PASSWORD = "";
 std::string PROPER_PASSWORD = "abcABC123!@#";
 std::string TOO_SHORT_PASSWORD = "12345678";
+std::string PASSWORD_WITHOUT_NUMBERS = "abd$#@LLDScsefdef";
+std::string PASSWORD_WITHOUT_SPECIALS = "abdcseef12321LLLsdfads";
+std::string PASSWORD_WITHOUT_UPPERCASE = "abdcsel$#@refs1231dfads";
 auto MIN_ALLOWED_ERROR_CODE = ErrorCode::Ok;
 auto MAX_ALLOWED_ERROR_CODE = ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+auto TOO_SHORT_PASSWORD_CODE = ErrorCode::PasswordNeedsAtLeastNineCharacters;
+auto NEEDS_ONE_NUMBER_AT_LEAST_CODE = ErrorCode::PasswordNeedsAtLeastOneNumber;
+auto NEEDS_ONE_SPECIAL_AT_LEAST_CODE = ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
+auto NEEDS_ONE_UPPER_CASE_AT_LEAST_CODE = ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
 
 TEST(DoesPasswordsMatchTests, returnsTrueForIdenticalPasswords)
 {
@@ -27,6 +34,26 @@ TEST(checkPasswordRulesTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUp
     EXPECT_LE(checkPasswordRules(EMPTY_PASSWORD), MAX_ALLOWED_ERROR_CODE); // less or equal <=
     EXPECT_GE(checkPasswordRules(TOO_SHORT_PASSWORD), MIN_ALLOWED_ERROR_CODE);
     EXPECT_LE(checkPasswordRules(TOO_SHORT_PASSWORD), MAX_ALLOWED_ERROR_CODE);
+}
+
+TEST(checkPasswordTests, returnsPasswordNeedsAtLeastNineCharactersForTooShortPassword)
+{
+    EXPECT_EQ(checkPasswordRules(TOO_SHORT_PASSWORD), TOO_SHORT_PASSWORD_CODE);
+}
+
+TEST(checkPasswordTests, returnsPasswordNeedsAtLeastOneSpecialCharacterForPasswordWithoutAnySpecial)
+{
+    EXPECT_EQ(checkPasswordRules(PASSWORD_WITHOUT_SPECIALS), NEEDS_ONE_SPECIAL_AT_LEAST_CODE);
+}
+
+TEST(checkPasswordTests, returnsPasswordNeedsAtLeastOneUpperCaseCharacterForPasswordWithoutAnyUpperCase)
+{
+    EXPECT_EQ(checkPasswordRules(PASSWORD_WITHOUT_UPPERCASE), NEEDS_ONE_UPPER_CASE_AT_LEAST_CODE);
+}
+
+TEST(checkPasswordTests, returnsPasswordNeedsAtLeastOneNumberForPasswordWithoutAnyNumbers)
+{
+    EXPECT_EQ(checkPasswordRules(PASSWORD_WITHOUT_NUMBERS), NEEDS_ONE_NUMBER_AT_LEAST_CODE);
 }
 
 TEST(checkPasswordTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUppercaseLetter)
@@ -52,6 +79,4 @@ TEST(getErrorMessageTests, returnsErrorCodeAsString)
     EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter),
               "PasswordNeedsAtLeastOneUppercaseLetter");
     EXPECT_EQ(getErrorMessage(ErrorCode::PasswordsDoesNotMatch), "PasswordsDoesNotMatch");
-
-    // Add other tests for getErrorMessage if you wish
 }
