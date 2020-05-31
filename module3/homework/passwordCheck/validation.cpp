@@ -24,3 +24,7 @@ std::string getErrorMessage(ErrorCode error){
             return "Error code not know";
     }
 }
+
+bool doesPasswordsMatch(std::string firstPassword, std::string secondPassword){
+    return (firstPassword == secondPassword);
+}
