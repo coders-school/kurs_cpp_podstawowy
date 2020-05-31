@@ -1,4 +1,6 @@
 #include "validation.hpp"
+#include <algorithm>
+#include <cctype>
 
 std::string getErrorMessage(ErrorCode error)
 {
@@ -21,9 +23,9 @@ std::string getErrorMessage(ErrorCode error)
     }
 }
 
-bool doesPasswordsMatch(const std::string& firstPassword, const std::string& secondPassword)
+bool doesPasswordsMatch(const std::string& firstPass, const std::string& secondPass)
 {
-    return firstPassword == secondPassword;
+    return firstPass == secondPass;
 }
 
 ErrorCode checkPasswordRules(const std::string& password)
