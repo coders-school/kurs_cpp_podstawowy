@@ -1,8 +1,11 @@
 #include "validation.hpp"
+#include <regex>
 
 ErrorCode checkPassword(const std::string& password,const std::string& repeatedPassword) {
     if(!doesPasswordsMatch(password, repeatedPassword))
         return ErrorCode::PasswordsDoesNotMatch;
+    
+    return checkPasswordRules(password);
 
     
 }
@@ -12,9 +15,22 @@ bool doesPasswordsMatch(const std::string& password,const std::string& repeatedP
 }
 
 ErrorCode checkPasswordRules(const std::string& password) {
-    
-}
+    std::regex upperCaseChar("[A-Z]");
+    std::regex specialChar("[$&+,:;=?@#|'<>.^*()%!]");
+    std::regex oneNumber("[0-9]");
 
+    if(password.length() < 9)
+        return ErrorCode::PasswordNeedsAtLeastNineCharacters;
+    if(!std::regex_search(password,  upperCaseChar))
+        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+    if(!std::regex_search(password, specialChar))
+        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
+    if(!std::regex_search(password, oneNumber))
+        return ErrorCode::PasswordNeedsAtLeastOneNumber;
+
+    return Ok;
+
+}
 
 
 std::string getErrorMessage(ErrorCode result) {
