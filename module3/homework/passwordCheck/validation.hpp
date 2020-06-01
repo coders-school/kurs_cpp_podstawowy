@@ -1,10 +1,8 @@
-// TODO: I'm empty :) Put enum and function headers here.
-// Don't forget the header guard
-
 #pragma once
-#include <string>
-#include <cctype>
+
 #include <algorithm>
+#include <cctype>
+#include <string>
 
 enum class ErrorCode {
     Ok,
@@ -16,6 +14,6 @@ enum class ErrorCode {
 };
 
 std::string getErrorMessage(ErrorCode code);
-bool doesPasswordsMatch(std::string password1, std::string password2);
-ErrorCode checkPasswordRules(std::string password);
-ErrorCode checkPassword(std::string password1, std::string password2);
+bool doesPasswordsMatch(const std::string & password1, const std::string & password2);
+ErrorCode checkPasswordRules(const std::string & password);
+ErrorCode checkPassword(const std::string & password1, const std::string & password2);
