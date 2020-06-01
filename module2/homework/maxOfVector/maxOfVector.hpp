@@ -3,7 +3,7 @@
 #include <limits>
 
 int maxOfVector(const std::vector<int>& vec) {
-    int max = INT32_MIN;
+    int max = std::numeric_limits<int>::min();
     for (const auto & elem : vec) {
         if(elem > max) {
             max = elem;
