@@ -40,11 +40,7 @@ ErrorCode checkPasswordRules(const std::string& password) {
 
     auto isPasswordHaveSpecialCharacter = [](const std::string& pwd) {
         std::string specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-        if (!pwd.find(specialCharacters) == std::string::npos) {
-            return false;
-        }
-
-        return true;
+        return pwd.find(specialCharacters) == std::string::npos;
     };
 
     if (!isPasswordHaveSpecialCharacter(password)) {
