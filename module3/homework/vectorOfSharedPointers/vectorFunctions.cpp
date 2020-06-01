@@ -1,4 +1,6 @@
 #include "vectorFunctions.hpp"
+#include <iostream>
+
 
 std::vector<std::shared_ptr<int>> generate(int count){
     std::vector<std::shared_ptr<int>> newVector(count);
@@ -28,8 +30,5 @@ void sub10(int* const ptr){
 
 void sub10(const std::vector<std::shared_ptr<int>>& vec){
     for(const auto& element : vec)
-    {
-        if(element != nullptr)
-            *element -= 10;
-    }
+        sub10(element.get());
 }
