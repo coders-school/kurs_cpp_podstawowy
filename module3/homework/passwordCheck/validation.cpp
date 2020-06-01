@@ -29,42 +29,39 @@ bool doesPasswordsMatch(const std::string& firstPwd, const std::string& secondPw
     return firstPwd == secondPwd;
 }
 
-ErrorCode checkPasswordRules(const std::string& password){
-
-    if(password.length() < 9){
+ErrorCode checkPasswordRules(const std::string& password) {
+    if (password.length() < 9) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
 
-    if( !std::any_of(password.begin(),password.end(),isdigit) ){
+    if (!std::any_of(password.begin(), password.end(), isdigit)) {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
-    
-    auto isPasswordHaveSpecialCharacter = [](const std::string& pwd){
 
+    auto isPasswordHaveSpecialCharacter = [](const std::string& pwd) {
         std::string specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-        if( !pwd.find(specialCharacters) == std::string::npos ){
+        if (!pwd.find(specialCharacters) == std::string::npos) {
             return false;
         }
 
         return true;
-    }; 
+    };
 
-    if( !isPasswordHaveSpecialCharacter(password) ){
+    if (!isPasswordHaveSpecialCharacter(password)) {
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
     }
 
-    if( !std::any_of(password.begin(),password.end(),isupper) ){
+    if (!std::any_of(password.begin(), password.end(), isupper)) {
         return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
     }
 
     return ErrorCode::Ok;
 }
 
-ErrorCode checkPassword(const std::string& firstPwd, const std::string& secondPwd){
-
-    if( !doesPasswordsMatch(firstPwd,secondPwd) ){
+ErrorCode checkPassword(const std::string& firstPwd, const std::string& secondPwd) {
+    if (!doesPasswordsMatch(firstPwd, secondPwd)) {
         return ErrorCode::PasswordsDoesNotMatch;
     }
-    
+
     return checkPasswordRules(firstPwd);
 }

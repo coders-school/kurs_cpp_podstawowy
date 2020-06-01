@@ -1,7 +1,8 @@
 #pragma once
-#include <iostream>
+
 #include <algorithm>
 #include <array>
+#include <iostream>
 
 enum class ErrorCode {
     Ok,
@@ -19,4 +20,3 @@ bool doesPasswordsMatch(const std::string& firstPwd, const std::string& secondPw
 ErrorCode checkPasswordRules(const std::string& password);
 
 ErrorCode checkPassword(const std::string& firstPwd, const std::string& secondPwd);
-
