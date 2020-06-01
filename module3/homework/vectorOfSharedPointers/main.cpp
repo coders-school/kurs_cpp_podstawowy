@@ -1,7 +1,7 @@
+#include "vectorFunctions.hpp"
+
 #include <iostream>
 #include <string>
-// #include <vector>
-#include "vectorFunctions.hpp"
 
 int main() {
     auto vec = generate(10);
