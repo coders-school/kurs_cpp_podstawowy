@@ -3,7 +3,7 @@
 std::string getErrorMessage(ErrorCode codeToShow) {
     switch (codeToShow) {
     case ErrorCode::Ok:
-        return "Everything is OK";
+        return "OK";
         break;
     case ErrorCode::PasswordNeedsAtLeastNineCharacters:
         return "Password needs at least nine characters";
@@ -27,4 +27,44 @@ std::string getErrorMessage(ErrorCode codeToShow) {
 
 bool doesPasswordsMatch(const std::string& firstPwd, const std::string& secondPwd) {
     return firstPwd == secondPwd;
+}
+
+ErrorCode checkPasswordRules(const std::string& password){
+
+    if(password.length() < 9){
+        return ErrorCode::PasswordNeedsAtLeastNineCharacters;
+    }
+
+    if( !std::any_of(password.begin(),password.end(),isdigit) ){
+        return ErrorCode::PasswordNeedsAtLeastOneNumber;
+    }
+    
+    auto isPasswordHaveSpecialCharacter = [](const std::string& pwd){
+
+        std::string specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+        if( !pwd.find(specialCharacters) == std::string::npos ){
+            return false;
+        }
+
+        return true;
+    }; 
+
+    if( !isPasswordHaveSpecialCharacter(password) ){
+        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
+    }
+
+    if( !std::any_of(password.begin(),password.end(),isupper) ){
+        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+    }
+
+    return ErrorCode::Ok;
+}
+
+ErrorCode checkPassword(const std::string& firstPwd, const std::string& secondPwd){
+
+    if( !doesPasswordsMatch(firstPwd,secondPwd) ){
+        return ErrorCode::PasswordsDoesNotMatch;
+    }
+    
+    return checkPasswordRules(firstPwd);
 }
