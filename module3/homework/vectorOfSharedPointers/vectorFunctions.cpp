@@ -7,7 +7,7 @@
 std::vector<std::shared_ptr<int>> generate(int count) {
     std::vector<std::shared_ptr<int>> result;
 
-    for (int i = 0; i <= count; i++) {
+    for (int i = 0; i < count; i++) {
         result.emplace_back(std::make_shared<int>(i));
     }
 
@@ -29,24 +29,31 @@ struct Add10 {
 
     void operator()(const std::shared_ptr<int>& elem) const {
         auto el = elem.get();
-        el += number;
+        if (!el) {
+            return;
+        }
+        *el += number;
     }
 };
 
 void add10(const std::vector<std::shared_ptr<int>>& vec) {
-    if (vec.empty()) {
-        return;
-    }
     const int numToAdd = 10;
     std::for_each(vec.begin(), vec.end(), Add10(numToAdd));
 }
 
-void sub10(const std::vector<std::shared_ptr<int>>& vec) {
-    if (vec.empty()) {
+void sub10(int* const ptr) {
+    if (!ptr) {
         return;
     }
+    *ptr -= 10;
+}
+
+void sub10(const std::vector<std::shared_ptr<int>>& vec) {
     for (const auto& elem : vec) {
         auto ptr = elem.get();
+        if (!ptr) {
+            continue;
+        }
         sub10(ptr);
     }
 }
