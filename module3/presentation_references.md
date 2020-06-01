@@ -19,7 +19,7 @@ int value = 5;
 int & number = value;
 ```
 
-Powyższy zapis oznacza zmienną `num` typu `int&`, czyli referencję na typ `int`.
+Powyższy zapis oznacza zmienną `number` typu `int&`, czyli referencję na typ `int`.
 <!-- .element: class="fragment fade-in" -->
 
 Nie ma znaczenia, czy referencję dokleimy do typu, czy nazwy zmiennej, ale referencja jest oddzielnym typem, więc sugerujemy nie doklejać jej do nazwy zmiennej.
