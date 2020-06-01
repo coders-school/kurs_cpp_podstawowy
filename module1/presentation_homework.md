@@ -45,7 +45,7 @@ Za dostarczenie każdego zadania przed 24.05.2020 (niedziela) do 23:59 dostanies
 
 ### Pre-work
 
-* Poczytaj dokumentację typu [std::vector](https://en.cppreference.com/w/cpp/container/vector). Poklikaj na różne funkcje i patrz głównie na przykłady użycia na samym dole ston.
+* Poczytaj dokumentację typu [std::vector](https://en.cppreference.com/w/cpp/container/vector). Poklikaj na różne funkcje i patrz głównie na przykłady użycia na samym dole stron.
 * Możesz przyjrzeć się plikom z testami w zadaniach i spróbować dopisać własne przypadki testowe
 
 #### [Zadania w repo](https://github.com/coders-school/kurs_cpp_podstawowy/tree/master/module1/homework)
