@@ -49,3 +49,11 @@ googletest/
 *.exe
 *.out
 *.app
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+#ccls
+.ccls-cache/
