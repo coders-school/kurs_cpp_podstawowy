@@ -26,9 +26,13 @@ void add10(std::vector<std::shared_ptr<int>>& vector) {
 }
 
 void sub10(int* const ptr) {
-    
+    if (ptr) {
+        *ptr -= 10;
+    }
 }
 
 void sub10(std::vector<std::shared_ptr<int>>& vector) {
-    
+    for (const auto& el : vector) {
+        sub10(el.get());
+    }
 }
