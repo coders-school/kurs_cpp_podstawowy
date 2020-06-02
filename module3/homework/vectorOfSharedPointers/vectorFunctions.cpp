@@ -11,7 +11,7 @@ std::vector<std::shared_ptr<int>> generate(int count) {
 
     resultVector.reserve(count);
     for (size_t i = 0; i < count; ++i) {
-        resultVector.push_back(std::make_shared<int>(i));
+        resultVector.emplace_back(std::make_shared<int>(i));
     }
     return resultVector;
 }
@@ -23,7 +23,7 @@ void print(const std::vector<std::shared_ptr<int>>& sharedPointersVector) {
     std::cout << '\n';
 }
 
-void add10(std::vector<std::shared_ptr<int>>& sharedPointersVector) {
+void add10(const std::vector<std::shared_ptr<int>>& sharedPointersVector) {
     for (auto& el : sharedPointersVector) {
         if (el) {
             *el += 10;
@@ -37,7 +37,7 @@ void sub10(int* const element) {
     }
 }
 
-void sub10(std::vector<std::shared_ptr<int>>& sharedPointersVector) {
+void sub10(const std::vector<std::shared_ptr<int>>& sharedPointersVector) {
     for (auto& el : sharedPointersVector) {
         if (el) {
             sub10(el.get());
