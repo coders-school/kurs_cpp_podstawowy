@@ -1,5 +1,6 @@
 #include "validation.hpp"
 
+
 std::string getErrorMessage(const ErrorCode code){
 switch (code)
 {
