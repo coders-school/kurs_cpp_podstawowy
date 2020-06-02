@@ -22,38 +22,24 @@ void print(const std::vector<std::shared_ptr<int>>& vecToPrint) {
     std::cout << '\n';
 }
 
-struct Add10 {
-    int number;
-    Add10(int numToAdd)
-        : number(numToAdd) {}
-
-    void operator()(const std::shared_ptr<int>& elem) const {
-        auto el = elem.get();
-        if (!el) {
-            return;
-        }
-        *el += number;
-    }
-};
-
 void add10(const std::vector<std::shared_ptr<int>>& vec) {
-    const int numToAdd = 10;
-    std::for_each(vec.begin(), vec.end(), Add10(numToAdd));
+    for (const auto& ptr : vec) {
+        if (ptr) {
+            *ptr += 10;
+        }
+    }
 }
 
 void sub10(int* const ptr) {
-    if (!ptr) {
-        return;
+    if (ptr) {
+        *ptr -= 10;
     }
-    *ptr -= 10;
 }
 
 void sub10(const std::vector<std::shared_ptr<int>>& vec) {
     for (const auto& elem : vec) {
-        auto ptr = elem.get();
-        if (!ptr) {
-            continue;
+        if (elem) {
+            sub10(elem.get());
         }
-        sub10(ptr);
     }
 }
