@@ -1,5 +1,6 @@
 #include <iostream>
 #include <array>
+#include <algorithm>
 
 #include "validation.hpp"
 
@@ -28,7 +29,7 @@ std::string getErrorMessage(ErrorCode errorType){
     }
 }
 
-bool doesPasswordsMatch(const std::string& first,const std::string& second)
+bool doesPasswordsMatch(const std::string& first, const std::string& second)
 {
     return first == second;
 }
@@ -39,41 +40,17 @@ ErrorCode checkPasswordRules(const std::string& password)
     if(password.size() < 9)
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
 
-    //checking if string has at least one number, one special character and uppercase letter
-    //default to false
-    bool hasNumber = false;
-    bool hasSpecialCharacter = false;
-    bool hasUppercaseLetter = false;
-
-    //everything in one loop, so the efficiency if better
-    for(size_t i= 0; i < password.size(); i++)
-    {
-        //checking if it has at least one number
-        //add "!hasNumber" statement so it doesn't need to check if it's true
-        if( !hasNumber && password[i] >= '0' && password[i] <= '9' ){
-            hasNumber = true; //bool to true if char on i-index is a number
-        }
-        //if not it is still set to false
-
-        //checking if it has special character
-        if( !hasSpecialCharacter && ( password[i] > ' ' && password[i] < '0' ) ||
-                (password[i] > '9' && password[i] < 'A' ) ) {
-            hasSpecialCharacter = true; //bool to true if char on i-index is a special character
-        }
-
-        //hasSpecialCharacter = (std::any_of(password.begin(), password.end(), [](char c){return c == '!' || c == '@';}));
-        // ^this gonna work but i don't know how to check every special character, i think it's bad to write out all symbols
-
-        if( !hasUppercaseLetter && password[i] > 'A' && password[i] < 'Z' ) {
-            hasUppercaseLetter = true; //bool to true if char on i-index is a number
-        }
-    }
-    if(!hasNumber)
+    if (!std::any_of(password.begin(), password.end(), isdigit)) {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
-    if(!hasSpecialCharacter)
+    }
+
+    if (std::none_of(password.begin(), password.end(), [](char sign) { return isprint(sign) && !isalnum(sign); })) {
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
-    if(!hasUppercaseLetter)
+    }
+
+    if (!std::any_of(password.begin(), password.end(), isupper)) {
         return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+    }
 
     return ErrorCode::Ok;
 }
@@ -86,4 +63,5 @@ ErrorCode checkPassword(const std::string& first,const std::string& second)
     }
     return checkPasswordRules(first);
 }
+
 
