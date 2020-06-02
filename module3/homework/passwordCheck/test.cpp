@@ -4,6 +4,7 @@
 std::string EMPTY_PASSWORD = "";
 std::string PROPER_PASSWORD = "abcABC123!@#";
 std::string TOO_SHORT_PASSWORD = "12345678";
+std::string NINE_CHARACTERS_PROPER_PASSWORD = "abAB12!@#";
 std::string NO_NUMBER_PASSWORD = "abcABCEFG!@#";
 std::string NO_SPECIAL_PASSWORD = "abcABC123123";
 std::string NO_UPPER_PASSWORD = "abcdef123!@#";
@@ -34,6 +35,7 @@ TEST(checkPasswordRulesDetailedTests, returnsErrorCodeForGivenPassword) {
     EXPECT_EQ(checkPasswordRules(EMPTY_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
     EXPECT_EQ(checkPasswordRules(TOO_SHORT_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
     EXPECT_EQ(checkPasswordRules(PROPER_PASSWORD), ErrorCode::Ok);
+    EXPECT_EQ(checkPasswordRules(NINE_CHARACTERS_PROPER_PASSWORD), ErrorCode::Ok);
     EXPECT_EQ(checkPasswordRules(NO_NUMBER_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneNumber);
     EXPECT_EQ(checkPasswordRules(NO_SPECIAL_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
     EXPECT_EQ(checkPasswordRules(NO_UPPER_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter);
