@@ -7,8 +7,8 @@ int NWD(int lhs, int rhs) {
     if (lhs == 0) {
         return rhs;
     }
-    if (lhs == rhs) {
-        return lhs;
+    if (abs(lhs) == abs(rhs)) {
+        return abs(lhs);
     }
     int modulo = lhs > rhs ? abs(lhs % rhs) : abs(rhs % lhs);
     int higher = lhs > rhs ? abs(rhs) : abs(lhs);
@@ -29,6 +29,6 @@ int NWW(int lhs, int rhs) {
     if (abs(lhs) == abs(rhs)) {
         return abs(lhs);
     }
-    int result = abs(lhs * rhs) / (NWD(lhs, rhs));
+    long long result = abs(lhs * rhs) / (NWD(lhs, rhs));
     return result;
 }
