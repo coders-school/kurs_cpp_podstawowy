@@ -1,13 +1,13 @@
 #include "vectorFunctions.hpp"
 
 #include <algorithm>
-#include <functional>
 #include <iostream>
 
 std::vector<std::shared_ptr<int>> generate(int count) {
     std::vector<std::shared_ptr<int>> result;
+    result.reserve(count);
 
-    for (int i = 0; i < count; i++) {
+    for (size_t i = 0; i < count; i++) {
         result.emplace_back(std::make_shared<int>(i));
     }
 
