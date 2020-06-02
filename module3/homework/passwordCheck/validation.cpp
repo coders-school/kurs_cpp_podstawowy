@@ -20,7 +20,7 @@ std::string getErrorMessage(ErrorCode errorToDecode) {
 }
 
 bool doesPasswordsMatch(const std::string& firstPassword, const std::string& secondPassword) {
-    return true;
+    return firstPassword == secondPassword;
 }
 
 ErrorCode checkPasswordRules(const std::string& password) {
