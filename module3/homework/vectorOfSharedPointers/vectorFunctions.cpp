@@ -24,7 +24,7 @@ void print(const std::vector<std::shared_ptr<int>>& sharedPointersVector) {
 }
 
 void add10(const std::vector<std::shared_ptr<int>>& sharedPointersVector) {
-    for (auto& el : sharedPointersVector) {
+    for (const auto& el : sharedPointersVector) {
         if (el) {
             *el += 10;
         }
@@ -38,7 +38,7 @@ void sub10(int* const element) {
 }
 
 void sub10(const std::vector<std::shared_ptr<int>>& sharedPointersVector) {
-    for (auto& el : sharedPointersVector) {
+    for (const auto& el : sharedPointersVector) {
         if (el) {
             sub10(el.get());
         }
