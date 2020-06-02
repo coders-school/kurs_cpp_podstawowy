@@ -5,9 +5,9 @@
 
 
 int NWD(int lhs, int rhs) {
-    int first = std::max(abs(lhs), abs(rhs));
-    int second = std::min(abs(lhs), abs(rhs));
-    while(second > 0){
+    int first = abs(lhs);
+    int second = abs(rhs);
+    while (second > 0){
         int tmp = first % second;
         first = second;
         second = tmp;
@@ -16,7 +16,7 @@ int NWD(int lhs, int rhs) {
 }
 
 int NWW(int lhs, int rhs) {
-    if(lhs == 0 && rhs == 0){
+    if (lhs == 0 && rhs == 0){
         return 0;
     }
     return abs (lhs * rhs) / NWD(lhs, rhs); 
