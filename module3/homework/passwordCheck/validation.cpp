@@ -4,6 +4,10 @@
 #include <cctype>
 #include <random>
 
+namespace {
+unsigned const minimumPasswordLength = 9;
+};
+
 std::string getErrorMessage(ErrorCode errorToDecode) {
     switch (errorToDecode) {
     case ErrorCode::Ok:
@@ -28,7 +32,7 @@ bool doesPasswordsMatch(const std::string& basePassword, const std::string& repe
 }
 
 ErrorCode checkPasswordRules(const std::string& password) {
-    if (password.length() < 9) {
+    if (password.length() < minimumPasswordLength) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
 
