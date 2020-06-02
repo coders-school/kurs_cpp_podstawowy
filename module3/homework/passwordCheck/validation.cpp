@@ -38,7 +38,11 @@ ErrorCode checkPasswordRules(const std::string& password) {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
 
-    if (std::none_of(password.begin(), password.end(), [](char sign) { return isprint(sign) && !isalnum(sign); })) {
+    auto isSpecial = [](char sign) {
+        return isprint(sign) && !isalnum(sign);
+    };
+
+    if (std::none_of(password.begin(), password.end(), isSpecial)) {
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
     }
 
