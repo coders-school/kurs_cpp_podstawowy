@@ -18,7 +18,11 @@ void print(std::vector<std::shared_ptr<int>>& vector) {
 }
 
 void add10(std::vector<std::shared_ptr<int>>& vector) {
-    
+    for (const auto& el : vector) {
+        if (el) {
+            *el += 10;
+        }
+    }
 }
 
 void sub10(int* const ptr) {
