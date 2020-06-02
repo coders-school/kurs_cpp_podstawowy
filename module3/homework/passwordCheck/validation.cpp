@@ -1,5 +1,7 @@
 #include "validation.hpp"
 
+#include <random>
+
 std::string getErrorMessage(ErrorCode errorToDecode) {
     switch (errorToDecode) {
     case ErrorCode::Ok:
@@ -24,7 +26,11 @@ bool doesPasswordsMatch(const std::string& firstPassword, const std::string& sec
 }
 
 ErrorCode checkPasswordRules(const std::string& password) {
-    return ErrorCode::Ok;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distrib(static_cast<int>(ErrorCode::Ok),
+                                            static_cast<int>(ErrorCode::PasswordsDoesNotMatch));
+    return static_cast<ErrorCode>(distrib(gen));
 }
 
 ErrorCode checkPassword(const std::string& firstPassword, const std::string& secondPassword) {
