@@ -1,10 +1,14 @@
 #pragma once
-#include <vector>
 #include <limits>
-#include <algorithm>
+#include <vector>
 
 int maxOfVector(const std::vector<int>& vec) {
-    
-    return *std::max_element(vec.begin(), vec.end());
+    int max = std::numeric_limits<int>::min();
 
+    for (const int element : vec) {
+        if (element > max)
+            max = element;
+    }
+
+    return max;
 }
