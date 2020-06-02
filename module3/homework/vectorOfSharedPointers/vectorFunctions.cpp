@@ -1,6 +1,6 @@
-#include <iostream>
-
 #include "vectorFunctions.hpp"
+
+#include <iostream>
 
 std::vector<std::shared_ptr<int>> generate(int count)
 {

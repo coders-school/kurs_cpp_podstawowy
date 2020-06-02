@@ -1,6 +1,6 @@
-#include <algorithm>
-
 #include "validation.hpp"
+
+#include <algorithm>
 
 std::string getErrorMessage(ErrorCode errorCode)
 {
