@@ -21,18 +21,18 @@ std::string getErrorMessage(ErrorCode errorToDecode) {
     }
 }
 
-bool doesPasswordsMatch(const std::string& firstPassword, const std::string& secondPassword) {
-    return firstPassword == secondPassword;
+bool doesPasswordsMatch(const std::string& basePassword, const std::string& repeatedPassword) {
+    return basePassword == repeatedPassword;
 }
 
 ErrorCode checkPasswordRules(const std::string& password) {
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> distrib(static_cast<int>(ErrorCode::Ok),
-                                            static_cast<int>(ErrorCode::PasswordsDoesNotMatch));
+                                            static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter));
     return static_cast<ErrorCode>(distrib(gen));
 }
 
-ErrorCode checkPassword(const std::string& firstPassword, const std::string& secondPassword) {
+ErrorCode checkPassword(const std::string& basePassword, const std::string& repeatedPassword) {
     return ErrorCode::Ok;
 }
