@@ -48,7 +48,7 @@ void sub10(std::vector<std::shared_ptr<int>> subSPvec){
     for(auto element : subSPvec){
         if(element.get()==nullptr)
             break;
-        *element-=10;
+        sub10(element.get());
     }
 
 }
