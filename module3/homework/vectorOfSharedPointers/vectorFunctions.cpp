@@ -23,10 +23,13 @@ void print(const std::vector<std::shared_ptr<int>>& sharedPointersVector) {
     std::cout << '\n';
 }
 
-void add10(const std::vector<std::shared_ptr<int>>& sharedPointersVector) {
+void add10(std::vector<std::shared_ptr<int>>& sharedPointersVector) {
+    for (auto& el : sharedPointersVector) {
+        *el += 10;
+    }
 }
 
-void sub10(const std::vector<std::shared_ptr<int>>& sharedPointersVector) {
+void sub10(std::vector<std::shared_ptr<int>>& sharedPointersVector) {
 }
 
 void sub10(int* const element) {
