@@ -1,5 +1,7 @@
 #include "validation.hpp"
 
+#include <algorithm>
+#include <cctype>
 #include <random>
 
 std::string getErrorMessage(ErrorCode errorToDecode) {
@@ -26,11 +28,26 @@ bool doesPasswordsMatch(const std::string& basePassword, const std::string& repe
 }
 
 ErrorCode checkPasswordRules(const std::string& password) {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distrib(static_cast<int>(ErrorCode::Ok),
-                                            static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter));
-    return static_cast<ErrorCode>(distrib(gen));
+    if (password.length() < 9) {
+        return ErrorCode::PasswordNeedsAtLeastNineCharacters;
+    }
+
+    if (!std::any_of(std::begin(password), std::end(password),
+                     [](unsigned char c) { return std::isdigit(c); })) {
+        return ErrorCode::PasswordNeedsAtLeastOneNumber;
+    }
+
+    if (!std::any_of(std::begin(password), std::end(password),
+                     [](unsigned char c) { return std::isprint(c) && !std::isalnum(c); })) {
+        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
+    }
+
+    if (!std::any_of(std::begin(password), std::end(password),
+                     [](unsigned char c) { return std::isupper(c); })) {
+        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+    }
+
+    return ErrorCode::Ok;
 }
 
 ErrorCode checkPassword(const std::string& basePassword, const std::string& repeatedPassword) {
