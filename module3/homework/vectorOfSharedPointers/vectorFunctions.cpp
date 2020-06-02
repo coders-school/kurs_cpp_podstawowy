@@ -23,7 +23,7 @@ void add10(const std::vector<std::shared_ptr<int>>& addSPvec){
     
     for(auto element : addSPvec){
         if(!element.get())
-            break;
+            continue;
         *element+=10;
     }
 
