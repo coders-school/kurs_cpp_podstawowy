@@ -2,6 +2,15 @@
 
 std::vector<std::shared_ptr<int>> generate(int count) {
     std::vector<std::shared_ptr<int>> resultVector{};
+
+    if (count < 0) {
+        return resultVector;
+    }
+
+    resultVector.reserve(count);
+    for (size_t i = 0; i < count; ++i) {
+        resultVector.push_back(std::make_shared<int>(i));
+    }
     return resultVector;
 }
 
