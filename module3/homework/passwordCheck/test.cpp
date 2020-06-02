@@ -29,7 +29,7 @@ TEST(checkPasswordRulesTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUp
     EXPECT_LE(checkPasswordRules(TOO_SHORT_PASSWORD), MAX_ALLOWED_ERROR_CODE);
 }
 
-TEST(checkPasswordRulesTests, returnExactErrorMessage) {
+TEST(checkPasswordRulesTests, returnExtractErrorMessage) {
     EXPECT_EQ(checkPasswordRules(PASSWORD_WITHOUT_DIGITS), ErrorCode::PasswordNeedsAtLeastOneNumber);
     EXPECT_EQ(checkPasswordRules(TOO_SHORT_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
     EXPECT_EQ(checkPasswordRules(PASSWORD_WITHOUT_SPECIAL_CHAR), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
