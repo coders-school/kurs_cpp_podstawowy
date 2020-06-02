@@ -18,3 +18,15 @@ std::string getErrorMessage(ErrorCode errorToDecode) {
         return "Unknown error";
     }
 }
+
+bool doesPasswordsMatch(const std::string& firstPassword, const std::string& secondPassword) {
+    return true;
+}
+
+ErrorCode checkPasswordRules(const std::string& password) {
+    return ErrorCode::Ok;
+}
+
+ErrorCode checkPassword(const std::string& firstPassword, const std::string& secondPassword) {
+    return ErrorCode::Ok;
+}
