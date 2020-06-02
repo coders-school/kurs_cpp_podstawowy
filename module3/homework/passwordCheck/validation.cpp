@@ -1,5 +1,7 @@
 #include "validation.hpp"
 
+#include <algorithm>
+
 std::string getErrorMessage(ErrorCode codeToShow) {
     switch (codeToShow) {
     case ErrorCode::Ok:
