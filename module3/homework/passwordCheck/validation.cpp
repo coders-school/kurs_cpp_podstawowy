@@ -1,7 +1,7 @@
 #include <iostream>
 #include <array>
 
-#include "validation.h"
+#include "validation.hpp"
 
 std::string getErrorMessage(ErrorCode errorType){
     switch(errorType){
@@ -28,12 +28,12 @@ std::string getErrorMessage(ErrorCode errorType){
     }
 }
 
-bool doesPasswordsMatch(std::string& first, std::string& second)
+bool doesPasswordsMatch(const std::string& first,const std::string& second)
 {
     return first == second;
 }
 
-ErrorCode checkPasswordRules(std::string& password)
+ErrorCode checkPasswordRules(const std::string& password)
 {
     //checking if size in at least 9
     if(password.size() < 9)
@@ -78,7 +78,7 @@ ErrorCode checkPasswordRules(std::string& password)
     return ErrorCode::Ok;
 }
 
-ErrorCode checkPassword(std::string& first, std::string& second)
+ErrorCode checkPassword(const std::string& first,const std::string& second)
 {
     if(!doesPasswordsMatch(first, second))
     {
@@ -87,15 +87,3 @@ ErrorCode checkPassword(std::string& first, std::string& second)
     return checkPasswordRules(first);
 }
 
-int main() {
-    std::string password;
-    std::string repeatedPassword;
-    std::cout << "Set new password: ";
-    std::cin >> password;
-    std::cout << "Repeat password: ";
-    std::cin >> repeatedPassword;
-    auto result = checkPassword(password, repeatedPassword);
-    std::cout << getErrorMessage(result) << '\n';
-
-    return 0;
-}

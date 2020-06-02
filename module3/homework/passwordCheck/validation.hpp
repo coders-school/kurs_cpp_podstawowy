@@ -12,7 +12,7 @@ enum class ErrorCode
 
 //Functions
 std::string getErrorMessage(ErrorCode errorType);
-bool doesPasswordsMatch(std::string& first, std::string& second);
-ErrorCode checkPasswordRules(std::string& password);
-ErrorCode checkPassword(std::string& first, std::string& second);
+bool doesPasswordsMatch(const std::string& first,const std::string& second);
+ErrorCode checkPasswordRules(const std::string& password);
+ErrorCode checkPassword(const std::string& first,const std::string& second);
 
