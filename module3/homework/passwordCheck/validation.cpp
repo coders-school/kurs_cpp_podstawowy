@@ -21,11 +21,11 @@ std::string getErrorMessage(ErrorCode code) {
     }
 }
 
-bool doesPasswordsMatch(std::string password1, std::string password2) {
+bool doesPasswordsMatch(std::string& password1, std::string& password2) {
     return password1 == password2;
 }
 
-ErrorCode checkPasswordRules(std::string password) {
+ErrorCode checkPasswordRules(std::string& password) {
     if (password.size() < 9)
         return PasswordNeedsAtLeastNineCharacters;
     if (std::none_of(password.begin(), password.end(), [&](char a) { return isdigit(a) }))
@@ -35,4 +35,11 @@ ErrorCode checkPasswordRules(std::string password) {
     if (std::none_of(password.begin(), password.end(), [&](char a) { return ispunct(a) }))
         return PasswordNeedsAtLeastOneSpecialCharacter;
     return Ok;
+}
+
+ErrorCode checkPassword(std::string& password1, std::string& password2) {
+    if (!doesPasswordsMatch)
+        return PasswordsDoesNotMatch;
+
+    return checkPasswordRules(password1);
 }

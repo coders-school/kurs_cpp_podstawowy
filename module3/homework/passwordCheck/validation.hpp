@@ -13,6 +13,8 @@ enum ErrorCode {
 std::string
 getErrorMessage(ErrorCode code);
 
-bool doesPasswordsMatch(std::string password1, std::string password2);
+bool doesPasswordsMatch(std::string&, std::string&);
 
-ErrorCode checkPasswordRules(std::string password);
+ErrorCode checkPasswordRules(std::string&);
+
+ErrorCode checkPassword(std::string&, std::string&);
