@@ -10,14 +10,14 @@ std::vector<std::shared_ptr<int>> generate(int count) {
 }
 
 void print(const std::vector<std::shared_ptr<int>>& vec) {
-    for (const std::shared_ptr<int> ptr : vec) {
+    for (const std::shared_ptr<int>& ptr : vec) {
         std::cout << *ptr << "\t";
     }
     std::cout << '\n';
 }
 
 void add10(const std::vector<std::shared_ptr<int>>& vec) {
-    for (const std::shared_ptr<int> ptr : vec) {
+    for (const std::shared_ptr<int>& ptr : vec) {
         if (ptr) {
             *ptr += 10;
         }
@@ -31,7 +31,7 @@ void sub10(int* const ptr) {
 }
 
 void sub10(const std::vector<std::shared_ptr<int>>& vec) {
-    for (std::shared_ptr<int> ptr : vec) {
+    for (const std::shared_ptr<int>& ptr : vec) {
         if (ptr) {
             sub10(ptr.get());
         }
