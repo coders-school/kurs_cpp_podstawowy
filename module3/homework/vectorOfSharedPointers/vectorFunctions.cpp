@@ -18,7 +18,7 @@ void print(const std::vector<std::shared_ptr<int>>& v) {
 }
 
 void add10(const std::vector<std::shared_ptr<int>>& v) {
-    std::for_each(begin(v), end(v), [&](std::shared_ptr<int>& s){
+    std::for_each(begin(v), end(v), [&](const std::shared_ptr<int>& s){
         if (s)
             *s += 10; });
 }
@@ -29,7 +29,7 @@ void sub10(int* const ptr) {
 }
 
 void sub10(const std::vector<std::shared_ptr<int>>& v) {
-    std::for_each(begin(v), end(v), [&](std::shared_ptr<int>& s){
+    std::for_each(begin(v), end(v), [&](const std::shared_ptr<int>& s){
         if (s)
             sub10(s.get());
     });
