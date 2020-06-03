@@ -1,11 +1,12 @@
 #pragma once
-#include <vector>
 #include <limits>
+#include <vector>
 
-int maxOfVector(const std::vector<int>& vec) {
+
+int maxOfVector (const std::vector<int>& vec) {
     int max = std::numeric_limits<int>::min();
     for (const auto& element : vec) {
-        if (element > max){
+        if (element > max) {
             max = element;
         }
     }
