@@ -1,28 +1,29 @@
+#include "validation.hpp"
+
 #include <algorithm>
 #include <array>
 #include <cctype>
 #include <iostream>
-#include "validation.hpp"
 
-std::string getErrorMessage(ErrorCode const & code) {
+std::string getErrorMessage(ErrorCode code) {
 
-    switch (static_cast<int>(code)) {
-    case 0:
+    switch (code) {
+    case ErrorCode::Ok:
         return "OK";
         break;
-    case 1:
+    case ErrorCode::PasswordNeedsAtLeastNineCharacters:
         return "Error, password should consist of at least nine characters!";
         break;
-    case 2:
+    case ErrorCode::PasswordNeedsAtLeastOneNumber:
         return "Error, password should consist of at least 1 number!";
         break;
-    case 3:
+    case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
         return "Error, password should consist of at least 1 special character!";
         break;
-    case 4:
+    case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
         return "Error, password should consist of at least 1 uppercase letter!";
         break;
-    case 5:
+    case ErrorCode::PasswordsDoesNotMatch:
         return "Error, passwords do not match!";
         break;
     }
