@@ -2,10 +2,10 @@
 #include <iostream>
 #include <vector>
 
-int addEven(const std::vector<int>& numbers) {
+int addEven (const std::vector<int>& numbers) {
     int sum = 0;
     for (const auto& element : numbers) {
-        if (element % 2 == 0){
+        if (element % 2 == 0) {
             sum += element;
         }
     }
