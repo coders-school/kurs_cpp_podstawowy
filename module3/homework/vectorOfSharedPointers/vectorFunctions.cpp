@@ -16,7 +16,7 @@ void print(const std::vector<std::shared_ptr<int>>& vec) {
     std::cout << '\n';
 }
 
-void add10(std::vector<std::shared_ptr<int>>& vec) {
+void add10(const std::vector<std::shared_ptr<int>>& vec) {
     for (const std::shared_ptr<int> ptr : vec) {
         if (ptr) {
             *ptr += 10;
@@ -30,7 +30,7 @@ void sub10(int* const ptr) {
     }
 }
 
-void sub10(std::vector<std::shared_ptr<int>>& vec) {
+void sub10(const std::vector<std::shared_ptr<int>>& vec) {
     for (std::shared_ptr<int> ptr : vec) {
         if (ptr) {
             sub10(ptr.get());
