@@ -30,7 +30,6 @@ std::string getErrorMessage(ErrorCode errorNumber) {
         }
         default: {
             return "Unknown error";
-            break;
         }
     }
 }
