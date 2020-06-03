@@ -1,4 +1,5 @@
 #pragma once
+
 #include <string>
 
 enum class ErrorCode
@@ -11,8 +12,6 @@ enum class ErrorCode
     PasswordsDoesNotMatch
 };
 
-// https://www.ipvoid.com/password-special-characters/
-// https://owasp.org/www-community/password-special-characters
 // This line below indicates which characters are allowed and which are not
 const std::string specialCharacters = " !\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~";
 constexpr int minPasswordLength = 9;
@@ -21,3 +20,4 @@ std::string getErrorMessage(ErrorCode errorCode);
 bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword);
 ErrorCode checkPasswordRules(const std::string& password);
 ErrorCode checkPassword(const std::string& password, const std::string& repeatedPassword);
+

@@ -51,3 +51,4 @@ void sub10(const std::vector<std::shared_ptr<int>>& vec)
         }
     }
 }
+

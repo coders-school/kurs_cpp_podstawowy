@@ -46,3 +46,4 @@ TEST(getErrorMessageTests, returnsErrorCodeAsString) {
     EXPECT_EQ(getErrorMessage(ErrorCode::PasswordsDoesNotMatch), "Password does not match.");
     // Add other tests for getErrorMessage if you wish
 }
+
