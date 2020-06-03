@@ -10,6 +10,9 @@ enum ErrorCode {
     PasswordsDoesNotMatch
 }
 
-std::string getErrorMessage(ErrorCode);
+std::string
+getErrorMessage(ErrorCode code);
 
-bool doesPasswordsMatch(std::string, std::string);
+bool doesPasswordsMatch(std::string password1, std::string password2);
+
+ErrorCode checkPasswordRules(std::string password);
