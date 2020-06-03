@@ -1,5 +1,6 @@
 // TODO: I'm empty :) Put enum and function headers here.
 // Don't forget the header guard
+#include <string>
 
 enum ErrorCode {
     Ok,
@@ -8,10 +9,9 @@ enum ErrorCode {
     PasswordNeedsAtLeastOneSpecialCharacter,
     PasswordNeedsAtLeastOneUppercaseLetter,
     PasswordsDoesNotMatch
-}
+};
 
-std::string
-getErrorMessage(ErrorCode code);
+std::string getErrorMessage(ErrorCode code);
 
 bool doesPasswordsMatch(std::string&, std::string&);
 
