@@ -17,3 +17,7 @@ std::string getErrorMessage(ErrorCode code) {
         return "Password does not match";
     }
 }
+
+bool doesPasswordsMatch(std::string password1, std::string password2) {
+    return password1 == password2;
+}
