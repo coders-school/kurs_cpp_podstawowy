@@ -34,22 +34,20 @@ ErrorCode checkPasswordRules(const std::string& password)
     {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
-    else if (!std::any_of(password.begin(), password.end(), [&](char letter){ return isdigit(letter); }))
+    else if (!std::any_of(password.begin(), password.end(), [](char letter){ return isdigit(letter); }))
     {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
-    else if (!std::any_of(password.begin(), password.end(), [&](char letter){ return ispunct(letter); }))
+    else if (!std::any_of(password.begin(), password.end(), [](char letter){ return ispunct(letter); }))
     {
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
     }
-    else if (!std::any_of(password.begin(), password.end(), [&](char letter){ return isupper(letter); }))
+    else if (!std::any_of(password.begin(), password.end(), [](char letter){ return isupper(letter); }))
     {
         return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
     }
-    else 
-    {
-        return ErrorCode::Ok;
-    }
+    
+    return ErrorCode::Ok;
 }
 
 ErrorCode checkPassword(const std::string& firstPass, const std::string& secondPass)
@@ -58,8 +56,6 @@ ErrorCode checkPassword(const std::string& firstPass, const std::string& secondP
     {
         return checkPasswordRules(firstPass);
     }
-    else
-    {
-        return ErrorCode::PasswordsDoesNotMatch;
-    }
+    
+    return ErrorCode::PasswordsDoesNotMatch;
 }
