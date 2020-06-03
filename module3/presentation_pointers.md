@@ -229,8 +229,8 @@ void ptr(int* a) ( *a += 2; )
 
 void example() {
     int c = 10;
-    int& r = a;
-    int* p = &a;  // typically int* p = new int{10};
+    int& r = c;
+    int* p = &c;  // typically int* p = new int{10};
     copy(c);
     copy(r);
     copy(*p);
