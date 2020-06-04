@@ -1,99 +1,54 @@
 #include "validation.hpp"
-
 #include <algorithm>
-#include <ctime>
+#include <numeric>
 
-
-std::string getErrorMessage(ErrorCode e) {
-
-    std::string errMsg = "";
-
-    switch (e) {
-
-        case ErrorCode::Ok: {
-
-            errMsg = "OK";
-            break;
-        }
-
-        case ErrorCode::PasswordNeedsAtLeastNineCharacters: {
-
-            errMsg = "PasswordNeedsAtLeastNineCharacters";
-            break;
-        }
-
-        case ErrorCode::PasswordNeedsAtLeastOneNumber: {
-
-            errMsg = "PasswordNeedsAtLeastOneNumber";
-            break;
-        }
-
-        case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter: {
-
-            errMsg = "PasswordNeedsAtLeastOneSpecialCharacter";
-            break;
-        }
-
-        case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter: {
-
-            errMsg = "PasswordNeedsAtLeastOneUppercaseLetter";
-            break;
-        }
-
-        case ErrorCode::PasswordsDoesNotMatch: {
-
-            errMsg = "PasswordsDoesNotMatch";
-        }
-
+std::string getErrorMessage(ErrorCode error){
+    switch(static_cast<int>(error)){
+      case static_cast<int>(ErrorCode::Ok):
+         return "OK";
+      case static_cast<int>(ErrorCode::PasswordNeedsAtLeastNineCharacters):
+         return "Error! Password need at least 9 characters !";
+      case static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneNumber):
+         return "Error! Password need at least 1 number !";
+      case static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter):
+         return "Error! Password need at least 1 special char !";
+      case static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter):
+         return "Error! Password need at least 1 Uppercase Letter !";
+      case static_cast<int>(ErrorCode::PasswordsDoesNotMatch):
+         return "Password does not match !!!";
+      default: 
+         return "Unknown Error !";
     }
-
-    return errMsg;
 }
 
+bool doesPasswordsMatch(const std::string& first, const std::string& second){
 
-
-bool doesPasswordsMatch(const std::string&pass, const std::string& repPass) {
-
-    return pass == repPass;
+    return first == second;
 }
 
+ErrorCode checkPasswordRules(const std::string& password){
 
-
-ErrorCode checkPasswordRules(const std::string& pass) {
-
-    if (pass.size() < 9) {
-
+    if(password.size() < 9){
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
-
-    if (std::any_of(pass.cbegin(), pass.cend(), [](const char& c){if (c > 47 && c < 58) {return true;} else {return false;};})) {
-
+    if(std::none_of(password.begin(), password.end(), isdigit)){
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
-
-    if (std::any_of(pass.cbegin(), pass.cend(), [](const char& c){if ((c > 32 && c < 48) && (c > 57 && c < 65)) {return true;} else {return false;};})) {
-
+    if(std::none_of(password.begin(), password.end(), [](int letter){return (isalpha(letter) == 0) && (isdigit(letter) == 0);})){
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
     }
-
-    if (std::any_of(pass.cbegin(), pass.cend(), [](const char& c){if (c > 64 && c < 91) {return true;} else {return false;};})) {
-
+    if(std::none_of(password.begin(), password.end(), isupper)){
         return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
     }
 
-    return ErrorCode::Ok;
+return ErrorCode::Ok;
 }
 
+ErrorCode checkPassword(const std::string& first, const std::string& second){
 
-
-ErrorCode checkPassword(const std::string& pass, const std::string& repPass) {
-
-    if (doesPasswordsMatch(pass, repPass) == false) {
-
-        return ErrorCode::PasswordsDoesNotMatch;
+    if(doesPasswordsMatch(first, second)){
+        return checkPasswordRules(first);
     }
 
-    return checkPasswordRules(pass);
+    return ErrorCode::PasswordsDoesNotMatch;
 }
-
-
