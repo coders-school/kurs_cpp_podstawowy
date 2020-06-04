@@ -2,13 +2,11 @@
 #include <vector>
 #include <limits>
 
-int maxOfVector(const std::vector<int>& vec)
-{
-    int max = vec.front();
+int maxOfVector(const std::vector<int>& vec) {
+    auto max =  std::numeric_limits<int>::min();;
 
-    for (size_t i = 1; i < vec.size(); i++)
-    {
-        vec[i] > max ? max = vec[i] : 0;
+    for (const auto& el : vec) {
+        el > max ? max = el : 0;
     }
     return max;
 }
