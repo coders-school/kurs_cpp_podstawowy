@@ -22,11 +22,11 @@ std::string getErrorMessage(ErrorCode code) {
 ErrorCode checkPasswordRules(std::string password) {
     if (password.length() < 9) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
-    } else if (!std::any_of(password.begin(), password.end(), ::isdigit)) {
+    } else if (std::none_of(password.begin(), password.end(), ::isdigit)) {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     } else if (std::all_of(password.begin(), password.end(), ::isalnum)) {
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
-    }else if (!std::any_of(password.begin(), password.end(), ::isupper)) {
+    }else if (std::none_of(password.begin(), password.end(), ::isupper)) {
         return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
     } else {
         return ErrorCode::Ok;
