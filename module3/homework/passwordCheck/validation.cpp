@@ -8,18 +8,25 @@ bool doesPasswordsMatch(const std::string& password, const std::string& repetedP
 }
 
 std::string getErrorMessage(ErrorCode code) {
-    switch(static_cast<int>(code)) {
-        case 0: return "OK";
-        case 1: return "Password is too short";
-        case 2: return "Password need to contain at least one digit";
-        case 3: return "Password need to contain at least one special character (like: [#],[%],[,],[$],[/]";
-        case 4: return "Password need to contain at least one uppercase letter";
-        case 5: return "Passwords do not match";
-        default: return "I do not know that kind of error. I am sorry...";
+    switch(code) {
+        case ErrorCode::Ok: 
+            return "OK";
+        case ErrorCode::PasswordNeedsAtLeastNineCharacters: 
+            return "Password is too short";
+        case ErrorCode::PasswordNeedsAtLeastOneNumber: 
+            return "Password need to contain at least one digit";
+        case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter: 
+            return "Password need to contain at least one special character (like: [#],[%],[,],[$],[/]";
+        case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter: 
+            return "Password need to contain at least one uppercase letter";
+        case ErrorCode::PasswordsDoesNotMatch: 
+            return "Passwords do not match";
+        default: 
+            return "I do not know that kind of error. I am sorry...";
     }
 }
 
-ErrorCode checkPasswordRules(std::string password) {
+ErrorCode checkPasswordRules(const std::string& password) {
     if (password.length() < 9) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     } else if (std::none_of(password.begin(), password.end(), ::isdigit)) {
@@ -33,7 +40,7 @@ ErrorCode checkPasswordRules(std::string password) {
     }
 }
 
-ErrorCode checkPassword(std::string password, std::string repetedPassword) {
+ErrorCode checkPassword(const std::string& password, const std::string& repetedPassword) {
     if(!doesPasswordsMatch(password, repetedPassword)) {
         return ErrorCode::PasswordsDoesNotMatch;
     } else {
