@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <iostream>
 
-bool doesPasswordsMatch(std::string password, std::string repetedPassword) {
+bool doesPasswordsMatch(const std::string& password, const std::string& repetedPassword) {
     return password == repetedPassword;
 }
 
