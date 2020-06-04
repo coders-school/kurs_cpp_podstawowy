@@ -1,38 +1,38 @@
 #include "validation.hpp"
-// TODO: Put implementations here
-
+#include <algorithm>
+#include <numeric>
 
 std::string getErrorMessage(ErrorCode error){
     switch(static_cast<int>(error)){
-      case 0:
+      case static_cast<int>(ErrorCode::Ok):
          return "OK";
          break;
-      case 1:
+      case static_cast<int>(ErrorCode::PasswordNeedsAtLeastNineCharacters):
          return "Wrong ! Password need at least 9 characters !";
          break;
-      case 2:
+      case static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneNumber):
          return "Wrong ! Password need at least 1 number !";
          break;
-      case 3:
+      case static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter):
          return "Wrong ! Password need at least 1 special char !";
          break;
-      case 4:
+      case static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter):
          return "Wrong ! Password need at least 1 Uppercase Letter !";
          break;
-      case 5:
+      case static_cast<int>(ErrorCode::PasswordsDoesNotMatch):
          return "Password does not match !!!";
          break;
+      default: 
+         return "Unknown Error !";
     }
-
-return "";
 }
 
-bool doesPasswordsMatch(std::string first, std::string second){
+bool doesPasswordsMatch(const std::string& first, const std::string& second){
 
-    return first == second ? true : false;
+    return first == second;
 }
 
-ErrorCode checkPasswordRules(std::string password){
+ErrorCode checkPasswordRules(const std::string& password){
 
     if(password.size() < 9)
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
@@ -52,14 +52,11 @@ ErrorCode checkPasswordRules(std::string password){
 return ErrorCode::Ok;
 }
 
-ErrorCode checkPassword(std::string first, std::string second){
+ErrorCode checkPassword(const std::string& first, const std::string& second){
 
     if(doesPasswordsMatch(first, second)){
         return checkPasswordRules(first);
     }
-    else{
-        return ErrorCode::PasswordsDoesNotMatch;
-    }
+
+    return ErrorCode::PasswordsDoesNotMatch;
 }
-
-
