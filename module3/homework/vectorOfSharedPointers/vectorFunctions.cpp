@@ -19,3 +19,19 @@ std::vector<std::shared_ptr<int>> generate(int count){
     }
     return result;
 }
+
+void sub10(std::vector<std::shared_ptr<int>> &vec){
+    for(const auto & el: vec){
+        if(el){
+            sub10(el.get());
+        }
+    }
+}
+
+void add10(std::vector<std::shared_ptr<int>> &vec){
+    for(const auto & el : vec){
+        if(el){
+            *el += 10;
+        }
+    }
+}
