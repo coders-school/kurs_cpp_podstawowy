@@ -4,8 +4,8 @@
 std::string EMPTY_PASSWORD = "";
 std::string PROPER_PASSWORD = "abcABC123!@#";
 std::string TOO_SHORT_PASSWORD = "12345678";
-auto MIN_ALLOWED_ERROR_CODE = 0;
-auto MAX_ALLOWED_ERROR_CODE = 5;
+auto MIN_ALLOWED_ERROR_CODE = ErrorCode::Ok;
+auto MAX_ALLOWED_ERROR_CODE = ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
 
 TEST(DoesPasswordsMatchTests, returnsTrueForIdenticalPasswords) {
     EXPECT_TRUE(doesPasswordsMatch(EMPTY_PASSWORD, EMPTY_PASSWORD));
@@ -32,9 +32,9 @@ TEST(checkPasswordTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUpperca
 }
 
 TEST(checkPasswordTests, returnsPasswordsDoesNotMatchForDifferentPasswords) {
-    EXPECT_EQ(checkPassword(PROPER_PASSWORD, EMPTY_PASSWORD), 4);  // equal ==
-    EXPECT_EQ(checkPassword(EMPTY_PASSWORD, PROPER_PASSWORD), 4);
-    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, PROPER_PASSWORD), 4);
+    EXPECT_EQ(checkPassword(PROPER_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordsDoesNotMatch);  // equal ==
+    EXPECT_EQ(checkPassword(EMPTY_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
+    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
 }
 
 TEST(getErrorMessageTests, returnsErrorCodeAsString) {
