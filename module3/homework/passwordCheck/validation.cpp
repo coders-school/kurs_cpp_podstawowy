@@ -7,7 +7,6 @@ std::string getErrorMessage(const ErrorCode code) {
 
     case ErrorCode::PasswordNeedsAtLeastNineCharacters:
         return "Password is too short, needs at least 9 characters";
-
     case ErrorCode::PasswordNeedsAtLeastOneNumber:
         return "Password needs at least one number";
 
@@ -37,7 +36,7 @@ ErrorCode checkPassword(const std::string& firstPassword, const std::string& sec
     }
 }
 ErrorCode checkPasswordRules(const std::string& password) {
-    if (password.length() < 9) {
+    if (password.length() < charAtLeast) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
     if (std::none_of(password.begin(), password.end(), ::isdigit)) {

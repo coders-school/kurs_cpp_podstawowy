@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+const int charAtLeast = 9;
+
 enum class ErrorCode {
 
     Ok,
