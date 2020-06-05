@@ -17,17 +17,20 @@ void print(const std::vector<std::shared_ptr<int>>& vec) {
 }
 void add10(std::vector<std::shared_ptr<int>>& vec) {
     for (auto& el : vec) {
-        if (el)
+        if (el) {
             *el += 10;
+        }
     }
 }
 void sub10(std::vector<std::shared_ptr<int>>& vec) {
     for (const auto& el : vec) {
-        if (el)
+        if (el) {
             sub10(el.get());
+        }
     }
 }
 void sub10(int* const el) {
-    if (el)
+    if (el) {
         *el -= 10;
+    }
 }
