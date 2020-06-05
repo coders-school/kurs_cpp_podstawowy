@@ -4,18 +4,18 @@
 #include <numeric>
 
 std::string getErrorMessage(ErrorCode error){
-    switch(static_cast<int>(error)){
-      case static_cast<int>(ErrorCode::Ok):
+    switch(error){
+      case ErrorCode::Ok:
          return "OK";
-      case static_cast<int>(ErrorCode::PasswordNeedsAtLeastNineCharacters):
+      case ErrorCode::PasswordNeedsAtLeastNineCharacters:
          return "Error! Password need at least 9 characters !";
-      case static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneNumber):
+      case ErrorCode::PasswordNeedsAtLeastOneNumber:
          return "Error! Password need at least 1 number !";
-      case static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter):
+      case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
          return "Error! Password need at least 1 special char !";
-      case static_cast<int>(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter):
+      case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
          return "Error! Password need at least 1 Uppercase Letter !";
-      case static_cast<int>(ErrorCode::PasswordsDoesNotMatch):
+      case ErrorCode::PasswordsDoesNotMatch:
          return "Password does not match !!!";
       default:
          return "Unknown Error !";
