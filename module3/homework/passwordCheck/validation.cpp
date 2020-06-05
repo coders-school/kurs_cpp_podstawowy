@@ -20,11 +20,11 @@ std::string getErrorMessage(ErrorCode code) {
     }
 }
 
-bool doesPasswordsMatch(std::string& password1, std::string& password2) {
+bool doesPasswordsMatch(const std::string& password1, const std::string& password2) {
     return password1 == password2;
 }
 
-ErrorCode checkPasswordRules(std::string& password) {
+ErrorCode checkPasswordRules(const std::string& password) {
     if (password.size() < 9)
         return PasswordNeedsAtLeastNineCharacters;
     if (std::none_of(password.begin(), password.end(), [&](char a) { return isdigit(a); }))
@@ -36,7 +36,7 @@ ErrorCode checkPasswordRules(std::string& password) {
     return Ok;
 }
 
-ErrorCode checkPassword(std::string& password1, std::string& password2) {
+ErrorCode checkPassword(const std::string& password1, const std::string& password2) {
     if (!doesPasswordsMatch(password1, password2))
         return PasswordsDoesNotMatch;
 
