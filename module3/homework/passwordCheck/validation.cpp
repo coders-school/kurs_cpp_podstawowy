@@ -1,30 +1,27 @@
 #include "validation.hpp"
 
-#include <iostream>
-
 std::string getErrorMessage(const ErrorCode code) {
     switch (code) {
     case ErrorCode::Ok:
         return "Every think is ok, thanks bye";
-        break;
+
     case ErrorCode::PasswordNeedsAtLeastNineCharacters:
         return "Password is too short, needs at least 9 characters";
-        break;
+
     case ErrorCode::PasswordNeedsAtLeastOneNumber:
         return "Password needs at least one number";
-        break;
+
     case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
         return "Password needs at least one special character";
-        break;
+
     case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
         return "Password needs at least one uppercase letter";
-        break;
+
     case ErrorCode::PasswordsDoesNotMatch:
         return "Passwords doesnt match";
-        break;
+
     default:
         return "unknown error, better contact the service";
-        break;
     }
 }
 
