@@ -2,7 +2,8 @@
 #include <string>
 #include "vectorFunctions.hpp"
 
-int main() {
+int main()
+{
     auto vec = generate(10);
     print(vec);
     add10(vec);
