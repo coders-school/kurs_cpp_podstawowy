@@ -16,7 +16,7 @@ void print(const std::vector<std::shared_ptr<int>>& vec) {
     std::cout << "}\n";
 }
 void add10(std::vector<std::shared_ptr<int>>& vec) {
-    for (auto& el : vec) {
+    for (const auto& el : vec) {
         if (el) {
             *el += 10;
         }
