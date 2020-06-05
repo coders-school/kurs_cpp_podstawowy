@@ -1,10 +1,9 @@
 #pragma once
 
-#include <string>
 #include <algorithm>
-#include <map>
+#include <string>
 
-enum class ErrorCode{
+enum class ErrorCode {
 
     Ok,
     PasswordNeedsAtLeastNineCharacters,
@@ -13,7 +12,6 @@ enum class ErrorCode{
     PasswordNeedsAtLeastOneUppercaseLetter,
     PasswordsDoesNotMatch,
 };
-
 
 std::string getErrorMessage(const ErrorCode code);
 bool doesPasswordsMatch(const std::string& firstPassword, const std::string& secondPassword);
