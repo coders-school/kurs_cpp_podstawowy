@@ -1,5 +1,4 @@
 #include<string>
-
 enum class ErrorCode 
 {
     Ok = 0,
@@ -12,4 +11,5 @@ enum class ErrorCode
 
 bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword);
 std::string getErrorMessage(ErrorCode code);
-ErrorCode checkPasswordRules(std::string& password);
+ErrorCode checkPasswordRules(const std::string& password);
+ErrorCode checkPassword(const std::string& firstPassword, const std::string& secondPassword);
