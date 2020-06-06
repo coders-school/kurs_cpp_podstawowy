@@ -1,6 +1,5 @@
-#include<string>
-enum class ErrorCode 
-{
+#include <string>
+enum class ErrorCode {
     Ok = 0,
     PasswordNeedsAtLeastNineCharacters = 1,
     PasswordNeedsAtLeastOneNumber = 2,
