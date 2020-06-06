@@ -17,15 +17,20 @@ std::string getErrorMessage(ErrorCode error){
     return "Ok";
 }
 
+bool doesPasswordsMatch(std::string input,std::string password){
+    return false;
+}
+
 std::string checkPasswordRules(const std::string& password){
-    srand (time(NULL));
-    int random = rand() % 6;
-    return getErrorMessage(ErrorCode(random));
+   srand (time(NULL));
+   int random = rand() % 6;
+   return getErrorMessage(ErrorCode(random));
 }
 
 std::string checkPassword(std::string input,std::string password){
-    if(input.compare(password) != 0){
+    if (!doesPasswordsMatch(input,password)) {
         return getErrorMessage(ErrorCode::PasswordsDoesNotMatch);
     }
     return checkPasswordRules(input);
 }
+
