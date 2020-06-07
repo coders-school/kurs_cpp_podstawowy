@@ -27,29 +27,29 @@ TEST(DoesPasswordsMatchTests, returnsFalseForDifferentPasswords) {
 }
 
 TEST(checkPasswordRulesTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUppercaseLetter) {
-    EXPECT_FALSE(checkPasswordRules(EMPTY_PASSWORD), ErrorCode::Ok);
-    EXPECT_TRUE(checkPasswordRules(EMPTY_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
-    EXPECT_FALSE(checkPasswordRules(TOO_SHORT_PASSWORD), ErrorCode::Ok);
-    EXPECT_TRUE(checkPasswordRules(TOO_SHORT_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
-    EXPECT_FALSE(checkPasswordRules(NO_NUMBER_PASSWORD), ErrorCode::Ok);
-    EXPECT_TRUE(checkPasswordRules(NO_NUMBER_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneNumber);
-    EXPECT_FALSE(checkPasswordRules(NO_SPECIAL_CHAR_PASSWORD), ErrorCode::Ok);
-    EXPECT_TRUE(checkPasswordRules(NO_SPECIAL_CHAR_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
-    EXPECT_FALSE(checkPasswordRules(SPACE_IS_NOT_SPECIAL), ErrorCode::Ok);
-    EXPECT_TRUE(checkPasswordRules(SPACE_IS_NOT_SPECIAL), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
-    EXPECT_FALSE(checkPasswordRules(NO_UPPERCASE_PASSWORD, ErrorCode::Ok);
-    EXPECT_TRUE(checkPasswordRules(NO_UPPERCASE_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter);
-    EXPECT_TRUE(checkPasswordRules(PROPER_PASSWORD), ErrorCode::Ok);
+    EXPECT_NE(checkPasswordRules(EMPTY_PASSWORD), ErrorCode::Ok);
+    EXPECT_EQ(checkPasswordRules(EMPTY_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
+    EXPECT_NE(checkPasswordRules(TOO_SHORT_PASSWORD), ErrorCode::Ok);
+    EXPECT_EQ(checkPasswordRules(TOO_SHORT_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
+    EXPECT_NE(checkPasswordRules(NO_NUMBER_PASSWORD), ErrorCode::Ok);
+    EXPECT_EQ(checkPasswordRules(NO_NUMBER_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneNumber);
+    EXPECT_NE(checkPasswordRules(NO_SPECIAL_CHAR_PASSWORD), ErrorCode::Ok);
+    EXPECT_EQ(checkPasswordRules(NO_SPECIAL_CHAR_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
+    EXPECT_NE(checkPasswordRules(SPACE_IS_NOT_SPECIAL), ErrorCode::Ok);
+    EXPECT_EQ(checkPasswordRules(SPACE_IS_NOT_SPECIAL), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
+    EXPECT_NE(checkPasswordRules(NO_UPPERCASE_PASSWORD, ErrorCode::Ok);
+    EXPECT_EQ(checkPasswordRules(NO_UPPERCASE_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter);
+    EXPECT_EQ(checkPasswordRules(PROPER_PASSWORD), ErrorCode::Ok);
 }
 
 TEST(checkPasswordTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUppercaseLetter) {
-    EXPECT_TRUE(checkPassword(PROPER_PASSWORD, PROPER_PASSWORD), ErrorCode::Ok);
-    EXPECT_TRUE(checkPassword(EMPTY_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
-    EXPECT_TRUE(checkPassword(TOO_SHORT_PASSWORD, TOO_SHORT_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
-    EXPECT_TRUE(checkPassword(NO_NUMBER_PASSWORD, NO_NUMBER_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneNumber);
-    EXPECT_TRUE(checkPassword(NO_SPECIAL_CHAR_PASSWORD, NO_SPECIAL_CHAR_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
-    EXPECT_TRUE(checkPassword(SPACE_IS_NOT_SPECIAL, SPACE_IS_NOT_SPECIAL), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
-    EXPECT_TRUE(checkPassword(NO_UPPERCASE_PASSWORD, NO_UPPERCASE_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter);
+    EXPECT_EQ(checkPassword(PROPER_PASSWORD, PROPER_PASSWORD), ErrorCode::Ok);
+    EXPECT_EQ(checkPassword(EMPTY_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
+    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, TOO_SHORT_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
+    EXPECT_EQ(checkPassword(NO_NUMBER_PASSWORD, NO_NUMBER_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneNumber);
+    EXPECT_EQ(checkPassword(NO_SPECIAL_CHAR_PASSWORD, NO_SPECIAL_CHAR_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
+    EXPECT_EQ(checkPassword(SPACE_IS_NOT_SPECIAL, SPACE_IS_NOT_SPECIAL), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
+    EXPECT_EQ(checkPassword(NO_UPPERCASE_PASSWORD, NO_UPPERCASE_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter);
 }
 
 TEST(checkPasswordTests, returnsPasswordsDoesNotMatchForDifferentPasswords) {
