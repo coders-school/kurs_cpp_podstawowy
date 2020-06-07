@@ -1,7 +1,6 @@
 #include "validation.hpp"
 
 #include <algorithm>
-#include <cctype>
 #include <regex>
 #include <string>
 
@@ -55,7 +54,7 @@ ErrorCode checkPasswordRules(const std::string& password) {
     if (std::none_of(password.begin(), password.end(), ::isalpha))
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
 
-    if (!std::regex_match(password, specialPattern))
+    if (!std::regex_search(password, specialPattern))
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
 
     return ErrorCode::Ok;

@@ -29,6 +29,7 @@ TEST(checkPasswordRulesTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUp
     EXPECT_EQ(checkPasswordRules(WITHOUT_SPECIAL_CHAR), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
     EXPECT_EQ(checkPasswordRules(TOO_SHORT_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
     EXPECT_EQ(checkPasswordRules(ONLY_LOWER_CASE), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter);
+    EXPECT_EQ(checkPasswordRules(PROPER_PASSWORD), ErrorCode::Ok);
 }
 
 TEST(checkPasswordTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUppercaseLetter) {
