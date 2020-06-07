@@ -5,8 +5,8 @@ std::string EMPTY_PASSWORD = "";
 std::string PROPER_PASSWORD = "abcABC123!@#";
 std::string TOO_SHORT_PASSWORD = "12345678";
 std::string NO_NUMBER_PASSWORD = "QWERTYUIOP";
-std::string NO_SPECIAL_CHAR_PASSWORD = "1122AABB";
-std::string SPACE_IS_NOT_SPECIAL = "1122 AABB";
+std::string NO_SPECIAL_CHAR_PASSWORD = "11223AABBC";
+std::string SPACE_IS_NOT_SPECIAL = "1122 AABBCD";
 std::string NO_UPPERCASE_PASSWORD = "1234567890_!@##asdfg";
 
 
