@@ -9,7 +9,7 @@
 std::string getErrorMessage(ErrorCode error) {
     switch (error) {
     case ErrorCode::Ok:
-        return "Ok";
+        return "OK";
     case ErrorCode::PasswordNeedsAtLeastNineCharacters:
         return "Error, Password need at least 9 characters!";
     case ErrorCode::PasswordNeedsAtLeastOneNumber:
