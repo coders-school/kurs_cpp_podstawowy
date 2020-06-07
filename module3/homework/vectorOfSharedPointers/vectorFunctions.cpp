@@ -4,7 +4,7 @@
 
 std::vector<std::shared_ptr<int>> generate(int count){
     std::vector<std::shared_ptr<int>> vec;
-    for(size_t i = 0; i < (count); ++i){
+    for(size_t i = 0; i < count; ++i){
         vec.emplace_back(std::make_shared<int>(i));
     }
     return vec;
@@ -23,14 +23,22 @@ void add10(std::vector<std::shared_ptr<int>>& vec){
         else{
             std::cout << "Pointer is NullPtr";
         }
-
         
+    }
+ 
+}
+void sub10(std::vector<std::shared_ptr<int>>& vec){
+    for(size_t i = 0; i < vec.size(); ++i){
+        if(vec[i]){
+        auto temp = vec[i];
+        sub10(temp.get());
+        }
+        else{
+            std::cout << "Pointer is a NullPtr";
+        }
     }
 
 }
-void sub10(std::vector<std::shared_ptr<int>> vec){
-
-}
 void sub10(int* const ptr){
-
+    *ptr -= 10;
 }
