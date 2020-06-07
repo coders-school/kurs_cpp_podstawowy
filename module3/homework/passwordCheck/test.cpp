@@ -7,6 +7,8 @@ std::string TOO_SHORT_PASSWORD = "12345678";
 auto MIN_ALLOWED_ERROR_CODE = ErrorCode::Ok;
 auto MAX_ALLOWED_ERROR_CODE = ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
 
+std::vector<std::string> bad_passwords {"HasloBezNumeru$", "HasloBezSpecjalnegoZnaku4", "haslobez$$3wielkichliter",  "Haslo$2lop"};
+
 TEST(DoesPasswordsMatchTests, returnsTrueForIdenticalPasswords) {
     EXPECT_TRUE(doesPasswordsMatch(EMPTY_PASSWORD, EMPTY_PASSWORD));
     EXPECT_TRUE(doesPasswordsMatch(PROPER_PASSWORD, PROPER_PASSWORD));
@@ -35,6 +37,15 @@ TEST(checkPasswordTests, returnsPasswordsDoesNotMatchForDifferentPasswords) {
     EXPECT_EQ(checkPassword(PROPER_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordsDoesNotMatch); // equal ==
     EXPECT_EQ(checkPassword(EMPTY_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
     EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch); 
+}
+
+TEST(My_checkPasswordTests, returnsPasswordsDoesNotMatchForDifferentPasswords) {
+    EXPECT_EQ(checkPassword(PROPER_PASSWORD, PROPER_PASSWORD), ErrorCode::Ok); // equal ==
+    EXPECT_EQ(checkPassword(EMPTY_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
+    EXPECT_EQ(checkPassword(bad_passwords[0], bad_passwords[0]), ErrorCode::PasswordNeedsAtLeastOneNumber); 
+    EXPECT_EQ(checkPassword(bad_passwords[1], bad_passwords[1]), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter); 
+    EXPECT_EQ(checkPassword(bad_passwords[2], bad_passwords[2]), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter); 
+    EXPECT_EQ(checkPassword(bad_passwords[3], bad_passwords[3]), ErrorCode::Ok); 
 }
 
 TEST(getErrorMessageTests, returnsErrorCodeAsString) {
