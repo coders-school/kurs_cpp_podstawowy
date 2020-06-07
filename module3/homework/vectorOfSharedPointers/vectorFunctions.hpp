@@ -1,7 +1,9 @@
 #pragma once
 
-#include <memory>
+#include <iostream>
+#include <string>
 #include <vector>
+#include <memory>
 
 std::vector<std::shared_ptr<int>> generate(int);
 void print(const std::vector<std::shared_ptr<int>>&);
