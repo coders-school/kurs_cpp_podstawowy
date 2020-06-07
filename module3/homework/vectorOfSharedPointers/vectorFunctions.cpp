@@ -32,10 +32,11 @@ void print(const std::vector<std::shared_ptr<int>> vec)
     }
 }
 
-std::vector<std::shared_ptr<int>> add10(const std::vector<std::shared_ptr<int>> vec)
+void add10(const std::vector<std::shared_ptr<int>> vec)
 {
     for(auto elem : vec)
     {
+        if(elem)
        *elem += 10;     
     }
 }
