@@ -2,6 +2,7 @@
 #include<vector>
 
 std::vector<std::shared_ptr<int>> generate(int count);
-// to do print()
-//to do add10()
+std::vector<std::shared_ptr<int>> add10(const std::vector<std::shared_ptr<int>> vec);
+void print(const std::vector<std::shared_ptr<int>> vec);
 void sub10(int* const elem);
+void sub10(const std::vector<std::shared_ptr<int>> vec); 
