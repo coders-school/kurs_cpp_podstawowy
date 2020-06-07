@@ -37,7 +37,7 @@ TEST(checkPasswordRulesTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUp
     EXPECT_EQ(checkPasswordRules(NO_SPECIAL_CHAR_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
     EXPECT_NE(checkPasswordRules(SPACE_IS_NOT_SPECIAL), ErrorCode::Ok);
     EXPECT_EQ(checkPasswordRules(SPACE_IS_NOT_SPECIAL), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
-    EXPECT_NE(checkPasswordRules(NO_UPPERCASE_PASSWORD, ErrorCode::Ok);
+    EXPECT_NE(checkPasswordRules(NO_UPPERCASE_PASSWORD), ErrorCode::Ok);
     EXPECT_EQ(checkPasswordRules(NO_UPPERCASE_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter);
     EXPECT_EQ(checkPasswordRules(PROPER_PASSWORD), ErrorCode::Ok);
 }
