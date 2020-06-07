@@ -42,7 +42,8 @@ bool my_isupper(char c) {
 }
 
 ErrorCode checkPasswordRules(const std::string& password) {
-    if (password.size() < 9) {
+    const int MIN_PASSWORD_LENGHT = 9;
+    if (password.size() < MIN_PASSWORD_LENGHT) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
     if (std::none_of(begin(password), end(password), my_isdigit)) {
