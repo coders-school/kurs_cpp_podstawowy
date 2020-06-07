@@ -33,7 +33,7 @@ int fibonacci_recursive(int sequence) {
         result=first+second;
         second=first;
         first=result;
-        std::cout << "To jest " << i << " wynik w ciagu: " << result << std::endl;
+        std::cout << result << std::endl;
     }
 
     return 0;
