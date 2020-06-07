@@ -27,17 +27,17 @@ TEST(DoesPasswordsMatchTests, returnsFalseForDifferentPasswords) {
 }
 
 TEST(checkPasswordRulesTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUppercaseLetter) {
-    //EXPECT_NE(checkPasswordRules(EMPTY_PASSWORD), ErrorCode::Ok);
+    EXPECT_NE(checkPasswordRules(EMPTY_PASSWORD), ErrorCode::Ok);
     EXPECT_EQ(checkPasswordRules(EMPTY_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
-    //EXPECT_NE(checkPasswordRules(TOO_SHORT_PASSWORD), ErrorCode::Ok);
+    EXPECT_NE(checkPasswordRules(TOO_SHORT_PASSWORD), ErrorCode::Ok);
     EXPECT_EQ(checkPasswordRules(TOO_SHORT_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
-    //EXPECT_NE(checkPasswordRules(NO_NUMBER_PASSWORD), ErrorCode::Ok);
+    EXPECT_NE(checkPasswordRules(NO_NUMBER_PASSWORD), ErrorCode::Ok);
     EXPECT_EQ(checkPasswordRules(NO_NUMBER_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneNumber);
-    //EXPECT_NE(checkPasswordRules(NO_SPECIAL_CHAR_PASSWORD), ErrorCode::Ok);
+    EXPECT_NE(checkPasswordRules(NO_SPECIAL_CHAR_PASSWORD), ErrorCode::Ok);
     EXPECT_EQ(checkPasswordRules(NO_SPECIAL_CHAR_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
-    //EXPECT_NE(checkPasswordRules(SPACE_IS_NOT_SPECIAL), ErrorCode::Ok);
+    EXPECT_NE(checkPasswordRules(SPACE_IS_NOT_SPECIAL), ErrorCode::Ok);
     EXPECT_EQ(checkPasswordRules(SPACE_IS_NOT_SPECIAL), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
-    //EXPECT_NE(checkPasswordRules(NO_UPPERCASE_PASSWORD, ErrorCode::Ok);
+    EXPECT_NE(checkPasswordRules(NO_UPPERCASE_PASSWORD, ErrorCode::Ok);
     EXPECT_EQ(checkPasswordRules(NO_UPPERCASE_PASSWORD), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter);
     EXPECT_EQ(checkPasswordRules(PROPER_PASSWORD), ErrorCode::Ok);
 }
