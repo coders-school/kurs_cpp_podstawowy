@@ -35,7 +35,7 @@ ErrorCode checkPasswordRules(const std::string& password) {
     return ErrorCode(random);
 }
 
-ErrorCode checkPassword(std::string input, std::string password) {
+ErrorCode checkPassword(const std::string& input, const std::string& password) {
     if (!doesPasswordsMatch(input, password)) {
         return ErrorCode::PasswordsDoesNotMatch;
     }
