@@ -24,3 +24,7 @@ std::string getErrorMessage(const ErrorCode &errCode)
         return "Something is bad";
     }
 }
+bool doesPasswordsMatch(const std::string &firstPass, const std::string &secondPass)
+{
+    return firstPass == secondPass;
+}
