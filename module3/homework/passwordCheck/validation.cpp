@@ -12,6 +12,8 @@ std::map<ErrorCode, const char*> ErrorMap
     {ErrorCode::PasswordsDoesNotMatch, "Passwords do not match"}   
 };
 
+int minPasswordLength = 9;
+
 std::string getErrorMessage(ErrorCode errorCode)
 {
     return ErrorMap[errorCode];
@@ -19,7 +21,7 @@ std::string getErrorMessage(ErrorCode errorCode)
 
 bool passwordHasNineCharacters(const std::string& password)
 {
-    return password.length() >= 9;
+    return password.length() >= minPasswordLength;
 }
 
 bool passwordHasNumber(const std::string& password)
