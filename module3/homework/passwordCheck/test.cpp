@@ -4,6 +4,8 @@
 std::string EMPTY_PASSWORD = "";
 std::string PROPER_PASSWORD = "abcABC123!@#";
 std::string TOO_SHORT_PASSWORD = "12345678";
+std::string WITHOUT_SPECIAL_CHAR = "AZWEasdfgrwfe12kzfdsm";
+std::string ONLY_LOWER_CASE = "auipolk2sada1&%aos";
 auto MIN_ALLOWED_ERROR_CODE = ErrorCode::Ok;
 auto MAX_ALLOWED_ERROR_CODE = ErrorCode::PasswordsDoesNotMatch;
 
@@ -24,6 +26,9 @@ TEST(checkPasswordRulesTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUp
     EXPECT_LE(checkPasswordRules(EMPTY_PASSWORD), MAX_ALLOWED_ERROR_CODE);  // less or equal <=
     EXPECT_GE(checkPasswordRules(TOO_SHORT_PASSWORD), MIN_ALLOWED_ERROR_CODE);
     EXPECT_LE(checkPasswordRules(TOO_SHORT_PASSWORD), MAX_ALLOWED_ERROR_CODE);
+    EXPECT_EQ(checkPasswordRules(WITHOUT_SPECIAL_CHAR), ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter);
+    EXPECT_EQ(checkPasswordRules(TOO_SHORT_PASSWORD), ErrorCode::PasswordNeedsAtLeastNineCharacters);
+    EXPECT_EQ(checkPasswordRules(ONLY_LOWER_CASE), ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter);
 }
 
 TEST(checkPasswordTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUppercaseLetter) {
@@ -32,9 +37,9 @@ TEST(checkPasswordTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUpperca
 }
 
 TEST(checkPasswordTests, returnsPasswordsDoesNotMatchForDifferentPasswords) {
-    EXPECT_EQ(checkPassword(PROPER_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordsDoesNotMatch); // equal ==
+    EXPECT_EQ(checkPassword(PROPER_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordsDoesNotMatch);  // equal ==
     EXPECT_EQ(checkPassword(EMPTY_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
-    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch); 
+    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
 }
 
 TEST(getErrorMessageTests, returnsErrorCodeAsString) {
