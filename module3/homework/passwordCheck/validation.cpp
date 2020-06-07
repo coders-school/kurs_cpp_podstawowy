@@ -20,3 +20,7 @@ std::string getErrorMessage(ErrorCode error) {
         return "Undefined Error!";
     }
 }
+
+bool doesPasswordsMatch(const std::string input, const std::string password) {
+    return input == password;
+}
