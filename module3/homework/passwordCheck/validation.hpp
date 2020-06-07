@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <map>
 
 enum class ErrorCode 
 {
@@ -10,6 +11,8 @@ enum class ErrorCode
 	PasswordNeedsAtLeastOneUppercaseLetter,
 	PasswordsDoesNotMatch
 };
+
+extern std::map<ErrorCode, const char*> ErrorMap;
 
 std::string getErrorMessage(const ErrorCode errorCode);
 

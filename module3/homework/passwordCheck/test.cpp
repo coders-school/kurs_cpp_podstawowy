@@ -38,6 +38,10 @@ TEST(checkPasswordTests, returnsPasswordsDoesNotMatchForDifferentPasswords) {
 }
 
 TEST(getErrorMessageTests, returnsErrorCodeAsString) {
-    EXPECT_EQ(getErrorMessage(ErrorCode::Ok), "OK");
-    // Add other tests for getErrorMessage if you wish
+    EXPECT_EQ(getErrorMessage(ErrorCode::Ok), ::ErrorMap[ErrorCode::Ok]);
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastNineCharacters), ::ErrorMap[ErrorCode::PasswordNeedsAtLeastNineCharacters]);
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastOneNumber), ::ErrorMap[ErrorCode::PasswordNeedsAtLeastOneNumber]);
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter), ::ErrorMap[ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter]);
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter), ::ErrorMap[ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter]);
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordsDoesNotMatch), ::ErrorMap[ErrorCode::PasswordsDoesNotMatch]);
 }

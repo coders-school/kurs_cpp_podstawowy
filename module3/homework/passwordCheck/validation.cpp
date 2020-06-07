@@ -2,32 +2,19 @@
 #include <string>
 #include <algorithm>
 
+std::map<ErrorCode, const char*> ErrorMap
+{
+    {ErrorCode::Ok, "OK"},
+    {ErrorCode::PasswordNeedsAtLeastNineCharacters, "Password needs at least nine characters"},
+    {ErrorCode::PasswordNeedsAtLeastOneNumber, "Password needs at least one number"},
+    {ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter, "Password needs at least one special characters"},
+    {ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter, "Password needs at least one uppercase letter"},
+    {ErrorCode::PasswordsDoesNotMatch, "Passwords do not match"}   
+};
+
 std::string getErrorMessage(ErrorCode errorCode)
 {
-    switch (errorCode)
-    {
-    case ErrorCode::Ok:
-        return "Password is correct";
-        break;
-    case ErrorCode::PasswordNeedsAtLeastNineCharacters:
-        return "Password needs at least nine characters";
-        break;
-    case ErrorCode::PasswordNeedsAtLeastOneNumber:
-        return "Password needs at least one number";
-        break;
-    case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
-        return "Password needs at least one special characters";
-        break;
-    case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
-        return "Password needs at least one uppercase letter";
-        break;
-    case ErrorCode::PasswordsDoesNotMatch:
-        return "Passwords does not match";
-        break;
-    default:
-        return std::string();
-        break;
-    }
+    return ErrorMap[errorCode];
 }
 
 bool passwordHasNineCharacters(const std::string& password)
@@ -42,20 +29,7 @@ bool passwordHasNumber(const std::string& password)
 
 bool passwordHasSpecialCharacter(const std::string& password)
 {
-    for (size_t i = 0, count = password.length(); i < count; i++)
-    {
-        if ((password[i] >= 48 && password[i] <= 57) ||
-            (password[i] >= 65 && password[i] <= 90) ||
-            (password[i] >= 97 && password[i] <= 122))
-        {
-            continue;
-        }
-        else
-        {
-            return true;
-        }
-    }
-    return false;
+    return std::any_of(password.begin(), password.end(), ::ispunct);
 }
 
 bool passwordHasUppercase(const std::string& password)
