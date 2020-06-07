@@ -4,11 +4,12 @@
 
 enum ErrorCode {
     Ok,
+    PasswordsDoesNotMatch,
     PasswordNeedsAtLeastNineCharacters,
     PasswordNeedsAtLeastOneNumber,
     PasswordNeedsAtLeastOneSpecialCharacter,
-    PasswordNeedsAtLeastOneUppercaseLetter,
-    PasswordsDoesNotMatch
+    PasswordNeedsAtLeastOneUppercaseLetter
+
 };
 
 std::string getErrorMessage(ErrorCode error);
