@@ -2,12 +2,12 @@
 
 #include <iostream>
 
-std::vector<const std::shared_ptr<int>> generate(const int count) {
+std::vector<std::shared_ptr<int>> generate(const int count) {
     if (count < 1) {
         return {};
     }
 
-    std::vector<const std::shared_ptr<int>> vec;
+    std::vector<std::shared_ptr<int>> vec;
     vec.reserve(count);
 
     for (int i = 0; i < count; i++) {
@@ -16,13 +16,13 @@ std::vector<const std::shared_ptr<int>> generate(const int count) {
     return vec;
 }
 
-void print(const std::vector<const std::shared_ptr<int>>& vec) {
+void print(const std::vector<std::shared_ptr<int>>& vec) {
     for (const auto& el : vec) {
         std::cout << *el << '\n';
     }
 }
 
-void add10(const std::vector<const std::shared_ptr<int>>& vec) {
+void add10(const std::vector<std::shared_ptr<int>>& vec) {
     for (const auto& el : vec) {
         if (el) {
             *el += 10;
@@ -36,7 +36,7 @@ void sub10(int* const ptr) {
     }
 }
 
-void sub10(const std::vector<const std::shared_ptr<int>>& vec) {
+void sub10(const std::vector<std::shared_ptr<int>>& vec) {
     for (const auto& el : vec) {
         sub10(el.get());
     }
