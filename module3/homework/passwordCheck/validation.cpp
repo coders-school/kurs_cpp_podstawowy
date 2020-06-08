@@ -2,7 +2,6 @@
 
 #include <algorithm>
 #include <iostream>
-#include <string>
 
 std::string getErrorMessage(ErrorCode error) {
     switch (error) {
@@ -23,12 +22,13 @@ std::string getErrorMessage(ErrorCode error) {
     }
 }
 
-bool doesPasswordsMatch(const std::string input, const std::string password) {
+bool doesPasswordsMatch(const std::string& input, const std::string& password) {
     return input == password;
 }
 
 ErrorCode checkPasswordRules(const std::string& password) {
-    if (password.size() < 9) {
+    constexpr int minPasswordSize = 9;
+    if (password.size() < minPasswordSize) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
     if (std::none_of(password.cbegin(), password.cend(), [](char i){ return isdigit(i); })) {
