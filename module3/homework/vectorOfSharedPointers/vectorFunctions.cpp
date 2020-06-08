@@ -7,7 +7,7 @@ std::vector<const std::shared_ptr<int>> generate(const int count) {
         return {};
     }
 
-    std::vector<std::shared_ptr<int>> vec;
+    std::vector<const std::shared_ptr<int>> vec;
     vec.reserve(count);
 
     for (int i = 0; i < count; i++) {
