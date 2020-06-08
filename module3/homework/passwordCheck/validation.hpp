@@ -1,5 +1,5 @@
-// TODO: I'm empty :) Put enum and function headers here.
-// Don't forget the header guard
+#pragma onec
+#include <string>
 
 enum class ErrorCode {
     Ok,
@@ -9,3 +9,5 @@ enum class ErrorCode {
     PasswordNeedsAtLeastOneUppercaseLetter,
     PasswordsDoesNotMatch
 };
+
+std::string getErrorMessage(const ErrorCode);
