@@ -2,47 +2,24 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
-
-bool czy_zawiera_cyfre(char znak)
-{
-    int cyfra = (int)znak;
-    return (cyfra >= 48) && (cyfra <= 57);
-}
-
-bool czy_zawiera_znak_specjalny(char znak)
-{
-    int cyfra = (int)znak;
-    return ((cyfra >= 0) && (cyfra <= 47)
-        || (cyfra >= 58) && (cyfra <= 64)
-        || (cyfra >= 91) && (cyfra <= 96)
-        || (cyfra >= 0) && (cyfra <= 47)
-        || (cyfra >= 123) && (cyfra <= 255));
-}
-
-bool czy_zawiera_wielka_litere(char znak)
-{
-    int cyfra = (int)znak;
-    return (cyfra >= 65) && (cyfra <= 90);
-}
+#include <stdio.h>
 
 ErrorCode checkPasswordRules(std::string password)
 {
     if (password.size() < 9) 
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
 
-    if (!std::any_of(password.begin(), password.end(), czy_zawiera_cyfre))
+    if (!std::any_of(password.begin(), password.end(), isdigit))
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
 
-    if (!std::any_of(password.begin(), password.end(), czy_zawiera_znak_specjalny))
+    if (!std::any_of(password.begin(), password.end(), isalpha))
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
     
-    if (!std::any_of(password.begin(), password.end(), czy_zawiera_wielka_litere))
+    if (!std::any_of(password.begin(), password.end(), isupper))
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
 
     return ErrorCode::Ok;
 }
-
-
 
 ErrorCode checkPassword(std::string password, std::string repeatedPassword)
 {
@@ -50,7 +27,6 @@ ErrorCode checkPassword(std::string password, std::string repeatedPassword)
         return checkPasswordRules(password);
     else 
         return ErrorCode::PasswordsDoesNotMatch;
-   
 }
 
 bool doesPasswordsMatch(std::string password, std::string repeatedPassword)
