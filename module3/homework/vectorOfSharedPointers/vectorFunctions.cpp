@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-std::vector<std::shared_ptr<int>> generate(const int count) {
+std::vector<const std::shared_ptr<int>> generate(const int count) {
     if (count < 1) {
         return {};
     }
