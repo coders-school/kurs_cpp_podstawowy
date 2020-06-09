@@ -24,6 +24,8 @@ bool doesPasswordsMatch(const std::string& lhs, const std::string& rhs){
 }
 
 ErrorCode checkPasswordRules(const std::string& str){
+    constexpr size_t MinPasswordLength = 9;
+    
     if(str.length() < MinPasswordLength){
         return PasswordNeedsAtLeastNineCharacters;
     }
