@@ -32,7 +32,6 @@ ErrorCode checkPasswordRules(const std::string& password){
    namespace{
       size_t const minimumPasswordLength = 9; 
    };
-   
    if(password.size() < minimumPasswordLength) {
       return ErrorCode::PasswordNeedsAtLeastNineCharacters;
    }
