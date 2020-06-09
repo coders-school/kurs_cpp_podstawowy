@@ -27,7 +27,7 @@ std::string getErrorMessage(ErrorCode error) {
 }
 
 bool doesPasswordsMatch(const std::string& first, const std::string& second) {
-    return (first == second);
+    return first == second;
 }
 
 bool my_isdigit(char c) {
