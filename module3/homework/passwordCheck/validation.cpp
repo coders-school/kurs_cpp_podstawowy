@@ -1,6 +1,7 @@
 #include "validation.hpp"
-#include <cctype>
+
 #include <algorithm>
+#include <cctype>
 
 std::string getErrorMessage(ErrorCode error) {
     switch (error) {
@@ -26,7 +27,7 @@ std::string getErrorMessage(ErrorCode error) {
 }
 
 bool doesPasswordsMatch(const std::string& first, const std::string& second) {
-    return (first == second);
+    return first == second;
 }
 
 bool my_isdigit(char c) {
@@ -42,7 +43,8 @@ bool my_isupper(char c) {
 }
 
 ErrorCode checkPasswordRules(const std::string& password) {
-    if (password.size() < 9) {
+    const int MIN_PASSWORD_LENGHT = 9;
+    if (password.size() < MIN_PASSWORD_LENGHT) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
     if (std::none_of(begin(password), end(password), my_isdigit)) {
