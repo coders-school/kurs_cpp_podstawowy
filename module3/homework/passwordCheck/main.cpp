@@ -1,5 +1,7 @@
 #include "validation.hpp"
 
+#include <iostream>
+
 int main() {
     std::string password;
     std::string repeatedPassword;
