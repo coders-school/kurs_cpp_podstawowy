@@ -92,7 +92,7 @@ ___
 
 ## Zadanie
 
-Dopisz funkcję `max`. Ma ona zwracać maksymalną z trzech podanych wartości. [Pobierz zadanie](task2.cpp)
+Dopisz funkcję `max`. Ma ona zwracać maksymalną z trzech podanych wartości. [Pobierz zadanie][zadanie-domowe]
 
 ```cpp
 #include <iostream>
@@ -107,3 +107,5 @@ int main() {
     return 0;
 }
 ```
+
+[zadanie-domowe]: https://github.com/coders-school/kurs_cpp_podstawowy/blob/master/module1/task2.cpp

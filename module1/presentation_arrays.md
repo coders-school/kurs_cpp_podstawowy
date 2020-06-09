@@ -59,7 +59,7 @@ ___
 
 ## Zadanie
 
-Zmodyfikuj program, tak aby wypełniał tablicę kolejnymi nieparzystymi liczbami: 1, 3, 5, 7, ... [Pobierz zadanie](task4.cpp)
+Zmodyfikuj program, tak aby wypełniał tablicę kolejnymi nieparzystymi liczbami: 1, 3, 5, 7, ... [Pobierz zadanie][zadanie-domowe]
 
 ```cpp
 #include <iostream>
@@ -80,3 +80,5 @@ int main() {
     return 0;
 }
 ```
+
+[zadanie-domowe]: https://github.com/coders-school/kurs_cpp_podstawowy/blob/master/module1/task4.cpp

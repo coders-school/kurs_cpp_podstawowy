@@ -48,7 +48,7 @@ ___
 
 ## Zadanie
 
-Dopisz brakującą funkcję `multiply`. Ma ona pomnożyć dwie liczby podane jako jej parametry. [Pobierz zadanie](task1.cpp)
+Dopisz brakującą funkcję `multiply`. Ma ona pomnożyć dwie liczby podane jako jej parametry. [Pobierz zadanie][zadanie-domowe]
 
 ```cpp
 #include <iostream>
@@ -63,3 +63,5 @@ int main() {
     return 0;
 }
 ```
+
+[zadanie-domowe]: https://github.com/coders-school/kurs_cpp_podstawowy/blob/master/module1/task1.cpp

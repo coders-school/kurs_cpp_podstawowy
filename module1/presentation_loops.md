@@ -101,7 +101,7 @@ ___
 
 ## Zadanie
 
-Dopisz funkcję `printString`. Ma ona wypisywać tekst podany jako pierwszy argument tyle razy, jaka jest wartość liczby podanej jako drugi argument. [Pobierz zadanie](task3.cpp)
+Dopisz funkcję `printString`. Ma ona wypisywać tekst podany jako pierwszy argument tyle razy, jaka jest wartość liczby podanej jako drugi argument. [Pobierz zadanie][zadanie-domowe]
 
 ```cpp
 #include <iostream>
@@ -121,3 +121,5 @@ int main() {
     return 0;
 }
 ```
+
+[zadanie-domowe]: https://github.com/coders-school/kurs_cpp_podstawowy/blob/master/module1/task3.cpp
