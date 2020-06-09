@@ -13,7 +13,7 @@ std::vector<std::shared_ptr<int>> generate(int count){
 
 void print(const std::vector<std::shared_ptr<int>>& pSPvec){
 
-    for(auto element : pSPvec){
+    for(const auto& element : pSPvec){
         std::cout << element;
     }
 }
