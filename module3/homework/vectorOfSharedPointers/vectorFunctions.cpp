@@ -10,41 +10,39 @@ std::vector<std::shared_ptr<int>> generate(int count){
     }
     return vec;
 }
-void print(std::vector<std::shared_ptr<int>>& vec){
+void print(const std::vector<std::shared_ptr<int>>& vec){
     for(auto el : vec){
         std::cout << *el << "\n";
     }
 
 }
-void add10(std::vector<std::shared_ptr<int>>& vec){
+void add10(const std::vector<std::shared_ptr<int>>& vec){
     for(size_t i = 0; i < vec.size(); ++i){
        if(vec[i]){
         *vec[i] += 10;
        }
         else{
-            std::cout << "Pointer is NullPtr";
+            std::cout << "Nullptr" << "\n";
         }
         
     }
  
 }
-void sub10(std::vector<std::shared_ptr<int>>& vec){
+void sub10(const std::vector<std::shared_ptr<int>>& vec){
     for(size_t i = 0; i < vec.size(); ++i){
         if(vec[i]){
-        auto temp = vec[i];
-        sub10(temp.get());
+            sub10(vec[i].get());
         }
         else{
-            std::cout << "Pointer is a NullPtr";
+            std::cout << "Nullptr" << "\n";
         }
     }
-
 }
 void sub10(int* const ptr){
     if(ptr){
-    *ptr -= 10;
+        *ptr -= 10;
     }
     else{
-        std::cout << "Nullptr";
+        std::cout << "Nullptr" << "\n";
     }
 }
