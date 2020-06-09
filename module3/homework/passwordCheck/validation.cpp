@@ -2,9 +2,7 @@
 
 #include <algorithm>
 
-namespace{
-    size_t const minimumPasswordLength = 9; 
-};
+
 std::string getErrorMessage(const ErrorCode error){
 switch(error){
    case ErrorCode::Ok:
