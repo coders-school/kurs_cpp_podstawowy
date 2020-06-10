@@ -20,9 +20,6 @@ std::string getErrorMessage(const ErrorCode error) {
     return "Unknown error code";
 }
 
-bool doesPasswordsMatch(std::string& password, std::string& repeatedPassword) {
-    if (password == repeatedPassword) {
-        return "OK";
-    }
-    return "Passwords does not match";
+bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword) {
+    return password == repeatedPassword;
 }
