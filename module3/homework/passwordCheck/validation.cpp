@@ -4,20 +4,20 @@
 
 std::string getErrorMessage(const ErrorCode error) {
     switch (error) {
-    case "Ok":
+    case ErrorCode::Ok:
         return "OK";
-    case "PasswordNeedsAtLeastNineCharacters":
+    case ErrorCode::PasswordNeedsAtLeastNineCharacters:
         return "Password needs at least nine characters";
-    case "PasswordNeedsAtLeastOneNumber":
+    case ErrorCode::PasswordNeedsAtLeastOneNumber:
         return "Password needs at least one number";
-    case "PasswordNeedsAtLeastOneSpecialCharacter":
+    case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter:
         return "Password needs at least one special character";
-    case "PasswordNeedsAtLeastOneUppercaseLetter":
+    case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter:
         return "Password needs at least one uppercase letter";
-    case "PasswordsDoesNotMatch":
+    case ErrorCode::PasswordsDoesNotMatch:
         return "Passwords does not match";
     }
-    return "Unknown error code";
+    return "Unknown error";
 }
 
 bool doesPasswordsMatch(const std::string& password, const std::string& repeatedPassword) {
