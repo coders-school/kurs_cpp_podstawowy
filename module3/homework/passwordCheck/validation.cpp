@@ -60,21 +60,6 @@ ErrorCode checkPasswordRules(const std::string& pass) {
     }
 }
 
-// ErrorCode checkPassword(const std::string& pass1, const std::string& pass2) {
-//     ErrorCode checkRulesCode1 = checkPasswordRules(pass1);
-//     ErrorCode checkRulesCode2 = checkPasswordRules(pass2);
-
-//     if (checkRulesCode1 == ErrorCode::Ok && checkRulesCode2 == ErrorCode::Ok) {
-//         if (!doesPasswordsMatch(pass1, pass2))
-//             return ErrorCode::PasswordsDoesNotMatch;
-//         else {
-//             return ErrorCode::Ok;
-//         }
-//     } else {
-//         return checkPasswordRules(pass1);
-//     }
-// }
-
 ErrorCode checkPassword(const std::string& pass1, const std::string& pass2) {
     if (!doesPasswordsMatch(pass1, pass2))
         return ErrorCode::PasswordsDoesNotMatch;
