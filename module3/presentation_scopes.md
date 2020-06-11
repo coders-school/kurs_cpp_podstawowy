@@ -26,14 +26,14 @@ local_variable = 10;   // error -> local_variable doesn't exists
 
 Zakres zawsze tworzą nawiasy klamrowe m.in: <!-- .element: class="fragment fade-in" -->
 
-* <!-- .element: class="fragment fade-in" --> same nawiasy <code>{ /* ... */ }</code>
-* <!-- .element: class="fragment fade-in" --> ciała funkcji <code>void fun() { /* ... */ }</code>
-* <!-- .element: class="fragment fade-in" --> instrukcje warunkowe <code>if (condition) { /* ... */ }</code>
-* <!-- .element: class="fragment fade-in" --> pętle <code>while (condition) { /* ... */ }</code>
+* <!-- .element: class="fragment fade-in" --> same nawiasy - <code>{ /* ... */ }</code>
+* <!-- .element: class="fragment fade-in" --> ciała funkcji - <code>void fun() { /* ... */ }</code>
+* <!-- .element: class="fragment fade-in" --> instrukcje warunkowe - <code>if (condition) { /* ... */ }</code>
+* <!-- .element: class="fragment fade-in" --> pętle - <code>while (condition) { /* ... */ }</code>
 
 ___
 
-## Zmienna globalna
+## Zmienne globalne
 
 Zmienna globalna, jest widoczna dla wszystkich zakresów. Zawsze możemy się do niej odwołać.
 <!-- .element: class="fragment fade-in" -->
@@ -49,6 +49,9 @@ int main() {
     std::cout << global_value;
 }
 ```
+<!-- .element: class="fragment fade-in" -->
+
+Tworzenie zmiennych globalnych zazwyczaj jest złą praktyką.
 <!-- .element: class="fragment fade-in" -->
 
 ___
@@ -78,7 +81,7 @@ ___
 
 ## Przesłanianie nazw
 
-* możemy mieć wiele zmiennych o takiej samej nazwie, jeśli będą w różnych zakresach
-* nie jest raczej polecane, aby unikać niejednoznaczności
-* nazwa z lokalnego zakresu zawsze przesłania tę z szerszego zakresu (np. globalnego)
-* można odwoływać się do nazw z globalnego zakresu stosując `operator::` (operator zakresu)
+* <!-- .element: class="fragment fade-in" --> możemy mieć wiele zmiennych o takiej samej nazwie, jeśli będą w różnych zakresach
+  * <!-- .element: class="fragment fade-in" --> aby unikać niejednoznaczności nie jest to raczej polecane
+* <!-- .element: class="fragment fade-in" --> nazwa z lokalnego zakresu zawsze przesłania tę z szerszego zakresu (np. globalnego)
+* <!-- .element: class="fragment fade-in" --> można odwoływać się do nazw z globalnego zakresu stosując <code>::</code> (operator zakresu)
