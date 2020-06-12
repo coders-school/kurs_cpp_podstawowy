@@ -3,7 +3,7 @@
 
 #include <string>
 
-enum class ErrorCode{
+enum class ErrorCode {
     Ok,
     PasswordNeedsAtLeastNineCharacters,
     PasswordNeedsAtLeastOneNumber,
