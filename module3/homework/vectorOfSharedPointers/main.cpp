@@ -1,5 +1,8 @@
 #include "vectorFunctions.hpp"
 
+#include <iostream>
+#include <string>
+
 int main() {
     auto vec = generate(10);
     print(vec);
