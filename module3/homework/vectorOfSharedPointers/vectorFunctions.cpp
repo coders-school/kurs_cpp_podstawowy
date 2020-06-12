@@ -26,13 +26,19 @@ void add10(std::vector<std::shared_ptr<int>>& vec)
 {
     for (std::shared_ptr<int> ptr : vec)
     {
-        *ptr += 10;
+        if(ptr != nullptr)
+        {
+            *ptr += 10;
+        }
     }
 }
 
 void sub10(int * const ptr)
 {
-    *ptr -= 10;
+    if(ptr != nullptr)
+    {
+        *ptr -= 10;
+    }
 }
 
 void sub10(std::vector<std::shared_ptr<int>>& vec)
