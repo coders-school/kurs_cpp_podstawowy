@@ -23,8 +23,8 @@ switch(error){
    }
 }
 
-bool doesPasswordsMatch(const std::string& first, const std::string& secound){
-   return first == secound;
+bool doesPasswordsMatch(const std::string& first, const std::string& second){
+   return first == second;
 }
 
 ErrorCode checkPasswordRules(const std::string& password){
@@ -50,8 +50,8 @@ ErrorCode checkPasswordRules(const std::string& password){
    return ErrorCode::Ok;
 }
 
-ErrorCode checkPassword(const std::string& first, const std::string& secound){
-   if(!doesPasswordsMatch(first, secound)) {
+ErrorCode checkPassword(const std::string& first, const std::string& second){
+   if(!doesPasswordsMatch(first, second)) {
       return ErrorCode::PasswordsDoesNotMatch;
    }
 
