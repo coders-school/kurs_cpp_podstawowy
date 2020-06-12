@@ -12,7 +12,7 @@ ___
 
 ## Zmienne lokalne
 
-Zmienne lokalne są to zmienne, które są widziane w obrębię jakiegoś zakresu.
+Zmienne lokalne są to zmienne, które są widziane w obrębie jakiegoś zakresu.
 <!-- .element: class="fragment fade-in" -->
 
 ```cpp
