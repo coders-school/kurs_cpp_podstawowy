@@ -166,7 +166,8 @@ body {
 
 .reveal code {
   font-family: monospace;
-  text-transform: none; }
+  text-transform: none;
+  color: #fed; }
 
 .reveal pre code {
   display: block;
