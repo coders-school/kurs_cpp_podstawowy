@@ -47,7 +47,7 @@ ErrorCode checkPasswordRules(const std::string& password){
    if (std::none_of(password.begin(), password.end(), ::isupper)) {
       return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
       }
-return ErrorCode::Ok;
+   return ErrorCode::Ok;
 }
 
 ErrorCode checkPassword(const std::string& first, const std::string& secound){
@@ -55,6 +55,6 @@ ErrorCode checkPassword(const std::string& first, const std::string& secound){
       return ErrorCode::PasswordsDoesNotMatch;
    }
 
-return checkPasswordRules(first);
+   return checkPasswordRules(first);
 }
 
