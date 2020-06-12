@@ -17,8 +17,8 @@ void print(const std::vector<std::shared_ptr<int>>& vec){
         std::cout << *el << "\n";
     }
 }
-void add10(std::vector<std::shared_ptr<int>>& vec){
-    for(auto& el: vec){
+void add10(const std::vector<std::shared_ptr<int>>& vec){
+    for(const auto& el: vec){
         if(el == nullptr){
             break;
         }
