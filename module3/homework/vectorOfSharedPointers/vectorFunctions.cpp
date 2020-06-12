@@ -19,10 +19,9 @@ void print(const std::vector<std::shared_ptr<int>>& vec){
 }
 void add10(const std::vector<std::shared_ptr<int>>& vec){
     for(const auto& el: vec){
-        if(el == nullptr){
-            break;
+        if(el){
+            *el += 10;
         }
-        *el = *el + 10;
     }
 }
 void sub10(int * ptr){
