@@ -4,11 +4,10 @@ std::vector<std::shared_ptr<int>> generate(int count){
     std::vector<std::shared_ptr<int>> pointers;
     pointers.reserve(count);
     
-    int i = 0;
-    while(i < count){
+    
+    for(int i = 0; i < count; i++){
         auto ptr = std::make_shared<int>(i);
         pointers.push_back(ptr);
-        i++;
     }
     
     return pointers;
