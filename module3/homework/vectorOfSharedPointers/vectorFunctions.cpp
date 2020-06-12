@@ -24,9 +24,9 @@ void add10(const std::vector<std::shared_ptr<int>>& vec){
         }
     }
 }
-void sub10(const int * ptr){
+void sub10(int * const ptr){
     if(!ptr){
-        *ptr = *ptr - 10;
+        *ptr -= 10;
     }
 }
 void sub10(const std::vector<std::shared_ptr<int>>& vec){
