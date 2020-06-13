@@ -35,7 +35,7 @@ for (auto i = vec.begin(); i != vec.end(); ++i) {
 Taki zapis jest jednak niepotrzebnie złożony i mało czytelny. <!-- .element: class="fragment fade-in" -->
 Dlatego powstały `range loop` które umożliwiają łatwy zapis `for (typ nazwa : kontener)`.
 <!-- .element: class="fragment fade-in" -->
-Kompilator może sam go wygenerować powyższy kod, jeśli użyjemy poniższego zapisu. <!-- .element: class="fragment fade-in" -->
+Kompilator może sam wygenerować powyższy kod, jeśli użyjemy poniższego zapisu. <!-- .element: class="fragment fade-in" -->
 
 ```cpp
 for (auto element : vec) {
