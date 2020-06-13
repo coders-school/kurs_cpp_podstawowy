@@ -38,8 +38,8 @@ ___
 
 ## Typ logiczny - `bool`
 
-* Rozmiar: co najmniej 1 bajt
-  * `sizeof(bool) == 1`
+* Rozmiar: co najmniej 1 bajt (zazwyczaj równy właśnie 1)
+  * `sizeof(bool) >= 1`
 * 2 możliwe wartości
   * `false`
   * `true`
@@ -56,7 +56,7 @@ ___
 Przedrostek `unsigned` oznacza, że typ jest bez znaku (bez liczb ujemnych), czyli od 0 do jakieś dodatniej wartości.
 <!-- .element: class="fragment fade-in" -->
 
-Rozmiar typów logicznych i znakowych to zawsze 1 bajt.
+Rozmiar typów znakowych to zawsze 1 bajt.
 <!-- .element: class="fragment fade-in" -->
 
 Rozmiary dalszych typów zależą od platformy np. 32 bity, 64 bity.
