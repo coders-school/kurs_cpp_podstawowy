@@ -19,6 +19,6 @@ constexpr size_t kCapacity = 100;
 constexpr size_t kCrew = 50;
 constexpr size_t kSpeed = 10;
 constexpr char kName[] = "BLACK WIDOW";
-constexpr size_t kId= 10;
+constexpr size_t kId = 10;
 
-#endif // TEST_VALUES_H
+#endif  // TEST_VALUES_H

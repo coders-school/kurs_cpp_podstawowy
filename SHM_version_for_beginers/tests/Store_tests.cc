@@ -1,6 +1,3 @@
-#include "gtest/gtest.h"
-#include "gmock/gmock.h"
-
 #include <memory>
 
 #include "Alcohol.h"
@@ -11,6 +8,8 @@
 #include "Player.h"
 #include "Store.h"
 #include "Test_values.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
 using testing::_;
 using testing::AtLeast;
@@ -20,18 +19,18 @@ using testing::Return;
 
 class TestSuit : public testing::Test {
 public:
-    TestSuit():
-        timeMock_(std::make_unique<TimeMock>()),
-        playerMock_(std::make_unique<PlayerMock>(kPlayerMoney, timeMock_.get())) {
+    TestSuit()
+        : timeMock_(std::make_unique<TimeMock>()),
+          playerMock_(std::make_unique<PlayerMock>(kPlayerMoney, timeMock_.get())) {
         CreateStore();
         store_->SetCargo(prepareCargoForTest());
     }
 
     void CreateStore() {
-     // Check if Store register observer, rest call will be from Fruit class
-     // randomize generating during creating stock.
-     EXPECT_CALL(*timeMock_, AddObserver(_)).Times(AtLeast(1));
-     store_ = std::make_unique<Store>(timeMock_.get());
+        // Check if Store register observer, rest call will be from Fruit class
+        // randomize generating during creating stock.
+        EXPECT_CALL(*timeMock_, AddObserver(_)).Times(AtLeast(1));
+        store_ = std::make_unique<Store>(timeMock_.get());
     }
 
     void TearDown() override {
@@ -41,13 +40,13 @@ public:
 
     std::vector<std::unique_ptr<Cargo>> prepareCargoForTest() {
         std::vector<std::unique_ptr<Cargo>> cargo;
-        cargo.push_back(std::make_unique<Alcohol>(kAlcoholAmount, 
-            kAlcoholName, kAlcoholBasePrice, kAlcoholPercentage));
-        cargo.push_back(std::make_unique<Fruit>(kFruitAmount, 
-            kFruitName, kFruitBasePrice, kFruitExpiryTime,
-            kFruitTimeElapsed, timeMock_.get()));
-        cargo.push_back(std::make_unique<Item>(kItemAmount, 
-            kItemlName, kItemBasePrice, Item::Rarity::legendary));
+        cargo.push_back(std::make_unique<Alcohol>(kAlcoholAmount,
+                                                  kAlcoholName, kAlcoholBasePrice, kAlcoholPercentage));
+        cargo.push_back(std::make_unique<Fruit>(kFruitAmount,
+                                                kFruitName, kFruitBasePrice, kFruitExpiryTime,
+                                                kFruitTimeElapsed, timeMock_.get()));
+        cargo.push_back(std::make_unique<Item>(kItemAmount,
+                                               kItemlName, kItemBasePrice, Item::Rarity::legendary));
         return cargo;
     }
 
@@ -89,8 +88,8 @@ TEST_F(TestSuit, StoreShouldRecalculatePriceDuringSelling) {
 }
 
 TEST_F(TestSuit, StoreShouldRecalculatePriceDuringBuyingCargoWhichNotExistInStore) {
-    auto cargo = std::make_unique<Alcohol>(kAlcoholAmount, 
-        kAlcoholName, kAlcoholBasePrice, kAlcoholPercentage - 1);
+    auto cargo = std::make_unique<Alcohol>(kAlcoholAmount,
+                                           kAlcoholName, kAlcoholBasePrice, kAlcoholPercentage - 1);
 
     // 9 (alco_price) * (2.25 - (2 * 100 / 250)) = 13.05 -> 13
     EXPECT_EQ(13, store_->RecalculateCargoBuyPrice(cargo.get()));
@@ -103,8 +102,8 @@ TEST_F(TestSuit, StoreShouldRecalculatePriceDuringBuyingCargoWhichNotExistInStor
 }
 
 TEST_F(TestSuit, StoreShouldRecalculatePriceDuringBuyingCargoWhichExistInStore) {
-    auto cargo = std::make_unique<Item>(kItemAmount, 
-        kItemlName, kItemBasePrice, Item::Rarity::legendary);
+    auto cargo = std::make_unique<Item>(kItemAmount,
+                                        kItemlName, kItemBasePrice, Item::Rarity::legendary);
 
     // 1000 * (2.25 - (2 * 50 / 100) -> 1250
     EXPECT_EQ(1250, store_->RecalculateCargoBuyPrice(cargo.get()));
@@ -117,8 +116,8 @@ TEST_F(TestSuit, StoreShouldRecalculatePriceDuringBuyingCargoWhichExistInStore) 
 }
 
 TEST_F(TestSuit, StoreShouldSellCargoForTheSamePriceWhenHirepurchase) {
-    auto cargo = std::make_unique<Item>(kItemAmount + 50, 
-        kItemlName, kItemBasePrice, Item::Rarity::legendary);
+    auto cargo = std::make_unique<Item>(kItemAmount + 50,
+                                        kItemlName, kItemBasePrice, Item::Rarity::legendary);
 
     size_t price1 = 0;
     EXPECT_CALL(*playerMock_, SellCargo(_, _))
@@ -132,18 +131,18 @@ TEST_F(TestSuit, StoreShouldSellCargoForTheSamePriceWhenHirepurchase) {
     EXPECT_CALL(*playerMock_, SellCargo(_, _))
         .WillOnce(testing::SaveArg<1>(&price3));
     ASSERT_EQ(store_->Sell(cargo.get(), 8, playerMock_.get()), Store::Response::done);
-    
+
     const size_t sold_cargo = 43;
     auto soldCargo = store_->GetCargo(2);
     // Restore amount of cargo to previus value, before selling
     *soldCargo -= sold_cargo;
-    EXPECT_CALL(*playerMock_, SellCargo(_,  (price1 + price2 + price3)));
+    EXPECT_CALL(*playerMock_, SellCargo(_, (price1 + price2 + price3)));
     ASSERT_EQ(store_->Sell(cargo.get(), sold_cargo, playerMock_.get()), Store::Response::done);
 }
 
 TEST_F(TestSuit, StoreShouldAddNewCargoWhenNotExist) {
-    auto cargo = std::make_unique<Alcohol>(kAlcoholAmount, 
-        kAlcoholName, kAlcoholBasePrice, kAlcoholPercentage - 1);
+    auto cargo = std::make_unique<Alcohol>(kAlcoholAmount,
+                                           kAlcoholName, kAlcoholBasePrice, kAlcoholPercentage - 1);
 
     EXPECT_CALL(*playerMock_, SellCargo(_, _));
     ASSERT_EQ(store_->Sell(cargo.get(), 20, playerMock_.get()), Store::Response::done);
@@ -151,8 +150,8 @@ TEST_F(TestSuit, StoreShouldAddNewCargoWhenNotExist) {
 }
 
 TEST_F(TestSuit, StoreShouldAccumulateCargoWhenExist) {
-    auto cargo = std::make_unique<Item>(kItemAmount, 
-        kItemlName, kItemBasePrice, Item::Rarity::legendary);
+    auto cargo = std::make_unique<Item>(kItemAmount,
+                                        kItemlName, kItemBasePrice, Item::Rarity::legendary);
 
     EXPECT_CALL(*playerMock_, SellCargo(_, _));
     ASSERT_EQ(store_->Sell(cargo.get(), 20, playerMock_.get()), Store::Response::done);

@@ -1,6 +1,3 @@
-#include "gtest/gtest.h"
-#include "gmock/gmock.h"
-
 #include <memory>
 
 #include "Alcohol.h"
@@ -12,6 +9,8 @@
 #include "Player.h"
 #include "Store.h"
 #include "Test_values.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
 using testing::_;
 using testing::AtLeast;
@@ -25,7 +24,7 @@ constexpr size_t kX2 = 10;
 constexpr size_t kY2 = 20;
 constexpr size_t kX3 = 40;
 constexpr size_t kY3 = 50;
- 
+
 class GameTests : public testing::Test {
 public:
     void SetUp() override {
@@ -44,13 +43,13 @@ public:
 
     std::vector<std::unique_ptr<Cargo>> prepareCargoForTest() {
         std::vector<std::unique_ptr<Cargo>> cargo;
-        cargo.push_back(std::make_unique<Alcohol>(kAlcoholAmount, 
-            kAlcoholName, kAlcoholBasePrice, kAlcoholPercentage));
-        cargo.push_back(std::make_unique<FruitMock>(kFruitAmount, 
-            kFruitName, kFruitBasePrice, kFruitExpiryTime,
-            kFruitTimeElapsed, time_.get()));
-        cargo.push_back(std::make_unique<Item>(kItemAmount, 
-            kItemlName, kItemBasePrice, Item::Rarity::legendary));
+        cargo.push_back(std::make_unique<Alcohol>(kAlcoholAmount,
+                                                  kAlcoholName, kAlcoholBasePrice, kAlcoholPercentage));
+        cargo.push_back(std::make_unique<FruitMock>(kFruitAmount,
+                                                    kFruitName, kFruitBasePrice, kFruitExpiryTime,
+                                                    kFruitTimeElapsed, time_.get()));
+        cargo.push_back(std::make_unique<Item>(kItemAmount,
+                                               kItemlName, kItemBasePrice, Item::Rarity::legendary));
         return cargo;
     }
 
@@ -65,9 +64,9 @@ TEST_F(GameTests, PlayerShouldPayCrewWhileTravel) {
 }
 
 TEST_F(GameTests, ObserversShouldBeNotified) {
-    auto fruit = std::make_unique<FruitMock>(kFruitAmount, 
-        kFruitName, kFruitBasePrice, kFruitExpiryTime,
-        kFruitTimeElapsed, time_.get());
+    auto fruit = std::make_unique<FruitMock>(kFruitAmount,
+                                             kFruitName, kFruitBasePrice, kFruitExpiryTime,
+                                             kFruitTimeElapsed, time_.get());
     auto* fruit_ptr = fruit.get();
     EXPECT_CALL(*fruit_ptr, GetAmount());
     player_->PurchaseCargo(std::move(fruit), 200);
@@ -92,14 +91,14 @@ TEST_F(GameTests, ObserversShouldBeNotified) {
 }
 
 TEST_F(GameTests, ShouldStopNotifyRemovedObsers) {
-    auto fruit = std::make_unique<FruitMock>(kFruitAmount, 
-        kFruitName, kFruitBasePrice, kFruitExpiryTime,
-        kFruitTimeElapsed, time_.get());
+    auto fruit = std::make_unique<FruitMock>(kFruitAmount,
+                                             kFruitName, kFruitBasePrice, kFruitExpiryTime,
+                                             kFruitTimeElapsed, time_.get());
     auto* fruit_ptr = fruit.get();
     EXPECT_CALL(*fruit_ptr, GetAmount());
     player_->PurchaseCargo(std::move(fruit), 200);
     ASSERT_EQ(player_->GetCargo(0), fruit_ptr);
-    
+
     auto islands = PrepareMapForTest();
     auto cargo1 = prepareCargoForTest();
     auto cargo2 = prepareCargoForTest();
@@ -128,9 +127,9 @@ TEST_F(GameTests, ShouldStopNotifyRemovedObsers) {
 }
 
 TEST_F(GameTests, ShouldCallNextDayWhenTimeIncrement) {
-    auto fruit = std::make_unique<FruitMock>(kFruitAmount, 
-        kFruitName, kFruitBasePrice, kFruitExpiryTime,
-        kFruitTimeElapsed, time_.get());
+    auto fruit = std::make_unique<FruitMock>(kFruitAmount,
+                                             kFruitName, kFruitBasePrice, kFruitExpiryTime,
+                                             kFruitTimeElapsed, time_.get());
     auto* fruit_ptr = fruit.get();
     EXPECT_CALL(*fruit_ptr, GetAmount());
     player_->PurchaseCargo(std::move(fruit), 200);

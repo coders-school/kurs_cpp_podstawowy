@@ -13,7 +13,7 @@ constexpr float kSellPricePercentage = 0.8;
 // Make possible itarate through enum class
 ShipFactory::ShipType operator++(ShipFactory::ShipType& type) {
     return type = static_cast<ShipFactory::ShipType>(
-        std::underlying_type_t<ShipFactory::ShipType>(type) + 1);
+               std::underlying_type_t<ShipFactory::ShipType>(type) + 1);
 }
 
 ShipFactory::ShipType operator*(ShipFactory::ShipType type) {
@@ -29,7 +29,7 @@ ShipFactory::ShipType end(ShipFactory::ShipType) {
 }
 
 std::string EnumToString(const ShipFactory::ShipType& type) {
-    switch(type) {
+    switch (type) {
     case ShipFactory::ShipType::Barc:
         return "Barc";
     case ShipFactory::ShipType::Brig:
@@ -67,17 +67,17 @@ ShipFactory::ShipType StringToEnum(std::string type) {
     if (type == "Pinnace")
         return ShipFactory::ShipType::Pinnace;
     if (type == "Sloop")
-        return ShipFactory::ShipType::Sloop;  
+        return ShipFactory::ShipType::Sloop;
     return ShipFactory::ShipType::LAST;
 }
 
 std::ostream& operator<<(std::ostream& os, const ShipFactory::ShipType& ship) {
     const size_t index = static_cast<size_t>(ship);
-    return os << "Type: " << EnumToString(ship) 
-    << " | Capacity: " << kShipsInfo[index].kCapacity
-    << " | Crew: " << kShipsInfo[index].kCrew
-    << " | Speed: " << kShipsInfo[index].kSpeed
-    << " | Price: " << kShipsInfo[index].kPrice << '\n';
+    return os << "Type: " << EnumToString(ship)
+              << " | Capacity: " << kShipsInfo[index].kCapacity
+              << " | Crew: " << kShipsInfo[index].kCrew
+              << " | Speed: " << kShipsInfo[index].kSpeed
+              << " | Price: " << kShipsInfo[index].kPrice << '\n';
 }
 
 void Shipyard::PrintShipsToBuild() {
@@ -87,21 +87,21 @@ void Shipyard::PrintShipsToBuild() {
 }
 
 Shipyard::Response Shipyard::BuyShip(const std::string& type,
-                                const std::string& name, 
-                                Player* player) {
+                                     const std::string& name,
+                                     Player* player) {
     auto ship_type = StringToEnum(type);
     if (ship_type == ShipFactory::ShipType::LAST)
         return Response::wrong_type_of_ship;
 
     if (player->GetAvailableShips() == kMaxPlayerShips)
         return Response::lack_of_space;
-                                
+
     const size_t index = static_cast<size_t>(ship_type);
     if (player->GetMoney() < kShipsInfo[index].kPrice)
         return Response::lack_of_money;
 
     player->BuyShip(ShipFactory::CreateShip(ship_type, name, player),
-                        kShipsInfo[index].kPrice);
+                    kShipsInfo[index].kPrice);
     return Response::done;
 }
 
@@ -113,4 +113,3 @@ Shipyard::Response Shipyard::SellShip(size_t id, Player* player) {
     player->SellShip(ship, ship->GetPrice() * kSellPricePercentage);
     return Response::done;
 }
-

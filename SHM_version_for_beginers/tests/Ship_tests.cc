@@ -1,6 +1,3 @@
-#include "gtest/gtest.h"
-#include "gmock/gmock.h"
-
 #include <memory>
 
 #include "Alcohol.h"
@@ -10,13 +7,15 @@
 #include "MockClasses.h"
 #include "Ship.h"
 #include "Test_values.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
 TEST(ShipTest, ShouldRemoveCargoWhenAmountIsZero) {
     auto timeMock = std::make_unique<TimeMock>();
     auto ship = std::make_unique<Ship>(
-		kCapacity, kCrew, kSpeed, kName, kId, timeMock.get(), nullptr);
-    auto item = std::make_unique<Item>(kItemAmount, 
-        kItemlName, kItemBasePrice, Item::Rarity::legendary);
+        kCapacity, kCrew, kSpeed, kName, kId, timeMock.get(), nullptr);
+    auto item = std::make_unique<Item>(kItemAmount,
+                                       kItemlName, kItemBasePrice, Item::Rarity::legendary);
     auto* item_ptr = item.get();
     ship->Load(std::move(item));
     ASSERT_EQ(ship->GetCargo(0), item_ptr);
@@ -29,15 +28,15 @@ TEST(ShipTest, ShouldRemoveCargoWhenAmountIsZero) {
 TEST(ShipTest, ShouldAccumulateCargoWhenTheSame) {
     auto timeMock = std::make_unique<TimeMock>();
     auto ship = std::make_unique<Ship>(
-		kCapacity, kCrew, kSpeed, kName, kId, timeMock.get(), nullptr);
-    auto item = std::make_unique<Item>(kItemAmount, 
-        kItemlName, kItemBasePrice, Item::Rarity::legendary);
+        kCapacity, kCrew, kSpeed, kName, kId, timeMock.get(), nullptr);
+    auto item = std::make_unique<Item>(kItemAmount,
+                                       kItemlName, kItemBasePrice, Item::Rarity::legendary);
     auto* item_ptr = item.get();
     ship->Load(std::move(item));
     ASSERT_EQ(ship->GetCargo(0), item_ptr);
 
-    auto item2 = std::make_unique<Item>(kItemAmount, 
-        kItemlName, kItemBasePrice, Item::Rarity::legendary);
+    auto item2 = std::make_unique<Item>(kItemAmount,
+                                        kItemlName, kItemBasePrice, Item::Rarity::legendary);
     auto* item_ptr2 = item2.get();
     ship->Load(std::move(item2));
     ASSERT_EQ(ship->GetCargo(0), item_ptr);
@@ -47,22 +46,22 @@ TEST(ShipTest, ShouldAccumulateCargoWhenTheSame) {
 TEST(ShipTest, ShouldLoadAndUnloadDiffrentCargo) {
     auto timeMock = std::make_unique<TimeMock>();
     auto ship = std::make_unique<Ship>(
-		kCapacity, kCrew, kSpeed, kName, kId, timeMock.get(), nullptr);
-    
+        kCapacity, kCrew, kSpeed, kName, kId, timeMock.get(), nullptr);
+
     // LOAD
-    auto item = std::make_unique<Item>(kItemAmount, 
-        kItemlName, kItemBasePrice, Item::Rarity::legendary);
+    auto item = std::make_unique<Item>(kItemAmount,
+                                       kItemlName, kItemBasePrice, Item::Rarity::legendary);
     auto* item_ptr = item.get();
     ship->Load(std::move(item));
     ASSERT_EQ(ship->GetCargo(0), item_ptr);
-    auto alcohol = std::make_unique<Alcohol>(kAlcoholAmount, 
-            kAlcoholName, kAlcoholBasePrice, kAlcoholPercentage);
+    auto alcohol = std::make_unique<Alcohol>(kAlcoholAmount,
+                                             kAlcoholName, kAlcoholBasePrice, kAlcoholPercentage);
     auto* alcohol_ptr = alcohol.get();
     ship->Load(std::move(alcohol));
     ASSERT_EQ(ship->GetCargo(1), alcohol_ptr);
-    auto fruit = std::make_unique<Fruit>(kFruitAmount, 
-            kFruitName, kFruitBasePrice, kFruitExpiryTime,
-            kFruitTimeElapsed, timeMock.get());
+    auto fruit = std::make_unique<Fruit>(kFruitAmount,
+                                         kFruitName, kFruitBasePrice, kFruitExpiryTime,
+                                         kFruitTimeElapsed, timeMock.get());
     auto* fruit_ptr = fruit.get();
     ship->Load(std::move(fruit));
     ASSERT_EQ(ship->GetCargo(2), fruit_ptr);
@@ -73,7 +72,7 @@ TEST(ShipTest, ShouldLoadAndUnloadDiffrentCargo) {
     ship->Unload(item_ptr);
     ship->Unload(alcohol_ptr);
     ship->Unload(fruit_ptr);
-    
+
     // STOCK SHOULD BE EMPTY
     ASSERT_EQ(ship->GetCargo(0), nullptr);
 }
@@ -81,23 +80,23 @@ TEST(ShipTest, ShouldLoadAndUnloadDiffrentCargo) {
 TEST(ShipTest, ShouldAddAnotherCargoWhenDiffrent) {
     auto timeMock = std::make_unique<TimeMock>();
     auto ship = std::make_unique<Ship>(
-		kCapacity, kCrew, kSpeed, kName, kId, timeMock.get(), nullptr);
-    auto item = std::make_unique<Item>(kItemAmount, 
-        kItemlName, kItemBasePrice, Item::Rarity::legendary);
+        kCapacity, kCrew, kSpeed, kName, kId, timeMock.get(), nullptr);
+    auto item = std::make_unique<Item>(kItemAmount,
+                                       kItemlName, kItemBasePrice, Item::Rarity::legendary);
     auto* item_ptr = item.get();
     ship->Load(std::move(item));
     ASSERT_EQ(ship->GetCargo(0), item_ptr);
 
     // Diffrent rarity
-    auto item2 = std::make_unique<Item>(kItemAmount, 
-        kItemlName, kItemBasePrice, Item::Rarity::epic);
+    auto item2 = std::make_unique<Item>(kItemAmount,
+                                        kItemlName, kItemBasePrice, Item::Rarity::epic);
     auto* item_ptr2 = item2.get();
     ship->Load(std::move(item2));
     ASSERT_EQ(ship->GetCargo(1), item_ptr2);
 
     // Diffrent base price
-    auto item3 = std::make_unique<Item>(kItemAmount, 
-        kItemlName, kItemBasePrice + 2, Item::Rarity::epic);
+    auto item3 = std::make_unique<Item>(kItemAmount,
+                                        kItemlName, kItemBasePrice + 2, Item::Rarity::epic);
     auto* item_ptr3 = item3.get();
     ship->Load(std::move(item3));
     ASSERT_EQ(ship->GetCargo(2), item_ptr3);

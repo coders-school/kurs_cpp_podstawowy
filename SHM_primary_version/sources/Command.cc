@@ -4,21 +4,23 @@
 #include <iostream>
 #include <thread>
 
+#include "GTime.h"
 #include "Map.h"
 #include "Player.h"
 #include "Shipyard.h"
 #include "Store.h"
-#include "GTime.h"
 
 using namespace std::chrono_literals;
 
 const std::string dash(80, '_');
 
-Travel::Travel(Map* map, Time* time): map_(map), time_(time) {}
+Travel::Travel(Map* map, Time* time)
+    : map_(map), time_(time) {}
 
 void Travel::execute(Player* player) {
     while (true) {
-        std::cout << dash << "\n" << *map_;
+        std::cout << dash << "\n"
+                  << *map_;
         std::cout << "\nChoose destination: (type 0 0 to exit)";
         size_t x, y;
         std::cin >> x >> y;
@@ -42,7 +44,7 @@ void Travel::execute(Player* player) {
                     break;
                 std::cin.clear();
                 std::cout << "Wrong answer!\n";
-            }	
+            }
             for (size_t i = 0; i < travel_time; ++i) {
                 ++*time_;
             }
@@ -52,16 +54,18 @@ void Travel::execute(Player* player) {
     }
 }
 
-Sell::Sell(Map* map): map_(map) {}
+Sell::Sell(Map* map)
+    : map_(map) {}
 
 void Sell::execute(Player* player) {
     while (true) {
         // Player want to see cargo, to choose which want to sell
         player->PrintCargo();
         auto* store = map_->GetCurrentPosition()->GetStore();
-        std::cout << "\n" << *store << "\n";
+        std::cout << "\n"
+                  << *store << "\n";
         std::cout << "(type 0 0 to exit) Select product (number) and quantity: ";
-        size_t quantity {};
+        size_t quantity{};
         std::string product;
         std::cin >> product >> quantity;
         if (quantity == 0 && product == "0")
@@ -75,8 +79,8 @@ void Sell::execute(Player* player) {
 
         char answer = 'N';
         while (true) {
-            std::cout << "Price is: " <<  store->GetCargoSellPrice(cargo, quantity) 
-                        << " Are you sure to continue? (Y/n): ";
+            std::cout << "Price is: " << store->GetCargoSellPrice(cargo, quantity)
+                      << " Are you sure to continue? (Y/n): ";
             std::cin >> answer;
             if (std::tolower(answer) == 'n')
                 return;
@@ -84,7 +88,7 @@ void Sell::execute(Player* player) {
                 break;
             std::cin.clear();
             std::cout << "Wrong answer!\n";
-        }	
+        }
 
         switch (store->Sell(cargo, quantity, player)) {
         case Store::Response::done:
@@ -102,14 +106,16 @@ void Sell::execute(Player* player) {
     }
 }
 
-Buy::Buy(Map* map): map_(map) {}
+Buy::Buy(Map* map)
+    : map_(map) {}
 
 void Buy::execute(Player* player) {
     while (true) {
         auto* store = map_->GetCurrentPosition()->GetStore();
-        std::cout << "\n" << *store << "\n";
+        std::cout << "\n"
+                  << *store << "\n";
         std::cout << "(type 0 0 to exit) Select product (name) and quantity: ";
-        size_t quantity {};
+        size_t quantity{};
         std::string product;
         std::cin >> product >> quantity;
         if (quantity == 0 && product == "0")
@@ -123,8 +129,8 @@ void Buy::execute(Player* player) {
 
         char answer = 'N';
         while (true) {
-            std::cout << "Price is: " <<  store->GetCargoBuyPrice(cargo, quantity) 
-                    << " Are you sure to continue? (Y/n): ";
+            std::cout << "Price is: " << store->GetCargoBuyPrice(cargo, quantity)
+                      << " Are you sure to continue? (Y/n): ";
             std::cin >> answer;
             if (std::tolower(answer) == 'n')
                 return;
@@ -132,7 +138,7 @@ void Buy::execute(Player* player) {
                 break;
             std::cin.clear();
             std::cout << "Wrong answer!\n";
-        }	
+        }
 
         switch (store->Buy(cargo, quantity, player)) {
         case Store::Response::done:
@@ -159,10 +165,11 @@ void Buy::execute(Player* player) {
 }
 
 void PrintCargo::execute(Player* player) {
-		player->PrintCargo();
+    player->PrintCargo();
 }
 
-BuyShip::BuyShip(Shipyard* shipyard): shipyard_(shipyard) {}
+BuyShip::BuyShip(Shipyard* shipyard)
+    : shipyard_(shipyard) {}
 
 void BuyShip::execute(Player* player) {
     while (true) {
@@ -170,7 +177,7 @@ void BuyShip::execute(Player* player) {
         std::cout << "Select ship type and name (type 0 0 to exit): ";
         std::string ship_type, ship_name;
         std::cin >> ship_type >> ship_name;
-        if (ship_type ==  "0" && ship_name == "0")
+        if (ship_type == "0" && ship_name == "0")
             return;
 
         char answer = 'N';
@@ -183,7 +190,7 @@ void BuyShip::execute(Player* player) {
                 break;
             std::cin.clear();
             std::cout << "Wrong answer!\n";
-        }	
+        }
 
         switch (shipyard_->BuyShip(ship_type, ship_name, player)) {
         case Shipyard::Response::done:
@@ -209,13 +216,14 @@ void BuyShip::execute(Player* player) {
     }
 }
 
-SellShip::SellShip(Shipyard* shipyard): shipyard_(shipyard) {}
+SellShip::SellShip(Shipyard* shipyard)
+    : shipyard_(shipyard) {}
 
 void SellShip::execute(Player* player) {
     while (true) {
         player->PrintShips();
         std::cout << "Select ship id (type 0 to exit): ";
-        int id {0};
+        int id{0};
         std::cin >> id;
         if (!id)
             return;
@@ -223,7 +231,7 @@ void SellShip::execute(Player* player) {
         char answer = 'N';
         while (true != 'y') {
             std::cout << "Are you sure to sell this ship for (80% of his price)?\n"
-                    << "You will also lost all cargo hold on this ship. (Y/n): ";
+                      << "You will also lost all cargo hold on this ship. (Y/n): ";
             std::cin >> answer;
             if (std::tolower(answer) == 'n')
                 return;
@@ -231,7 +239,7 @@ void SellShip::execute(Player* player) {
                 break;
             std::cin.clear();
             std::cout << "Wrong answer!\n";
-        }	
+        }
 
         switch (shipyard_->SellShip(id, player)) {
         case Shipyard::Response::done:

@@ -1,26 +1,25 @@
-#include "gtest/gtest.h"
-#include "gmock/gmock.h"
-
 #include <memory>
 
 #include "Cargo.h"
-#include "CargoTypes.h"
 #include "CargoTypeServiceLocator.h"
+#include "CargoTypes.h"
 #include "GTime.h"
 #include "MockClasses.h"
 #include "Player.h"
 #include "Store.h"
 #include "Test_values.h"
 #include "TimeServiceLocator.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
 using testing::_;
 using testing::MockFunction;
 
 class TestSuit : public testing::Test {
 public:
-    TestSuit():
-            timeMock_(std::make_unique<TimeMock>()),
-            cargoTypes_(std::make_unique<CargoTypes>()) {
+    TestSuit()
+        : timeMock_(std::make_unique<TimeMock>()),
+          cargoTypes_(std::make_unique<CargoTypes>()) {
         TimeServiceLocator::Provide(timeMock_.get());
         CargoTypeServiceLocator::Provide(cargoTypes_.get());
         EXPECT_CALL(*timeMock_, AddObserver(_)).Times(1);
@@ -83,7 +82,7 @@ TEST_F(TestSuit, StoreShouldSellCargoCheaperThenBuying) {
     EXPECT_CALL(*playerMock_, PurchaseCargo(cargo, 17830, 100));
     // Buy 100 cargo
     ASSERT_EQ(store_->Buy(cargo, 100, playerMock_.get()), Store::Response::done);
-    
+
     EXPECT_CALL(*playerMock_, SellCargo(cargo, 15070, 100));
     // Sell 100 cargo
     ASSERT_EQ(store_->Sell(cargo, 100, playerMock_.get()), Store::Response::done);
@@ -107,11 +106,11 @@ TEST_F(TestSuit, StoreShouldSellCargoForTheSamePriceWhenHirepurchase) {
     EXPECT_CALL(*playerMock_, SellCargo(_, _, _))
         .WillOnce(testing::SaveArg<1>(&price3));
     ASSERT_EQ(store_->Sell(cargo, 8, playerMock_.get()), Store::Response::done);
-    
+
     const size_t sold_cargo = 43;
     // Restore amount of cargo to previus value, before selling
     store_->SetAmountForTesting(cargo, kJewelleryAmount);
-    EXPECT_CALL(*playerMock_, SellCargo(_,  (price1 + price2 + price3), _));
+    EXPECT_CALL(*playerMock_, SellCargo(_, (price1 + price2 + price3), _));
     ASSERT_EQ(store_->Sell(cargo, sold_cargo, playerMock_.get()), Store::Response::done);
 }
 

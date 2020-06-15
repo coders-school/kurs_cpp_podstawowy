@@ -25,23 +25,22 @@ public:
 
     using Amount = size_t;
 
-	Ship() = default;
-    Ship(int capacity, int crew, int speed, size_t id, size_t price,
-        std::string name, Delegate* delegate);
-	~Ship() override;
+    Ship() = default;
+    Ship(int capacity, int crew, int speed, size_t id, size_t price, std::string name, Delegate* delegate);
+    ~Ship() override;
     void PrintCargo() const;
     void Load(const Cargo* cargo, size_t amount);
     // Return how many cargo was unloaded
     size_t TryUnload(const Cargo* cargo, size_t amount);
-	size_t GetSpeed() const { return speed_; }
+    size_t GetSpeed() const { return speed_; }
     size_t GetPrice() const { return price_; }
     size_t GetId() const { return id_; }
     size_t GetCapacity() const { return capacity_; }
     size_t GetAvailableCapacity() const { return available_capacity_; }
-	const Cargo* GetCargo(const std::string& name) const;
+    const Cargo* GetCargo(const std::string& name) const;
 
     // Override from Time::Observer
-	void NextDay() override;
+    void NextDay() override;
 
     friend std::ostream& operator<<(std::ostream& os, const Ship& ship);
 
@@ -59,4 +58,4 @@ private:
     size_t available_capacity_;
 };
 
-#endif // SHIP_H
+#endif  // SHIP_H

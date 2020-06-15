@@ -1,6 +1,3 @@
-#include "gtest/gtest.h"
-#include "gmock/gmock.h"
-
 #include <memory>
 
 #include "GTime.h"
@@ -10,6 +7,8 @@
 #include "Store.h"
 #include "Test_values.h"
 #include "TimeServiceLocator.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
 using testing::_;
 using testing::MockFunction;
@@ -20,7 +19,7 @@ constexpr size_t kX2 = 10;
 constexpr size_t kY2 = 20;
 constexpr size_t kX3 = 40;
 constexpr size_t kY3 = 50;
- 
+
 class GameTests : public testing::Test {
 public:
     void SetUp() override {
@@ -65,7 +64,7 @@ TEST_F(GameTests, ShouldLoadCargoToAnotherShipWhenPreviousIsFull) {
     ASSERT_EQ(ship_ptr->GetAvailableCapacity(), 0);
     ASSERT_EQ(ship_ptr2->GetCargo(kJewelleryName), cargo.get());
     ASSERT_EQ(ship_ptr2->GetAvailableCapacity(), 0);
-}  
+}
 
 TEST_F(GameTests, ShouldReturnDistanceBeetweenIsland) {
     auto islands = PrepareMapForTest();

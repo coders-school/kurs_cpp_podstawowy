@@ -2,18 +2,17 @@
 
 constexpr size_t kCargoTypeNum = 10;
 
-CargoTypes::CargoTypes():
-	fruit_("Fruit", 30),
-    alcohol_("Alcohol", 120),
-    wheat_("Wheat", 50),
-    wood_("Wood", 60),
-    vegetables_("Vegetables", 35),
-    spices_("Spices", 300),
-    canvas_("Canvas", 150),
-    cotton_("Cotton", 90),
-    wool_("Wool", 120),
-    jewellery_("Jewellery", 500)
-{}
+CargoTypes::CargoTypes()
+    : fruit_("Fruit", 30),
+      alcohol_("Alcohol", 120),
+      wheat_("Wheat", 50),
+      wood_("Wood", 60),
+      vegetables_("Vegetables", 35),
+      spices_("Spices", 300),
+      canvas_("Canvas", 150),
+      cotton_("Cotton", 90),
+      wool_("Wool", 120),
+      jewellery_("Jewellery", 500) {}
 
 std::vector<const Cargo*> CargoTypes::GetAvailableCargo() const {
     std::vector<const Cargo*> cargo(kCargoTypeNum);
@@ -29,4 +28,4 @@ std::vector<const Cargo*> CargoTypes::GetAvailableCargo() const {
     cargo[9] = &jewellery_;
 
     return cargo;
- }
+}

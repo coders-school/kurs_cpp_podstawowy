@@ -1,12 +1,11 @@
 #ifndef MOCKCLASSES_H
 #define MOCKCLASSES_H
 
-#include "gmock/gmock.h"
-
 #include "GTime.h"
 #include "Island.h"
 #include "Map.h"
 #include "Player.h"
+#include "gmock/gmock.h"
 
 class TimeMock : public Time {
 public:
@@ -19,7 +18,8 @@ public:
 
 class PlayerMock : public Player {
 public:
-    PlayerMock(size_t money): Player(money) {}
+    PlayerMock(size_t money)
+        : Player(money) {}
     MOCK_METHOD1(PayCrew, void(size_t));
     MOCK_CONST_METHOD0(GetAvailableSpace, size_t());
     MOCK_CONST_METHOD0(GetMoney, size_t());
@@ -32,11 +32,12 @@ public:
 
 class MapMock : public Map {
 public:
-	MapMock(): Map() {}
+    MapMock()
+        : Map() {}
     MOCK_METHOD1(Travel, void(Island*));
     MOCK_CONST_METHOD1(GetDistanceToIsland, void(Island*));
     MOCK_METHOD1(GetIsland, Island*(const Island::Coordinates&));
     MOCK_CONST_METHOD0(GetCurrentPosition, Island*(void));
 };
 
-#endif // MOCKCLASSES_H
+#endif  // MOCKCLASSES_H

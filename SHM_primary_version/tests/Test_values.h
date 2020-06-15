@@ -21,4 +21,4 @@ constexpr size_t kSpeed = 10;
 constexpr char kName[] = "BLACK WIDOW";
 constexpr size_t kId = 1;
 
-#endif // TEST_VALUES_H
+#endif  // TEST_VALUES_H

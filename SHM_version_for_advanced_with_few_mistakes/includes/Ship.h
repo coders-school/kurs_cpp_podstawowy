@@ -22,22 +22,21 @@ public:
         virtual void PayCrew(size_t money) = 0;
     };
 
-	Ship() = default;
-    Ship(int capacity, int crew, int speed, std::string name,
-        size_t id, Delegate* delegate);
-	~Ship() override;
+    Ship() = default;
+    Ship(int capacity, int crew, int speed, std::string name, size_t id, Delegate* delegate);
+    ~Ship() override;
     void PrintCargo() const;
     void Load(std::unique_ptr<Cargo> cargo);
     void Unload(Cargo* cargo);
-	size_t GetSpeed() const { return speed_; }
-	Cargo* GetCargo(size_t index) const;
+    size_t GetSpeed() const { return speed_; }
+    Cargo* GetCargo(size_t index) const;
 
     // Override from Time::Observer
-	void NextDay() override;
+    void NextDay() override;
 
 private:
-	Cargo* FindMatchCargo(Cargo* cargo);
-	void RemoveFromStorage(Cargo* cargo);
+    Cargo* FindMatchCargo(Cargo* cargo);
+    void RemoveFromStorage(Cargo* cargo);
 
     const size_t capacity_;
     const size_t crew_;
@@ -48,4 +47,4 @@ private:
     std::vector<std::unique_ptr<Cargo>> cargo_;
 };
 
-#endif // SHIP_H
+#endif  // SHIP_H

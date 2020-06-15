@@ -24,4 +24,4 @@ private:
     Cargo jewellery_;
 };
 
-#endif // CARGO_TYPES_H
+#endif  // CARGO_TYPES_H

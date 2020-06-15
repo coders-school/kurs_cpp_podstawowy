@@ -7,14 +7,14 @@
 class Time {
 public:
     class Observer {
-	public:
+    public:
         virtual void NextDay() = 0;
-		virtual ~Observer() = default;
+        virtual ~Observer() = default;
     };
 
-	using ObserverIT = std::vector<Observer*>::iterator;
+    using ObserverIT = std::vector<Observer*>::iterator;
 
-	Time() = default;
+    Time() = default;
     virtual ~Time() = default;
     virtual void AddObserver(Observer* obs);
     virtual void RemoveObserver(Observer* obs);
@@ -22,9 +22,9 @@ public:
     virtual Time& operator++();
 
 private:
-	ObserverIT GetObserverIt(Observer* obs);
-    size_t time_elapsed_ {1};
+    ObserverIT GetObserverIt(Observer* obs);
+    size_t time_elapsed_{1};
     std::vector<Observer*> observers_;
 };
 
-#endif // TIME_H
+#endif  // TIME_H

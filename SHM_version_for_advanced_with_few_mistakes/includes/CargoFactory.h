@@ -21,37 +21,40 @@ constexpr char kFruitlName[] = "Fruit";
 constexpr char kItemlName[] = "Item";
 
 class CargoFactory {
-public: 
+public:
     enum class CargoType {
-        Alcohol, Fruit, Item, LAST
+        Alcohol,
+        Fruit,
+        Item,
+        LAST
     };
 
-    static std::unique_ptr<Cargo> CreateCargo(CargoType type, 
-                                size_t amount, 
-                                size_t base_price) {
+    static std::unique_ptr<Cargo> CreateCargo(CargoType type,
+                                              size_t amount,
+                                              size_t base_price) {
         std::random_device rd;
         std::mt19937 gen(rd());
-        switch(type) {
+        switch (type) {
         case CargoType::Alcohol: {
             std::uniform_int_distribution<> percentage_dist(
-                kMinPercentage, kMaxPercentage);	
+                kMinPercentage, kMaxPercentage);
             return CreateCargoT(type, amount, kAlcoholName,
-                base_price, percentage_dist(gen));
+                                base_price, percentage_dist(gen));
             break;
-            }
+        }
         case CargoType::Fruit: {
             std::uniform_int_distribution<> expiry_date_dist(
                 kMinTimeToSpoil, kMaxTimeToSpoil);
             return CreateCargoT(type, amount, kFruitlName,
-                base_price, expiry_date_dist(gen));
+                                base_price, expiry_date_dist(gen));
             break;
-            }
+        }
         case CargoType::Item: {
             std::uniform_int_distribution<> rarity_dist(0, kRarityMax);
             return CreateCargoT(type, amount, kItemlName,
-                base_price, GetRarity(rarity_dist(gen)));	
+                                base_price, GetRarity(rarity_dist(gen)));
             break;
-            }
+        }
         }
 
         std::cerr << __func__ << " Can't Create cargo!";
@@ -73,8 +76,7 @@ public:
 private:
     template <typename... Ts>
     static std::unique_ptr<Cargo> CreateCargoT(CargoType type, Ts&&... params) {
-        switch (type)
-        {
+        switch (type) {
         case CargoType::Alcohol:
             return constructArgs<Alcohol, Ts...>(std::forward<Ts>(params)...);
             break;
@@ -107,7 +109,7 @@ private:
 // We enable this function If we can't we call constructArgs(...).
 template <typename Type, typename... Ts>
 std::enable_if_t<std::is_constructible<Type, Ts...>::value,
-            std::unique_ptr<Type>>
+                 std::unique_ptr<Type>>
 constructArgs(Ts&&... params) {
     return std::make_unique<Type>(std::forward<Ts>(params)...);
 }
@@ -116,7 +118,7 @@ template <typename Type, typename... Ts>
 std::unique_ptr<Type> constructArgs(...) {
     std::cerr << __func__ << "(...) -> Can't match parameters!";
     return nullptr;
-} 
+}
 
 // Make possible itarate through enum class
 CargoFactory::CargoType operator++(CargoFactory::CargoType& type);

@@ -1,6 +1,3 @@
-#include "gtest/gtest.h"
-#include "gmock/gmock.h"
-
 #include <memory>
 
 #include "Cargo.h"
@@ -9,6 +6,8 @@
 #include "Ship.h"
 #include "Test_values.h"
 #include "TimeServiceLocator.h"
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
 class ShipTest : public testing::Test {
 public:
@@ -24,7 +23,7 @@ public:
 
 TEST_F(ShipTest, ShouldRemoveCargoWhenAmountIsZero) {
     auto ship = std::make_unique<Ship>(
-		kCapacity, kCrew, kSpeed, kId, kShipPrice, kName, nullptr);
+        kCapacity, kCrew, kSpeed, kId, kShipPrice, kName, nullptr);
     auto item = std::make_unique<Cargo>(kItemName, kItemBasePrice);
     ship->Load(item.get(), kItemAmount);
     ASSERT_EQ(ship->GetCargo(kItemName), item.get());
@@ -35,7 +34,7 @@ TEST_F(ShipTest, ShouldRemoveCargoWhenAmountIsZero) {
 
 TEST_F(ShipTest, ShouldAccumulateCargoWhenTheSame) {
     auto ship = std::make_unique<Ship>(
-		kCapacity, kCrew, kSpeed, kId, kShipPrice, kName, nullptr);
+        kCapacity, kCrew, kSpeed, kId, kShipPrice, kName, nullptr);
     auto item = std::make_unique<Cargo>(kItemName, kItemBasePrice);
     ship->Load(item.get(), kItemAmount);
     ASSERT_EQ(ship->GetCargo(kItemName), item.get());
@@ -49,7 +48,7 @@ TEST_F(ShipTest, ShouldAccumulateCargoWhenTheSame) {
 TEST_F(ShipTest, ShouldLoadAndUnloadDiffrentCargo) {
     const size_t ship_capacity = (3 * kCapacity);
     auto ship = std::make_unique<Ship>(
-		ship_capacity, kCrew, kSpeed, kId, kShipPrice, kName, nullptr);
+        ship_capacity, kCrew, kSpeed, kId, kShipPrice, kName, nullptr);
 
     // Load
     auto item = std::make_unique<Cargo>(kItemName, kItemBasePrice);
@@ -65,8 +64,8 @@ TEST_F(ShipTest, ShouldLoadAndUnloadDiffrentCargo) {
     auto fruit = std::make_unique<Cargo>(kFruitName, kFruitBasePrice);
     ship->Load(fruit.get(), kFruitAmount);
     ASSERT_EQ(ship->GetCargo(kFruitName), fruit.get());
-    ASSERT_EQ(ship->GetAvailableCapacity(), 
-        ship_capacity - (kItemAmount + kAlcoholAmount + kFruitAmount));
+    ASSERT_EQ(ship->GetAvailableCapacity(),
+              ship_capacity - (kItemAmount + kAlcoholAmount + kFruitAmount));
 
     // UNLOAD
     ASSERT_EQ(ship->TryUnload(item.get(), kItemAmount), kItemAmount);
@@ -74,7 +73,7 @@ TEST_F(ShipTest, ShouldLoadAndUnloadDiffrentCargo) {
     ASSERT_EQ(ship->TryUnload(alcohol.get(), kAlcoholAmount), kAlcoholAmount);
     ASSERT_EQ(ship->GetAvailableCapacity(), ship_capacity - kFruitAmount);
     ASSERT_EQ(ship->TryUnload(fruit.get(), kFruitAmount), kFruitAmount);
-    
+
     // SHIP SHOULD BE EMPTY
     ASSERT_EQ(ship->GetAvailableCapacity(), ship_capacity);
 }
@@ -96,7 +95,7 @@ TEST_F(ShipTest, ShouldLoadCargoToAnotherShipWhenPreviousIsFull) {
     ASSERT_EQ(ship_ptr->GetAvailableCapacity(), 0);
     ASSERT_EQ(ship_ptr2->GetCargo(kJewelleryName), cargo.get());
     ASSERT_EQ(ship_ptr2->GetAvailableCapacity(), 0);
-} 
+}
 
 TEST_F(ShipTest, ShouldRemoveCargoFromFewShips) {
     auto ship = std::make_unique<Ship>(
@@ -119,7 +118,7 @@ TEST_F(ShipTest, ShouldRemoveCargoFromFewShips) {
     ASSERT_EQ(ship_ptr->GetAvailableCapacity(), kCapacity);
     ASSERT_EQ(ship_ptr2->GetCargo(kJewelleryName), cargo.get());
     ASSERT_EQ(ship_ptr2->GetAvailableCapacity(), 50);
-} 
+}
 
 TEST_F(ShipTest, ShouldLoadAndUnloadDiffrentCargoOnFewShip) {
     auto shippp = player_->GetShip(14);
@@ -168,7 +167,7 @@ TEST_F(ShipTest, ShouldLoadAndUnloadDiffrentCargoOnFewShip) {
     ASSERT_EQ(ship_ptr->GetAvailableCapacity(), 100);
     ASSERT_EQ(ship_ptr2->GetCargo(kAlcoholName), alcohol.get());
     ASSERT_EQ(ship_ptr2->GetAvailableCapacity(), 0);
-    
+
     player_->SellCargo(fruit.get(), 0, 50);
     ASSERT_EQ(ship_ptr->GetCargo(kFruitName), nullptr);
     ASSERT_EQ(ship_ptr->GetAvailableCapacity(), 100);
