@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <algorithm>
-#include <string>
 
 std::string getErrorMessage(const ErrorCode error){
 switch(error){
