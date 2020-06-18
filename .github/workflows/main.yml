@@ -47,4 +47,4 @@ jobs:
       run: |
         find . -name "*.cpp" -exec clang-format --style="{ BasedOnStyle: Chromium, UseTab: Never, IndentWidth: 4, TabWidth: 4, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }" -i "{}" \;
         git diff
-        echo `git status | grep "modified" | wc -l` != 0 | bc
+        test `git status | grep "modified" | wc -l` == 0
