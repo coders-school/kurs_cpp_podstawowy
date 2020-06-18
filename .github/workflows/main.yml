@@ -34,3 +34,16 @@ jobs:
     - name: Run tests
       working-directory: module3/homework/vectorOfSharedPointers/build
       run: ctest -V
+
+  clangFormat:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install clang-format
+      run: sudo apt install clang-format
+    - name: Check out code
+      uses: actions/checkout@master
+    - name: Check formatting
+      working-directory: module3/homework
+      run: |
+        find . -name "*.cpp" -exec clang-format -i "{}" \;
+        echo `git status | grep "modified" | wc -l` == 0 | bc
