@@ -3,7 +3,7 @@
 #pragma once
 #include <string>
 #include <map>
-
+#include <stdlib.h>
 enum ErrorCode {
 Ok,
 PasswordNeedsAtLeastNineCharacters,
