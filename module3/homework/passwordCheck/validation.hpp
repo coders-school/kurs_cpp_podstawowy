@@ -5,12 +5,12 @@
 #include <map>
 #include <stdlib.h>
 enum ErrorCode {
-Ok,
-PasswordNeedsAtLeastNineCharacters,
-PasswordNeedsAtLeastOneNumber,
-PasswordNeedsAtLeastOneSpecialCharacter,
-PasswordNeedsAtLeastOneUppercaseLetter,
-PasswordsDoesNotMatch
+    Ok,
+    PasswordNeedsAtLeastNineCharacters,
+    PasswordNeedsAtLeastOneNumber,
+    PasswordNeedsAtLeastOneSpecialCharacter,
+    PasswordNeedsAtLeastOneUppercaseLetter,
+    PasswordsDoesNotMatch
 };
 
 std::string getErrorMessage(ErrorCode);
