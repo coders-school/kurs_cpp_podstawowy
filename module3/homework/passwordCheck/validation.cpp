@@ -1,6 +1,6 @@
 #include "validation.hpp"
 
-std::string getErrorMessage(ErrorCode err){
+std::string getErrorMessage(const ErrorCode err){
     static const std::map < ErrorCode, std::string > labels = {
         {Ok,"OK"},
         {PasswordNeedsAtLeastNineCharacters,"PasswordNeedsAtLeastNineCharacters"},
@@ -12,16 +12,16 @@ std::string getErrorMessage(ErrorCode err){
     return labels.find(err)->second;
 }
 
-bool doesPasswordsMatch(std::string passwd1,std::string passwd2){
+bool doesPasswordsMatch(const std::string passwd1,const std::string passwd2){
     if(passwd1.compare(passwd2)==0)
         return true;
     else return false;
 }
 
-ErrorCode checkPasswordRules(std::string passwd){
+ErrorCode checkPasswordRules(const std::string passwd){
     return static_cast<ErrorCode>(rand()%4);
 }
-ErrorCode checkPassword(std::string passwd1,std::string passwd2){
+ErrorCode checkPassword(const std::string passwd1,const std::string passwd2){
     if(!doesPasswordsMatch(passwd1,passwd2))
         return PasswordsDoesNotMatch;
     else 
