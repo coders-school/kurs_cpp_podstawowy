@@ -1,0 +1,190 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.5 102132 11184 ?        Ss   11:19   0:01 /sbin/init splash
+root           2  0.0  0.0      0     0 ?        S    11:19   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I<   11:19   0:00 [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I<   11:19   0:00 [rcu_par_gp]
+root           6  0.0  0.0      0     0 ?        I<   11:19   0:00 [kworker/0:0H-kblockd]
+root           9  0.0  0.0      0     0 ?        I<   11:19   0:00 [mm_percpu_wq]
+root          10  0.0  0.0      0     0 ?        S    11:19   0:00 [ksoftirqd/0]
+root          11  0.0  0.0      0     0 ?        R    11:19   0:00 [rcu_sched]
+root          12  0.0  0.0      0     0 ?        S    11:19   0:00 [migration/0]
+root          13  0.0  0.0      0     0 ?        S    11:19   0:00 [idle_inject/0]
+root          14  0.0  0.0      0     0 ?        S    11:19   0:00 [cpuhp/0]
+root          15  0.0  0.0      0     0 ?        S    11:19   0:00 [kdevtmpfs]
+root          16  0.0  0.0      0     0 ?        I<   11:19   0:00 [netns]
+root          17  0.0  0.0      0     0 ?        S    11:19   0:00 [rcu_tasks_kthre]
+root          18  0.0  0.0      0     0 ?        S    11:19   0:00 [kauditd]
+root          19  0.0  0.0      0     0 ?        S    11:19   0:00 [khungtaskd]
+root          20  0.0  0.0      0     0 ?        S    11:19   0:00 [oom_reaper]
+root          21  0.0  0.0      0     0 ?        I<   11:19   0:00 [writeback]
+root          22  0.0  0.0      0     0 ?        S    11:19   0:00 [kcompactd0]
+root          23  0.0  0.0      0     0 ?        SN   11:19   0:00 [ksmd]
+root          24  0.0  0.0      0     0 ?        SN   11:19   0:00 [khugepaged]
+root          26  0.0  0.0      0     0 ?        I    11:19   0:00 [kworker/u2:1-events_power_efficient]
+root         116  0.0  0.0      0     0 ?        I<   11:19   0:00 [kintegrityd]
+root         117  0.0  0.0      0     0 ?        I<   11:19   0:00 [kblockd]
+root         118  0.0  0.0      0     0 ?        I<   11:19   0:00 [blkcg_punt_bio]
+root         119  0.0  0.0      0     0 ?        I<   11:19   0:00 [tpm_dev_wq]
+root         120  0.0  0.0      0     0 ?        I<   11:19   0:00 [ata_sff]
+root         121  0.0  0.0      0     0 ?        I<   11:19   0:00 [md]
+root         122  0.0  0.0      0     0 ?        I<   11:19   0:00 [edac-poller]
+root         123  0.0  0.0      0     0 ?        I<   11:19   0:00 [devfreq_wq]
+root         124  0.0  0.0      0     0 ?        S    11:19   0:00 [watchdogd]
+root         127  0.0  0.0      0     0 ?        S    11:19   0:00 [kswapd0]
+root         128  0.0  0.0      0     0 ?        S    11:19   0:00 [ecryptfs-kthrea]
+root         131  0.0  0.0      0     0 ?        I<   11:19   0:00 [kthrotld]
+root         132  0.0  0.0      0     0 ?        I<   11:19   0:00 [acpi_thermal_pm]
+root         133  0.0  0.0      0     0 ?        S    11:19   0:00 [scsi_eh_0]
+root         134  0.0  0.0      0     0 ?        I<   11:19   0:00 [scsi_tmf_0]
+root         135  0.0  0.0      0     0 ?        S    11:19   0:00 [scsi_eh_1]
+root         136  0.0  0.0      0     0 ?        I<   11:19   0:00 [scsi_tmf_1]
+root         138  0.0  0.0      0     0 ?        I<   11:19   0:00 [vfio-irqfd-clea]
+root         140  0.0  0.0      0     0 ?        I<   11:19   0:00 [ipv6_addrconf]
+root         151  0.0  0.0      0     0 ?        I<   11:19   0:00 [kstrp]
+root         155  0.0  0.0      0     0 ?        I<   11:19   0:00 [kworker/u3:0]
+root         171  0.0  0.0      0     0 ?        I<   11:19   0:00 [charger_manager]
+root         172  0.0  0.0      0     0 ?        I<   11:19   0:00 [kworker/0:1H-kblockd]
+root         212  0.0  0.0      0     0 ?        S    11:19   0:00 [scsi_eh_2]
+root         213  0.0  0.0      0     0 ?        I<   11:19   0:00 [scsi_tmf_2]
+root         237  0.0  0.0      0     0 ?        S    11:19   0:00 [jbd2/sda5-8]
+root         238  0.0  0.0      0     0 ?        I<   11:19   0:00 [ext4-rsv-conver]
+root         277  0.0  1.2  78668 25284 ?        S<s  11:19   0:00 /lib/systemd/systemd-journald
+root         303  0.0  0.0      0     0 ?        I    11:19   0:00 [kworker/0:5-events]
+root         307  0.0  0.3  23544  6696 ?        Ss   11:19   0:00 /lib/systemd/systemd-udevd
+root         311  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop0]
+root         315  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop1]
+root         317  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop2]
+root         319  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop3]
+root         321  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop4]
+root         332  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop5]
+root         335  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop6]
+root         337  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop7]
+root         344  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop8]
+root         346  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop9]
+root         348  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop10]
+root         350  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop11]
+root         351  0.0  0.0      0     0 ?        S<   11:19   0:00 [loop12]
+root         357  0.0  0.0      0     0 ?        I<   11:19   0:00 [iprt-VBoxWQueue]
+root         372  0.0  0.0      0     0 ?        I<   11:19   0:00 [cryptd]
+root         389  0.0  0.0      0     0 ?        S    11:19   0:00 [irq/18-vmwgfx]
+root         391  0.0  0.0      0     0 ?        I<   11:19   0:00 [ttm_swap]
+systemd+     550  0.0  0.6  24176 12880 ?        Ss   11:19   0:00 /lib/systemd/systemd-resolved
+systemd+     551  0.0  0.3  90412  6284 ?        Ssl  11:19   0:00 /lib/systemd/systemd-timesyncd
+root         584  0.0  0.3 249380  7396 ?        Ssl  11:19   0:00 /usr/lib/accountsservice/accounts-daemon
+root         585  0.0  0.0   2540   784 ?        Ss   11:19   0:00 /usr/sbin/acpid
+avahi        590  0.0  0.1   8500  3268 ?        Ss   11:19   0:00 avahi-daemon: running [maciej-VirtualBox.local]
+root         592  0.0  0.1  20572  2984 ?        Ss   11:19   0:00 /usr/sbin/cron -f
+root         594  0.0  0.4  39712  8776 ?        Ss   11:19   0:00 /usr/sbin/cupsd -l
+message+     596  0.0  0.2   9860  6052 ?        Ss   11:19   0:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         597  0.0  0.9 420608 19620 ?        Ssl  11:19   0:00 /usr/sbin/NetworkManager --no-daemon
+root         612  0.0  0.9  50416 18540 ?        Ss   11:19   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         615  0.0  0.5 252176 10456 ?        Ssl  11:19   0:00 /usr/lib/policykit-1/polkitd --no-debug
+syslog       624  0.0  0.2 224324  4436 ?        Ssl  11:19   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         626  0.0  1.4 553820 28956 ?        Ssl  11:19   0:00 /usr/lib/snapd/snapd
+root         628  0.0  0.2 246756  5892 ?        Ssl  11:19   0:00 /usr/libexec/switcheroo-control
+root         629  0.0  0.4  16912  8376 ?        Ss   11:19   0:00 /lib/systemd/systemd-logind
+root         631  0.0  0.5 392908 11904 ?        Ssl  11:19   0:00 /usr/lib/udisks2/udisksd
+root         635  0.0  0.2  13664  4732 ?        Ss   11:19   0:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+avahi        640  0.0  0.0   8320   304 ?        S    11:19   0:00 avahi-daemon: chroot helper
+root         663  0.0  0.6 180424 12576 ?        Ssl  11:19   0:00 /usr/sbin/cups-browsed
+root         666  0.0  0.4 313728  9604 ?        Ssl  11:19   0:00 /usr/sbin/ModemManager --filter-policy=strict
+root         694  0.0  0.3 250752  8124 ?        Ssl  11:19   0:00 /usr/sbin/gdm3
+root         711  0.0  0.9 128964 19856 ?        Ssl  11:19   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+whoopsie     740  0.0  0.6 326844 13972 ?        Ssl  11:19   0:00 /usr/bin/whoopsie -f
+kernoops     742  0.0  0.1  11240  2456 ?        Ss   11:19   0:00 /usr/sbin/kerneloops --test
+kernoops     747  0.0  0.0  11240   444 ?        Ss   11:19   0:00 /usr/sbin/kerneloops
+root         895  0.0  0.4 263280  9664 ?        Ssl  11:19   0:00 /usr/lib/upower/upowerd
+rtkit        900  0.0  0.1 152916  2960 ?        SNsl 11:19   0:00 /usr/libexec/rtkit-daemon
+colord      1112  0.0  0.6 257376 14188 ?        Ssl  11:19   0:00 /usr/libexec/colord
+root        1152  0.0  0.4 178332  8984 ?        Sl   11:19   0:00 gdm-session-worker [pam/gdm-password]
+maciej      1163  0.0  0.5  22932 12016 ?        Ss   11:20   0:00 /lib/systemd/systemd --user
+maciej      1164  0.0  0.1 103524  2648 ?        S    11:20   0:00 (sd-pam)
+maciej      1172  0.0  0.3 251344  6280 ?        Sl   11:20   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+maciej      1175  0.3  0.8 1943820 16768 ?       S<sl 11:20   0:05 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+maciej      1177  0.0  0.8 670076 16744 ?        SNsl 11:20   0:00 /usr/libexec/tracker-miner-fs
+maciej      1179  0.0  0.3  10788  7452 ?        Ss   11:20   0:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+maciej      1185  0.0  0.3 250864  7292 ?        Ssl  11:20   0:00 /usr/libexec/gvfsd
+maciej      1200  0.0  0.3 175156  6160 tty2     Ssl+ 11:20   0:00 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+maciej      1202  0.0  0.2 378336  5876 ?        Sl   11:20   0:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+maciej      1203  0.0  0.3 325056  8104 ?        Ssl  11:20   0:00 /usr/libexec/gvfs-udisks2-volume-monitor
+maciej      1208  3.2  4.2 271092 86728 tty2     Sl+  11:20   0:55 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+maciej      1216  0.0  0.2 247028  5672 ?        Ssl  11:20   0:00 /usr/libexec/gvfs-goa-volume-monitor
+maciej      1220  0.0  1.1 552760 23916 ?        Sl   11:20   0:00 /usr/libexec/goa-daemon
+maciej      1228  0.0  0.3 399640  8044 ?        Sl   11:20   0:00 /usr/libexec/goa-identity-service
+maciej      1231  0.0  0.4 327880  8292 ?        Ssl  11:20   0:00 /usr/libexec/gvfs-afc-volume-monitor
+maciej      1239  0.0  0.2 246852  6052 ?        Ssl  11:20   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+maciej      1247  0.0  0.3 249128  6452 ?        Ssl  11:20   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+maciej      1255  0.0  0.5 199536 10796 tty2     Sl+  11:20   0:00 /usr/libexec/gnome-session-binary --systemd --systemd --session=ubuntu
+maciej      1341  0.0  0.0   6032   460 ?        Ss   11:20   0:00 /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+maciej      1360  0.0  0.3 322228  7172 ?        Ssl  11:20   0:01 /usr/bin/ibus-daemon --daemonize --xim
+maciej      1364  0.0  0.3 173856  7172 ?        Sl   11:20   0:00 /usr/libexec/ibus-memconf
+maciej      1365  0.0  2.9 423972 59076 ?        Sl   11:20   0:00 /usr/libexec/ibus-ui-gtk3
+maciej      1368  0.0  2.6 386848 53152 ?        Sl   11:20   0:01 /usr/libexec/ibus-extension-gtk3
+maciej      1371  0.0  2.4 309080 50104 ?        Sl   11:20   0:00 /usr/libexec/ibus-x11 --kill-daemon
+maciej      1374  0.0  0.3 247656  6464 ?        Sl   11:20   0:00 /usr/libexec/ibus-portal
+maciej      1380  0.0  0.3 305400  6456 ?        Ssl  11:20   0:00 /usr/libexec/at-spi-bus-launcher
+maciej      1385  0.0  0.2   7216  4108 ?        S    11:20   0:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+maciej      1391  0.0  0.2 162888  6072 ?        Sl   11:20   0:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+maciej      1397  0.0  0.4 473812  8432 ?        Ssl  11:20   0:00 /usr/libexec/xdg-desktop-portal
+maciej      1401  0.0  0.3 468680  6368 ?        Ssl  11:20   0:00 /usr/libexec/xdg-document-portal
+maciej      1405  0.0  0.2 246752  4640 ?        Ssl  11:20   0:00 /usr/libexec/xdg-permission-store
+maciej      1419  0.0  0.2 101200  4324 ?        Ssl  11:20   0:00 /usr/libexec/gnome-session-ctl --monitor
+maciej      1423  0.0  1.3 506772 26516 ?        Ssl  11:20   0:00 /usr/libexec/xdg-desktop-portal-gtk
+maciej      1426  0.0  0.6 421788 12984 ?        Ssl  11:20   0:00 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+maciej      1437  0.0  0.2 156208  5736 ?        Sl   11:20   0:00 /usr/libexec/dconf-service
+maciej      1452  9.7 16.9 3684588 345580 ?      Ssl  11:20   2:47 /usr/bin/gnome-shell
+maciej      1468  0.0  0.3 173848  7328 ?        Sl   11:20   0:00 /usr/libexec/ibus-engine-simple
+maciej      1484  0.0  0.7 507608 14276 ?        Sl   11:20   0:00 /usr/libexec/gnome-shell-calendar-server
+maciej      1488  0.0  0.7 475092 16244 ?        Ssl  11:20   0:00 /usr/libexec/evolution-source-registry
+maciej      1501  0.0  1.1 2535952 22728 ?       Sl   11:20   0:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+maciej      1507  0.0  0.3 324980  7740 ?        Sl   11:20   0:00 /usr/libexec/gvfsd-trash --spawner :1.3 /org/gtk/gvfs/exec_spaw/0
+maciej      1520  0.0  0.3 320804  6552 ?        Ssl  11:20   0:00 /usr/libexec/gsd-a11y-settings
+maciej      1521  0.0  1.2 644780 26152 ?        Ssl  11:20   0:00 /usr/libexec/gsd-color
+maciej      1523  0.0  0.5 384728 11488 ?        Ssl  11:20   0:00 /usr/libexec/gsd-datetime
+maciej      1524  0.0  0.3 322864  7456 ?        Ssl  11:20   0:00 /usr/libexec/gsd-housekeeping
+maciej      1531  0.0  1.2 357036 24948 ?        Ssl  11:20   0:00 /usr/libexec/gsd-keyboard
+maciej      1533  0.0  1.3 699316 28196 ?        Ssl  11:20   0:00 /usr/libexec/gsd-media-keys
+maciej      1535  0.0  1.2 357672 25424 ?        Ssl  11:20   0:00 /usr/libexec/gsd-power
+maciej      1540  0.0  0.5 259364 11080 ?        Ssl  11:20   0:00 /usr/libexec/gsd-print-notifications
+maciej      1542  0.0  0.2 468248  6064 ?        Ssl  11:20   0:00 /usr/libexec/gsd-rfkill
+maciej      1546  0.0  0.2 246660  5888 ?        Ssl  11:20   0:00 /usr/libexec/gsd-screensaver-proxy
+maciej      1549  0.0  0.4 475920  8812 ?        Ssl  11:20   0:00 /usr/libexec/gsd-sharing
+maciej      1558  0.0  0.4 400036  8740 ?        Ssl  11:20   0:00 /usr/libexec/gsd-smartcard
+maciej      1560  0.0  0.3 330388  7972 ?        Ssl  11:20   0:00 /usr/libexec/gsd-sound
+maciej      1565  0.0  0.3 469836  7028 ?        Ssl  11:20   0:00 /usr/libexec/gsd-usb-protection
+maciej      1566  0.0  1.1 356496 24352 ?        Ssl  11:20   0:00 /usr/libexec/gsd-wacom
+maciej      1568  0.0  0.2 231792  5640 ?        Sl   11:20   0:00 /usr/libexec/gsd-disk-utility-notify
+maciej      1570  0.0  0.3 325128  8072 ?        Ssl  11:20   0:00 /usr/libexec/gsd-wwan
+maciej      1574  0.0  1.2 357672 25804 ?        Ssl  11:20   0:00 /usr/libexec/gsd-xsettings
+maciej      1584  0.0  0.8 718756 16740 ?        Ssl  11:20   0:00 /usr/libexec/evolution-calendar-factory
+maciej      1598  0.0  2.3 645320 48748 ?        Sl   11:20   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+maciej      1612  0.0  0.6 353316 12292 ?        Sl   11:20   0:00 /usr/libexec/gsd-printer
+maciej      1652  0.0  0.9 692656 19820 ?        Ssl  11:20   0:00 /usr/libexec/evolution-addressbook-factory
+maciej      1659  0.0  0.3 173432  6432 ?        Ssl  11:20   0:00 /usr/libexec/gvfsd-metadata
+maciej      1819  0.0  1.4 431480 28944 ?        Sl   11:21   0:00 update-notifier
+maciej      1949  2.3  9.5 972056 194232 ?       SLl  11:21   0:38 /opt/google/chrome/chrome
+maciej      1955  0.0  0.0  19380   588 ?        S    11:21   0:00 cat
+maciej      1956  0.0  0.0  19380   584 ?        S    11:21   0:00 cat
+maciej      1959  0.0  2.8 282700 58832 ?        S    11:21   0:00 /opt/google/chrome/chrome --type=zygote --no-zygote-sandbox --enable-crash-reporter=50066a1a-6492-4e5d-b00e-62845670de20,
+maciej      1961  0.0  2.9 282700 59148 ?        S    11:21   0:00 /opt/google/chrome/chrome --type=zygote --enable-crash-reporter=50066a1a-6492-4e5d-b00e-62845670de20,
+maciej      1962  0.0  0.2  10776  4216 ?        S    11:21   0:00 /opt/google/chrome/nacl_helper
+maciej      1963  0.0  0.1  10776  3064 ?        S    11:21   0:00 /opt/google/chrome/nacl_helper
+maciej      1966  0.0  0.7 282700 15660 ?        S    11:21   0:00 /opt/google/chrome/chrome --type=zygote --enable-crash-reporter=50066a1a-6492-4e5d-b00e-62845670de20,
+maciej      1991  0.5  4.2 365812 85916 ?        SLl  11:21   0:09 /opt/google/chrome/chrome --type=utility --field-trial-handle=14136976776144157412,2646932698821341782,131072 --lang=en-US --service-sandbox-type=network --disable-webrtc-apm-in-audio-service --enable-crash-reporter=50066a1a-6492-4e5d-b00e-62845670de20, --shared-files
+maciej      2015  3.8  5.6 432648 116008 ?       Sl   11:21   1:02 /opt/google/chrome/chrome --type=gpu-process --field-trial-handle=14136976776144157412,2646932698821341782,131072 --enable-crash-reporter=50066a1a-6492-4e5d-b00e-62845670de20, --gpu-preferences=MAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAQAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA= --use-gl=swiftshader-webgl --shared-files
+maciej      2017  0.0  0.7 299088 15932 ?        S    11:21   0:00 /opt/google/chrome/chrome --type=broker
+maciej      2138  0.8  7.4 4713616 152196 ?      Sl   11:21   0:14 /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm-in-audio-service --field-trial-handle=14136976776144157412,2646932698821341782,131072 --disable-gpu-compositing --lang=en-US --enable-crash-reporter=50066a1a-6492-4e5d-b00e-62845670de20, --enable-auto-reload --num-raster-threads=1 --renderer-client-id=13 --no-v8-untrusted-code-mitigations --shared-files
+maciej      2306  0.0  0.4 325248  8264 ?        Sl   11:22   0:00 /usr/libexec/gvfsd-network --spawner :1.3 /org/gtk/gvfs/exec_spaw/1
+maciej      2321  0.0  0.4 399856  8348 ?        Sl   11:22   0:00 /usr/libexec/gvfsd-dnssd --spawner :1.3 /org/gtk/gvfs/exec_spaw/3
+maciej      3136  0.3  2.3 968512 47168 ?        Ssl  11:36   0:02 /usr/libexec/gnome-terminal-server
+maciej      3147  0.0  0.3  23024  6220 pts/0    Ss   11:36   0:00 bash
+maciej      3209  0.0  5.6 4637128 114500 ?      Sl   11:37   0:00 /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm-in-audio-service --field-trial-handle=14136976776144157412,2646932698821341782,131072 --disable-gpu-compositing --lang=en-US --enable-crash-reporter=50066a1a-6492-4e5d-b00e-62845670de20, --enable-auto-reload --num-raster-threads=1 --renderer-client-id=42 --no-v8-untrusted-code-mitigations --shared-files
+maciej      3220  9.9 13.9 4860772 284204 ?      Sl   11:37   1:07 /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm-in-audio-service --field-trial-handle=14136976776144157412,2646932698821341782,131072 --disable-gpu-compositing --lang=en-US --enable-crash-reporter=50066a1a-6492-4e5d-b00e-62845670de20, --enable-auto-reload --num-raster-threads=1 --renderer-client-id=43 --no-v8-untrusted-code-mitigations --shared-files
+root        3263  0.0  0.0      0     0 ?        I    11:37   0:00 [kworker/u2:2-events_unbound]
+maciej      4560  0.0  4.4 4587312 90452 ?       Sl   11:38   0:00 /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm-in-audio-service --field-trial-handle=14136976776144157412,2646932698821341782,131072 --disable-gpu-compositing --lang=en-US --enable-crash-reporter=50066a1a-6492-4e5d-b00e-62845670de20, --enable-auto-reload --num-raster-threads=1 --renderer-client-id=49 --no-v8-untrusted-code-mitigations --shared-files
+maciej      4868  0.2  2.9 565400 59236 ?        Sl   11:38   0:01 /opt/google/chrome/chrome --type=utility --field-trial-handle=14136976776144157412,2646932698821341782,131072 --lang=en-US --service-sandbox-type=audio --disable-webrtc-apm-in-audio-service --enable-crash-reporter=50066a1a-6492-4e5d-b00e-62845670de20, --shared-files
+maciej      5012  0.7  6.8 4671800 139016 ?      Sl   11:39   0:03 /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm-in-audio-service --field-trial-handle=14136976776144157412,2646932698821341782,131072 --disable-gpu-compositing --lang=en-US --enable-crash-reporter=50066a1a-6492-4e5d-b00e-62845670de20, --enable-auto-reload --num-raster-threads=1 --renderer-client-id=59 --no-v8-untrusted-code-mitigations --shared-files
+maciej      5023  0.0  2.5 4563184 51052 ?       Sl   11:39   0:00 /opt/google/chrome/chrome --type=renderer --disable-webrtc-apm-in-audio-service --field-trial-handle=14136976776144157412,2646932698821341782,131072 --disable-gpu-compositing --lang=en-US --enable-crash-reporter=50066a1a-6492-4e5d-b00e-62845670de20, --enable-auto-reload --num-raster-threads=1 --renderer-client-id=60 --no-v8-untrusted-code-mitigations --shared-files
+root        5157  0.0  0.0      0     0 ?        I    11:43   0:00 [kworker/0:1]
+maciej      5260  0.2  1.2 445840 24992 ?        Ssl  11:48   0:00 /usr/libexec/tracker-store
+maciej      5271  0.0  0.1  22636  3388 pts/0    R+   11:48   0:00 ps aux
