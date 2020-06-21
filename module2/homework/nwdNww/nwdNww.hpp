@@ -1,3 +1,4 @@
+#include <cstdlib>
 #pragma once
 
 int NWD(int lhs, int rhs)
@@ -14,13 +15,15 @@ int NWD(int lhs, int rhs)
             lhs -= rhs;
         }
     }
-    return rhs;
+    return std::abs(rhs);
 }
-
 
 int NWW(int lhs, int rhs)
 {
     // TODO: Implement me :)
-    int NWW = (lhs*rhs)*NWD(lhs,rhs);
-    return NWW;
+    if (lhs < 0 || rhs < 0)
+    {
+        return 0;
+    }
+    return std::abs((lhs * rhs) / NWD(lhs, rhs));
 }
