@@ -9,7 +9,7 @@ int main() {
         std::string command{};
         std::cin >> command;
         if (command == "quit")
-            break;
+            break;  
         int first{};
         int second{};
         std::cout << "Provide two numbers: ";
