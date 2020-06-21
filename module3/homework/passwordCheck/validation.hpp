@@ -10,6 +10,7 @@ enum class ErrorCode
     PasswordsDoesNotMatch
 };
 
+std::string getErrorMessage(ErrorCode code);
 
 
 
