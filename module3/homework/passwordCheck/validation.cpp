@@ -13,10 +13,9 @@ std::string getErrorMessage(const ErrorCode err){
 }
 
 bool doesPasswordsMatch(const std::string passwd1,const std::string passwd2){
-    if(passwd1.compare(passwd2)==0)
-        return true;
-    else return false;
+  return passwd1==passwd2;
 }
+
 
 ErrorCode checkPasswordRules(const std::string passwd){
     return static_cast<ErrorCode>(rand()%4);
