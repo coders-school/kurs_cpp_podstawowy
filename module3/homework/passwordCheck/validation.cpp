@@ -1,6 +1,10 @@
-#include "validation.hpp"
-#include <string>
+#include <cstring>
+#include <algorithm>
 
+
+#include "validation.hpp"
+
+const int8_t minPasswordLen = 9;
 std::string getErrorMessage(ErrorCode code)
 {
     switch(code)
@@ -17,4 +21,37 @@ std::string getErrorMessage(ErrorCode code)
         case ErrorCode::PasswordsDoesNotMatch: 
                     {return "ERROR. Password does not match.";}
     }
+}
+
+ErrorCode checkPasswordRules(std::string const password,
+                    std::string const repeated_password)
+{
+    if(!(password == repeated_password)) return ErrorCode::PasswordsDoesNotMatch;
+
+    if(password.length() < minPasswordLen) return ErrorCode::PasswordNeedsAtLeastNineCharacters;
+
+    if(std::find_if(password.begin(), 
+        password.end(), isdigit) == password.end())
+        return ErrorCode::PasswordNeedsAtLeastOneNumber;
+
+    if(std::find_if(password.begin(), 
+        password.end(), isupper) == password.end())
+        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+
+    bool passwordContainsSpecialCharacter = false;
+    std::string const listOfTheSpecialCharacters = "!@#$%^&*";
+    for(const char& ch : listOfTheSpecialCharacters)
+    {
+        if(std::any_of(password.begin(), password.end(),
+                [ch](const char& l){return l == ch;}))
+                {
+                    passwordContainsSpecialCharacter = true;
+                    break;
+                }
+    }
+
+    if(!passwordContainsSpecialCharacter) 
+        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
+
+    return ErrorCode::Ok;
 }
