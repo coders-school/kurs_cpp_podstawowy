@@ -13,3 +13,9 @@ std::vector<std::shared_ptr<int>> generate(int count) {
     }
     return vec;
 }
+
+void print(const std::vector<std::shared_ptr<int>>& vec) {
+    for (const auto& element : vec) {
+        std::cout << *element << "\n";
+    }
+}
