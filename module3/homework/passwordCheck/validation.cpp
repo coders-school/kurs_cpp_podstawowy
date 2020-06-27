@@ -9,7 +9,7 @@ std::string getErrorMessage(ErrorCode code)
 {
     switch(code)
     {
-        case ErrorCode::Ok : {return "The given password is OK.";}
+        case ErrorCode::Ok : {return "OK";}
         case ErrorCode::PasswordNeedsAtLeastNineCharacters : 
                     {return "ERROR. Password needs at least nine characters.";}
         case ErrorCode::PasswordNeedsAtLeastOneNumber : 
@@ -23,7 +23,7 @@ std::string getErrorMessage(ErrorCode code)
     }
 }
 
-bool doesPasswordMatch(std::string password, std::string repeated_password)
+bool doesPasswordsMatch(std::string password, std::string repeated_password)
 {
     if(password != repeated_password) return false;
     return true;
@@ -62,8 +62,8 @@ ErrorCode checkPasswordRules(std::string const password)
 ErrorCode checkPassword(std::string const password,
                     std::string const repeated_password)
 {
-    if(!doesPasswordMatch(password,repeated_password))
+    if(!doesPasswordsMatch(password,repeated_password))
         return ErrorCode::PasswordsDoesNotMatch;
 
-    return checkPasswordRules(password,repeated_password);
+    return checkPasswordRules(password);
 }
