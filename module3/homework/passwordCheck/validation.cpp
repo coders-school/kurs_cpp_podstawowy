@@ -23,11 +23,14 @@ std::string getErrorMessage(ErrorCode code)
     }
 }
 
-ErrorCode checkPasswordRules(std::string const password,
-                    std::string const repeated_password)
+bool doesPasswordMatch(std::string password, std::string repeated_password)
 {
-    if(!(password == repeated_password)) return ErrorCode::PasswordsDoesNotMatch;
+    if(password != repeated_password) return false;
+    return true;
+}
 
+ErrorCode checkPasswordRules(std::string const password)
+{
     if(password.length() < minPasswordLen) return ErrorCode::PasswordNeedsAtLeastNineCharacters;
 
     if(std::find_if(password.begin(), 
@@ -54,4 +57,13 @@ ErrorCode checkPasswordRules(std::string const password,
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
 
     return ErrorCode::Ok;
+}
+
+ErrorCode checkPassword(std::string const password,
+                    std::string const repeated_password)
+{
+    if(!doesPasswordMatch(password,repeated_password))
+        return ErrorCode::PasswordsDoesNotMatch;
+
+    return checkPasswordRules(password,repeated_password);
 }
