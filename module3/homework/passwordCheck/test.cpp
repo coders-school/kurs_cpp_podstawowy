@@ -1,5 +1,6 @@
-#include "gtest/gtest.h"
 #include "validation.hpp"
+#include "gtest/gtest.h"
+
 
 std::string EMPTY_PASSWORD = "";
 std::string PROPER_PASSWORD = "abcABC123!@#";
@@ -39,5 +40,9 @@ TEST(checkPasswordTests, returnsPasswordsDoesNotMatchForDifferentPasswords) {
 
 TEST(getErrorMessageTests, returnsErrorCodeAsString) {
     EXPECT_EQ(getErrorMessage(ErrorCode::Ok), "OK");
-    // Add other tests for getErrorMessage if you wish
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastNineCharacters), "ERROR. Password needs at least nine characters.");
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastOneNumber), "ERROR. Password needs at least one number.");
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter), "ERROR. Password needs at least one special character.");
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter), "ERROR. Password needs at least one uppercase letter.");
+    EXPECT_EQ(getErrorMessage(ErrorCode::PasswordsDoesNotMatch), "ERROR. Password does not match.");
 }
