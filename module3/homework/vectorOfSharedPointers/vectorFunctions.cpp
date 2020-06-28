@@ -15,9 +15,18 @@ std::vector<std::shared_ptr<int>> generate(int const count)
 
 void print(std::vector<std::shared_ptr<int>>& vec)
 {
+    printf("Vector of the Shared Ptrs values:\n");
     for(std::vector<std::shared_ptr<int>>::iterator it = vec.begin(); it!= vec.end(); it++)
     {
-        printf("%i", **it);
+        printf("%i ", **it);
     }
     printf("\n");
+}
+
+void add10(std::vector<std::shared_ptr<int>>& vec)
+{
+    for(std::vector<std::shared_ptr<int>>::iterator it = vec.begin(); it!= vec.end(); it++)
+    {
+        **it += 10;
+    }
 }
