@@ -2,5 +2,11 @@
 #include <vector>
 
 int addEven(const std::vector<int>& numbers) {
-    return -1;
+    int retValue{};
+    for(const auto& element : numbers) {
+        if(element%2 == 0) {
+            retValue += element;
+        }
+    }
+    return retValue;
 }
