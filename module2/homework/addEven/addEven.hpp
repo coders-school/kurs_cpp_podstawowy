@@ -4,7 +4,7 @@
 int addEven(const std::vector<int>& numbers) {
     int retValue{};
     for(const auto& element : numbers) {
-        if(element%2 == 0) {
+        if(element % 2 == 0) {
             retValue += element;
         }
     }
