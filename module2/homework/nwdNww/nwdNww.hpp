@@ -1,4 +1,5 @@
 #pragma once
+
 #include <algorithm>
 
 int NWD(int lhs, int rhs) {
