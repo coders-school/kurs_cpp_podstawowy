@@ -15,8 +15,9 @@ void print(const std::vector<std::shared_ptr<int>>& input) {
     for(const auto& element : input) {
         if (element) {
             std::cout << *element << '\n';
+        } else {
+            std::cerr << "Element in vector is a nullptr!\n";
         }
-        std::cerr << "Element in vector is a nullptr!\n";
     }
 }
 
