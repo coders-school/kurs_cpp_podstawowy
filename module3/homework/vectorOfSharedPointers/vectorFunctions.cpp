@@ -1,0 +1,38 @@
+#include <iostream>
+#include "vectorFunctions.hpp"
+
+
+std::vector<std::shared_ptr<int>> generate(int count) {
+    std::vector<std::shared_ptr<int>> returnValue;
+    returnValue.reserve(count);
+    for(int i = 0; i < count; ++i) {
+        returnValue.emplace_back(std::make_shared<int>(i));
+    }
+    return returnValue;
+}
+
+void print(const std::vector<std::shared_ptr<int>>& input) {
+    for(const auto& element : input) {
+        std::cout << *element << '\n';
+    }
+}
+
+void add10(std::vector<std::shared_ptr<int>>& input) {
+    for(auto& element : input) {
+        if(element) {
+            *element += 10;
+        }
+    }
+}
+
+void sub10(int* const input) {
+    if(input) {
+        *input -= 10;
+    }
+}
+
+void sub10(std::vector<std::shared_ptr<int>>& input) {
+    for(auto & element : input) {
+        sub10(element.get());
+    }
+}
