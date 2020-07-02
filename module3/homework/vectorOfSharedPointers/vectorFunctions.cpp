@@ -13,7 +13,10 @@ std::vector<std::shared_ptr<int>> generate(int count) {
 
 void print(const std::vector<std::shared_ptr<int>>& input) {
     for(const auto& element : input) {
-        std::cout << *element << '\n';
+        if (element) {
+            std::cout << *element << '\n';
+        }
+        std::cerr << "Element in vector is a nullptr!\n";
     }
 }
 
