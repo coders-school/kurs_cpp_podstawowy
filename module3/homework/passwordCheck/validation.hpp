@@ -11,9 +11,6 @@ enum class ErrorCode {
     PasswordsDoesNotMatch
 };
 
-constexpr int errorCodeFirstElementValue = static_cast<int>(ErrorCode::Ok);
-constexpr int errorCodeLastElementValue = static_cast<int>(ErrorCode::PasswordsDoesNotMatch);
-
 std::string getErrorMessage(const ErrorCode& input);
 bool doesPasswordsMatch(const std::string& input1, const std::string& input2);
 ErrorCode checkPasswordRules(const std::string& input);

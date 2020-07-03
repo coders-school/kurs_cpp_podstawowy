@@ -1,5 +1,7 @@
 #include <iostream>
-#include <random>
+#include <algorithm>
+#include <iterator>
+#include <cctype>
 #include "validation.hpp"
 
 std::string getErrorMessage(const ErrorCode& input) {
@@ -33,13 +35,21 @@ bool doesPasswordsMatch(const std::string& input1, const std::string& input2) {
 }
 
 ErrorCode checkPasswordRules(const std::string& input) {
-    std::random_device rDev;
-    std::default_random_engine dre(rDev());
-    std::uniform_int_distribution<int> uniformIntDist(
-        errorCodeFirstElementValue,
-        errorCodeLastElementValue
-    );
-    return static_cast<ErrorCode>(uniformIntDist(dre));
+    if(input.length() < 9) {
+        return ErrorCode::PasswordNeedsAtLeastNineCharacters;
+    }
+    const auto it1 = input.begin();
+    const auto it2 = input.end();
+    if(!std::any_of(it1, it2, isdigit)) {
+        return ErrorCode::PasswordNeedsAtLeastOneNumber;
+    }
+    if(!std::any_of(it1, it2, ispunct)) {
+        return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
+    }
+    if(!std::any_of(it1, it2, isupper)) {
+        return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
+    }
+    return ErrorCode::Ok;
 }
 
 ErrorCode checkPassword(const std::string& actualPassword, const std::string& correctPassword) {
@@ -48,5 +58,3 @@ ErrorCode checkPassword(const std::string& actualPassword, const std::string& co
     }
     return checkPasswordRules(actualPassword);
 }
-
-
