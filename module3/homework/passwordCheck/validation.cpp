@@ -5,6 +5,8 @@
 #include <iostream>
 #include <iterator>
 
+constexpr int minimumPasswordLength = 9;
+
 std::string getErrorMessage(const ErrorCode& input) {
 // Possible other implementation with a std::map<ErrorCode, std::string>
     std::string returnValue;
@@ -36,7 +38,7 @@ bool doesPasswordsMatch(const std::string& input1, const std::string& input2) {
 }
 
 ErrorCode checkPasswordRules(const std::string& input) {
-    if(input.length() < 9) {
+    if(input.length() < minimumPasswordLength) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
     const auto it1 = input.begin();
