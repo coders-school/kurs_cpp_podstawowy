@@ -43,13 +43,13 @@ ErrorCode checkPasswordRules(const std::string& input) {
     }
     const auto it1 = input.begin();
     const auto it2 = input.end();
-    if(!std::any_of(it1, it2, isdigit)) {
+    if(!std::any_of(it1, it2, ::isdigit)) {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
-    if(!std::any_of(it1, it2, ispunct)) {
+    if(!std::any_of(it1, it2, ::ispunct)) {
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
     }
-    if(!std::any_of(it1, it2, isupper)) {
+    if(!std::any_of(it1, it2, ::isupper)) {
         return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
     }
     return ErrorCode::Ok;
