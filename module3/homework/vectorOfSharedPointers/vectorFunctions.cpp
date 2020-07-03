@@ -4,6 +4,9 @@
 
 std::vector<std::shared_ptr<int>> generate(int count) {
     std::vector<std::shared_ptr<int>> returnValue;
+    if (count <= 0) {
+        return returnValue;
+    }
     returnValue.reserve(count);
     for(int i = 0; i < count; ++i) {
         returnValue.emplace_back(std::make_shared<int>(i));
