@@ -1,8 +1,9 @@
-#include <iostream>
-#include <algorithm>
-#include <iterator>
-#include <cctype>
 #include "validation.hpp"
+
+#include <algorithm>
+#include <cctype>
+#include <iostream>
+#include <iterator>
 
 std::string getErrorMessage(const ErrorCode& input) {
 // Possible other implementation with a std::map<ErrorCode, std::string>
