@@ -41,8 +41,8 @@ ErrorCode checkPasswordRules(const std::string& input) {
     if(input.length() < minimumPasswordLength) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
-    const auto it1 = input.begin();
-    const auto it2 = input.end();
+    const auto it1 = input.cbegin();
+    const auto it2 = input.cend();
     if(!std::any_of(it1, it2, ::isdigit)) {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
