@@ -5,7 +5,7 @@
 std::vector<std::shared_ptr<int>> generate(int const count)
 {
     std::vector<std::shared_ptr<int>> vec;
-    for(int i = 0; i <= count; i++)
+    for(int i = 0; i < count; i++)
     {
         vec.push_back(std::make_shared<int>(i));
     }
@@ -27,19 +27,19 @@ void add10(std::vector<std::shared_ptr<int>>& vec)
 {
     for(std::vector<std::shared_ptr<int>>::iterator it = vec.begin(); it!= vec.end(); it++)
     {
-        **it += 10;
+        if(*it != nullptr) **it += 10;
     }
 }
 
-void sub10(std::shared_ptr<int> const ptr)
+void sub10(int* const ptr)
 {
-    *ptr -= 10;
+    if(ptr != nullptr) *ptr -= 10;
 }
 
 void sub10(std::vector<std::shared_ptr<int>>& vec)
 {
     for(std::vector<std::shared_ptr<int>>::iterator it = vec.begin(); it!= vec.end(); it++)
     {
-        **it -= 10;
+        if(*it != nullptr) **it -= 10;
     }
 }
