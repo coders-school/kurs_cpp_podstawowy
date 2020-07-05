@@ -5,5 +5,5 @@
 std::vector<std::shared_ptr<int>> generate(int const count);
 void print(std::vector<std::shared_ptr<int>>& vec);
 void add10(std::vector<std::shared_ptr<int>>& vec);
-void sub10(std::shared_ptr<int> const ptr);
+void sub10(int* const ptr);
 void sub10(std::vector<std::shared_ptr<int>>& vec);
