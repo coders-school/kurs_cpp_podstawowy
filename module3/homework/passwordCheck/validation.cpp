@@ -8,7 +8,6 @@
 constexpr int minimumPasswordLength = 9;
 
 std::string getErrorMessage(const ErrorCode& input) {
-// Possible other implementation with a std::map<ErrorCode, std::string>
     std::string returnValue;
     switch(input) {
         case ErrorCode::Ok: {
