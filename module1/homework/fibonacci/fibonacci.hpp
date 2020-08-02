@@ -28,8 +28,8 @@ int fibonacci_iterative(int sequence) {
 int fibonacci_recursive(int sequence) {
     // TODO: Your implementation goes here
 
-    	int solution;
-	
+    	int solution = 0;
+
 	if (sequence < 1){
 	
 		solution = 0;
