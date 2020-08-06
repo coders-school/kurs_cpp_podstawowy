@@ -1,4 +1,4 @@
-name: C++ with CMake CI
+name: Module 3 homework
 
 on: [push, pull_request]
 
@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@master
-    - name: mkdir module3/homework/passwordCheck/build
+    - name: Create build directory
       run: mkdir module3/homework/passwordCheck/build
     - name: Compile
       working-directory: module3/homework/passwordCheck/build
@@ -24,7 +24,7 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@master
-    - name: mkdir module3/homework/vectorOfSharedPointers/build
+    - name: Create build directory
       run: mkdir module3/homework/vectorOfSharedPointers/build
     - name: Compile
       working-directory: module3/homework/vectorOfSharedPointers/build
