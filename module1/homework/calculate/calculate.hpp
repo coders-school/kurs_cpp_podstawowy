@@ -5,20 +5,24 @@ std::string calculate(const std::string& command, int first, int second) {
     std::string result;
 
     if (command == "add") {
-        result = std::to_string(first + second);
-    } else if (command == "subtract") {
-        result = std::to_string(first - second);
-    } else if (command == "multiply") {
-        result = std::to_string(first * second);
-    } else if (command == "divide") {
-        if (second = 0) {
-            return "Division by 0";
-        } else {
-            result = std::to_string(first / second);
-        }
-    } else {
-        return "Invalid command";
+        return std::to_string(first + second);
     }
 
-    return result;
+    if (command == "subtract") {
+        return std::to_string(first - second);
+    }
+
+    if (command == "multiply") {
+        return std::to_string(first * second);
+    }
+
+    if (command == "divide") {
+        if (second == 0) {
+            return "Division by 0";
+        } else {
+            return std::to_string(first / second);
+        }
+    }
+
+    return "Invalid command";
 }
