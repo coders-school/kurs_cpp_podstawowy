@@ -2,7 +2,6 @@
 #include <string>
 
 std::string calculate(const std::string& command, int first, int second) {
-    std::string result;
 
     if (command == "add") {
         return std::to_string(first + second);
@@ -24,5 +23,5 @@ std::string calculate(const std::string& command, int first, int second) {
         }
     }
 
-    return "Invalid command";
+    return "Invalid data";
 }
