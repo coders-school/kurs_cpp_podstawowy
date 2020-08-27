@@ -32,9 +32,9 @@ TEST(checkPasswordTests, returnsValuesBetweenOkAndPasswordNeedsAtLeastOneUpperca
 }
 
 TEST(checkPasswordTests, returnsPasswordsDoesNotMatchForDifferentPasswords) {
-    EXPECT_EQ(checkPassword(PROPER_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordsDoesNotMatch); // equal ==
+    EXPECT_EQ(checkPassword(PROPER_PASSWORD, EMPTY_PASSWORD), ErrorCode::PasswordsDoesNotMatch);  // equal ==
     EXPECT_EQ(checkPassword(EMPTY_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
-    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch); 
+    EXPECT_EQ(checkPassword(TOO_SHORT_PASSWORD, PROPER_PASSWORD), ErrorCode::PasswordsDoesNotMatch);
 }
 
 TEST(getErrorMessageTests, returnsErrorCodeAsString) {
