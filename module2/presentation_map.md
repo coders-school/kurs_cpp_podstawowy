@@ -147,8 +147,9 @@ int main() {
     std::list<std::string> list{"One", "Two", "Three", "Four", "Five"};
     auto map = createMap(vec, list);
 
-    for (const auto& pair : map)
+    for (const auto& pair : map) {
         std::cout << pair.first << " | " << pair.second << '\n';
+    }
 
     return 0;
 }
