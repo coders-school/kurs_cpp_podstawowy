@@ -2,9 +2,7 @@
 
 # Podstawy C++
 
-## Zagrożenia
-
-### w stosowaniu referencji i wskaźników
+## Zagrożenia w stosowaniu referencji i wskaźników
 
 <a href="https://coders.school">
     <img width="500" data-src="../img/coders_school_logo.png" alt="Coders School" class="plain">
