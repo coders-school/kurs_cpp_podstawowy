@@ -102,7 +102,7 @@ Napisz program, który zawierać będzie 5 funkcji. Deklaracje powinny znaleźć
 * `void print()` która wypisze wszystkie elementy ze wskaźników wektora
 * `void add10()` która przyjmie wektor i doda do każdej liczby `10`
 * `void sub10()` która przyjmie stały wskaźnik na `int` i odejmie od tego elementu `10`
-* `void sub10();` Która przyjmie wektor współdzielonych wskaźników i wywoła dla każdego elementu powyższe przeciążenie funkcji `sub10()`
+* `void sub10()` która przyjmie wektor współdzielonych wskaźników i wywoła dla każdego elementu powyższe przeciążenie funkcji `sub10()`
 
 Razem: 5 punktów (1 za każdą funkcję) (+2 za dostarczenie przed 07.06.2020 23:59, +3 punkty/osobę za pracę w parze)
 
