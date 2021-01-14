@@ -1,8 +1,20 @@
 #include <iostream>
 
 // Write your function here
+void printString(std::string arg1, int arg2)
+{
+    int i = 0;
 
-int main() {
+    do
+    {
+        std::cout << arg1 << "\n";
+        i++;
+
+    } while (i != arg2);
+}
+
+int main()
+{
     printString("Hello", 5);
     std::cout << "\n";
 

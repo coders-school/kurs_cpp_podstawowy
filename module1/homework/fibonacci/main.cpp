@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "fibonacci.hpp"
 
 int main() {
