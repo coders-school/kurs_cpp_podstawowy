@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "generateSequence.hpp"
 
 int main() {
