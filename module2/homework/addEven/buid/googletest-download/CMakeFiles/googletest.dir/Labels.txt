@@ -1,0 +1,14 @@
+# Target labels
+ googletest
+# Source files and their labels
+/home/warp/kurs_cpp_podstawowy/module2/homework/addEven/buid/googletest-download/CMakeFiles/googletest
+/home/warp/kurs_cpp_podstawowy/module2/homework/addEven/buid/googletest-download/CMakeFiles/googletest.rule
+/home/warp/kurs_cpp_podstawowy/module2/homework/addEven/buid/googletest-download/CMakeFiles/googletest-complete.rule
+/home/warp/kurs_cpp_podstawowy/module2/homework/addEven/buid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-install.rule
+/home/warp/kurs_cpp_podstawowy/module2/homework/addEven/buid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule
+/home/warp/kurs_cpp_podstawowy/module2/homework/addEven/buid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-download.rule
+/home/warp/kurs_cpp_podstawowy/module2/homework/addEven/buid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-update.rule
+/home/warp/kurs_cpp_podstawowy/module2/homework/addEven/buid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-patch.rule
+/home/warp/kurs_cpp_podstawowy/module2/homework/addEven/buid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-configure.rule
+/home/warp/kurs_cpp_podstawowy/module2/homework/addEven/buid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-build.rule
+/home/warp/kurs_cpp_podstawowy/module2/homework/addEven/buid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-test.rule
