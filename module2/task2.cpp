@@ -16,7 +16,7 @@ auto concatenateVector(std::vector<int>& first_vector, std::vector<int>& second_
 
 int main() {
     std::vector<int> vec1 {1, 2, 3, 4};
-    std::vector<int> vec2 {11, 12, 13, 14, 15, 16, 17};
+    std::vector<int> vec2 {11};
 
     auto vec = concatenateVector(vec1, vec2);
     for (const auto& el : vec) {

@@ -1,7 +1,14 @@
 #include <iostream>
 #include <vector>
+#include <list>
 
-// Implement createSortedList
+std::list<int> createSortedList(std::vector<int>& vec){
+    std::list<int> lis;
+    for (const auto i : vec){
+        lis.push_back(vec[i]);
+    }
+    return lis;
+}
 // add proper include :)
 
 int main() {
