@@ -4,8 +4,8 @@
 
 std::list<int> createSortedList(std::vector<int>& vec){
     std::list<int> lis;
-    for (const auto i : vec){
-        lis.push_back(vec[i]);
+    for (const auto& i : vec){
+        lis.push_back(i);
     }
     return lis;
 }
