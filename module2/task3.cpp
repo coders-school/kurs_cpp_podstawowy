@@ -7,6 +7,7 @@ std::list<int> createSortedList(std::vector<int>& vec){
     for (const auto& i : vec){
         lis.push_back(i);
     }
+    lis.sort();
     return lis;
 }
 // add proper include :)
