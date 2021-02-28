@@ -32,8 +32,11 @@ std::string getErrorMessage(ErrorCode code){
 }
 
 bool doesPasswordsMatch(std::string password1, std::string password2){
-    
-    return 0;
+    if (password1 == password2){
+        return true;
+    } else {
+        return false;
+    }
 }
 
 ErrorCode checkPasswordRules(std::string password){
