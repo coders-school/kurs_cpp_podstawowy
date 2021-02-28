@@ -4,7 +4,7 @@
 std::string getErrorMessage(ErrorCode code){
     switch(code){
         case Ok:{
-            return "Password OK";
+            return "OK";
             break;
         }
         case PasswordNeedsAtLeastNineCharacters:{
@@ -45,6 +45,9 @@ ErrorCode checkPasswordRules(std::string password){
 }
 
 ErrorCode checkPassword(std::string password1, std::string password2){
-    
-    return Ok;
+    if (doesPasswordsMatch(password1, password2) == false){
+        return PasswordsDoesNotMatch;
+    } else {
+        return checkPasswordRules(password1);   
+    }
 }
