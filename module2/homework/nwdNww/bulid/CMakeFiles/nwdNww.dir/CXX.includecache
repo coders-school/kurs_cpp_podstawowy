@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/nwdNww/main.cpp
+iostream
+-
+nwdNww.hpp
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/nwdNww/nwdNww.hpp
+
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/nwdNww/nwdNww.hpp
+

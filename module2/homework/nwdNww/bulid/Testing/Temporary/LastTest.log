@@ -1,0 +1,94 @@
+Start testing: Feb 22 03:08 GMT
+----------------------------------------------------------
+1/1 Testing: nwdNww_test
+1/1 Test: nwdNww_test
+Command: "/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/nwdNww/bulid/nwdNww-ut"
+Directory: /home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/nwdNww/bulid
+"nwdNww_test" start time: Feb 22 03:08 GMT
+Output:
+----------------------------------------------------------
+Running main() from /home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/nwdNww/bulid/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 32 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 16 tests from NWDFixtureTest/NWDFixture
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/0
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/0 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/1
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/1 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/2
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/2 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/3
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/3 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/4
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/4 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/5
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/5 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/6
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/6 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/7
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/7 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/8
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/8 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/9
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/9 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/10
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/10 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/11
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/11 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/12
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/12 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/13
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/13 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/14
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/14 (0 ms)
+[ RUN      ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/15
+[       OK ] NWDFixtureTest/NWDFixture.ShouldCalculateNWD/15 (0 ms)
+[----------] 16 tests from NWDFixtureTest/NWDFixture (0 ms total)
+
+[----------] 16 tests from NWWFixtureTest/NWWFixture
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/0
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/0 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/1
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/1 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/2
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/2 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/3
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/3 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/4
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/4 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/5
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/5 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/6
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/6 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/7
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/7 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/8
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/8 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/9
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/9 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/10
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/10 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/11
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/11 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/12
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/12 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/13
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/13 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/14
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/14 (0 ms)
+[ RUN      ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/15
+[       OK ] NWWFixtureTest/NWWFixture.ShouldCalculateNWW/15 (0 ms)
+[----------] 16 tests from NWWFixtureTest/NWWFixture (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 32 tests from 2 test suites ran. (0 ms total)
+[  PASSED  ] 32 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"nwdNww_test" end time: Feb 22 03:08 GMT
+"nwdNww_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 22 03:08 GMT

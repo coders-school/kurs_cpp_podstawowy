@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/main.cpp
+iostream
+-
+vector
+-
+maxOfVector.hpp
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/maxOfVector.hpp
+
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/maxOfVector.hpp
+vector
+-
+limits
+-
+

@@ -1,0 +1,47 @@
+Start testing: Feb 21 19:44 GMT
+----------------------------------------------------------
+1/1 Testing: addEven_test
+1/1 Test: addEven_test
+Command: "/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/addEven/bulid/addEven-ut"
+Directory: /home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/addEven/bulid
+"addEven_test" start time: Feb 21 19:44 GMT
+Output:
+----------------------------------------------------------
+Running main() from /home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/addEven/bulid/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from AddEvenTest/AddEven
+[ RUN      ] AddEvenTest/AddEven.ShouldAddEvenNumbers/0
+[       OK ] AddEvenTest/AddEven.ShouldAddEvenNumbers/0 (0 ms)
+[ RUN      ] AddEvenTest/AddEven.ShouldAddEvenNumbers/1
+[       OK ] AddEvenTest/AddEven.ShouldAddEvenNumbers/1 (0 ms)
+[ RUN      ] AddEvenTest/AddEven.ShouldAddEvenNumbers/2
+[       OK ] AddEvenTest/AddEven.ShouldAddEvenNumbers/2 (0 ms)
+[ RUN      ] AddEvenTest/AddEven.ShouldAddEvenNumbers/3
+[       OK ] AddEvenTest/AddEven.ShouldAddEvenNumbers/3 (0 ms)
+[ RUN      ] AddEvenTest/AddEven.ShouldAddEvenNumbers/4
+[       OK ] AddEvenTest/AddEven.ShouldAddEvenNumbers/4 (0 ms)
+[ RUN      ] AddEvenTest/AddEven.ShouldAddEvenNumbers/5
+[       OK ] AddEvenTest/AddEven.ShouldAddEvenNumbers/5 (0 ms)
+[ RUN      ] AddEvenTest/AddEven.ShouldAddEvenNumbers/6
+[       OK ] AddEvenTest/AddEven.ShouldAddEvenNumbers/6 (0 ms)
+[ RUN      ] AddEvenTest/AddEven.ShouldAddEvenNumbers/7
+[       OK ] AddEvenTest/AddEven.ShouldAddEvenNumbers/7 (0 ms)
+[ RUN      ] AddEvenTest/AddEven.ShouldAddEvenNumbers/8
+[       OK ] AddEvenTest/AddEven.ShouldAddEvenNumbers/8 (0 ms)
+[ RUN      ] AddEvenTest/AddEven.ShouldAddEvenNumbers/9
+[       OK ] AddEvenTest/AddEven.ShouldAddEvenNumbers/9 (0 ms)
+[----------] 10 tests from AddEvenTest/AddEven (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 10 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"addEven_test" end time: Feb 21 19:44 GMT
+"addEven_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 21 19:44 GMT

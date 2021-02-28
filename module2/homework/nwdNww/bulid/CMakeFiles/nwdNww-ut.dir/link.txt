@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/nwdNww-ut.dir/test.cpp.o  -o nwdNww-ut  lib/libgtest_main.a lib/libgtest.a -lpthread 

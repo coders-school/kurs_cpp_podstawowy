@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/addEven/addEven.hpp
+vector
+-
+
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/addEven/main.cpp
+iostream
+-
+vector
+-
+addEven.hpp
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/addEven/addEven.hpp
+

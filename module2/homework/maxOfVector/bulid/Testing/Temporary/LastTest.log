@@ -1,0 +1,51 @@
+Start testing: Feb 21 19:42 GMT
+----------------------------------------------------------
+1/1 Testing: maxOfVector_test
+1/1 Test: maxOfVector_test
+Command: "/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/maxOfVector-ut"
+Directory: /home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid
+"maxOfVector_test" start time: Feb 21 19:42 GMT
+Output:
+----------------------------------------------------------
+Running main() from /home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 12 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 12 tests from MaxOfVectorTests/MaxOfVectorTestFixture
+[ RUN      ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/0
+[       OK ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/0 (0 ms)
+[ RUN      ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/1
+[       OK ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/1 (0 ms)
+[ RUN      ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/2
+[       OK ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/2 (0 ms)
+[ RUN      ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/3
+[       OK ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/3 (0 ms)
+[ RUN      ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/4
+[       OK ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/4 (0 ms)
+[ RUN      ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/5
+[       OK ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/5 (0 ms)
+[ RUN      ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/6
+[       OK ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/6 (0 ms)
+[ RUN      ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/7
+[       OK ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/7 (0 ms)
+[ RUN      ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/8
+[       OK ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/8 (0 ms)
+[ RUN      ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/9
+[       OK ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/9 (0 ms)
+[ RUN      ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/10
+[       OK ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/10 (0 ms)
+[ RUN      ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/11
+[       OK ] MaxOfVectorTests/MaxOfVectorTestFixture.ShouldFindMax/11 (0 ms)
+[----------] 12 tests from MaxOfVectorTests/MaxOfVectorTestFixture (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 12 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"maxOfVector_test" end time: Feb 21 19:42 GMT
+"maxOfVector_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 21 19:42 GMT

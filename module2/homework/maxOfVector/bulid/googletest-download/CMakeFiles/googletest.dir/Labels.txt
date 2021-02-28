@@ -1,0 +1,14 @@
+# Target labels
+ googletest
+# Source files and their labels
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/googletest-download/CMakeFiles/googletest
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/googletest-download/CMakeFiles/googletest.rule
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/googletest-download/CMakeFiles/googletest-complete.rule
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-install.rule
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-download.rule
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-update.rule
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-patch.rule
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-configure.rule
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-build.rule
+/home/nanautzin/programing/kurs_cpp_podstawowy/module2/homework/maxOfVector/bulid/googletest-download/googletest-prefix/src/googletest-stamp/googletest-test.rule
