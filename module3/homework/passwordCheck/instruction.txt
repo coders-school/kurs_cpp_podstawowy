@@ -1,6 +1,0 @@
-Napisz funkcję getErrorMessage(), która przyjmie zdefiniowany typ kodu błędu i zwróci stosowny komunikat jako napis. (1 punkt)
-Napisz funkcję doesPasswordsMatch(), która otrzyma dwa hasła i sprawdzi czy są identyczne. Powinna zwrócić odpowiednią wartość typu bool. (1 punkt)
-Napisz funkcję checkPasswordRules(), która przyjmie jedno hasło i losowo zwróci jeden z kodów PasswordNeedsAtLeast* lub Ok. (2 punkty)
-Napisz funkcję checkPassword(). Powinna ona przyjąć dwa hasła i używać funkcji doesPasswordsMatch() w celu określenia czy hasła się zgadzają. W przypadku gdy się nie zgadzają ma ona zwrócić kod PasswordsDoesNotMatch, a w przeciwnym przypadku powinna zwrócić kod błędu zwrócony przez wywołanie funkcji checkPasswordRules(). (2 punkty)
-Dla ambitnych (nieobowiązkowe) - zaimplementuj w funkcji checkPasswordRules() prawdziwą walidację pozostałych przypadków, które są podane jako kody błędów. Najlepiej, jeśli wykorzystasz funkcje z nagłówka oraz algorytm std::any_of. Dopisz/zmodyfikuj odpowiednie testy. (4 punkty)
-Razem: 7 punktów (+4 dla ambitnych, +2 za dostarczenie przed 07.06.2020 23:59, +3 punkty/osobę za pracę w parze)
