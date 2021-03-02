@@ -42,9 +42,6 @@ bool doesPasswordsMatch(std::string password1, std::string password2){
 }
 
 ErrorCode checkPasswordRules(std::string password){
-   // bool ifNumber = false;
-   // bool ifSpecialCharacter = false;
-   // bool ifUppercaseLetter = false
     if (password.size() < 9){
         return PasswordNeedsAtLeastNineCharacters;
     } else if (!std::any_of(password.begin(), password.end(), [](char i){return std::isdigit(i);})) {
