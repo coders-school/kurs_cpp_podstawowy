@@ -18,12 +18,12 @@ std::string calculate(const std::string& command, int first, int second){
     }
     else if (command == "divide") {
 
-            if (second==0){
+	    if ((first||second)==0){
             return std::string("Division by 0");
                     }
-                    else if(first==0){
-            return std::string("Division by 0");
-                    }
+          
+            
+           
                         else if((first && second)!=0){
             return std::to_string(first/second);
                         }
