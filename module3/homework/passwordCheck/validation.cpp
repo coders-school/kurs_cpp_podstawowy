@@ -39,7 +39,7 @@ bool doesPasswordsMatch(std::string password1, std::string password2)
     }
     return false;
 }
-
+//
 ErrorCode checkPasswordRules(const std::string pass)
 {
     if(pass.length() < 0)
