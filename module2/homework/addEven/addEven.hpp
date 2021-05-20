@@ -2,13 +2,13 @@
 #include <vector>
 
 int addEven(const std::vector<int>& numbers) {
-      int sum = 0;
+    int intotal = 0;
     for(auto& el : numbers)
     {          
         if (el % 2 == 0)
         {
-            sum+=el;
+            intotal = intotal + el;
         }
     }  
-    return sum;
+    return intotal;
 }
